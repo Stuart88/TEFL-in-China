@@ -7,12 +7,25 @@
         Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
         Width="{x:Static SystemParameters.PrimaryScreenWidth}" 
         mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        WindowState="Maximized" 
         Title="eChinaCareers TEFL">
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets\Images\eCcLogo.png"
+           MaxWidth="350" MaxHeight="350" />
+
+        <TextBlock FontSize="26" Text="Welcome to TEFL in China" Foreground="{StaticResource Orange}"  HorizontalAlignment="Center" MaxWidth="300" Margin="0, 0 , 0, 40"></TextBlock>
+
+        <TextBlock Text="Email" Foreground="{StaticResource Grey}" ></TextBlock>
+        <TextBox x:Name="EmailInput" Foreground="{StaticResource Black}" FontSize="24" HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10"
+                 Text=""/>
+
+        <TextBlock Text="Password" Foreground="{StaticResource Grey}" ></TextBlock>
+        <PasswordBox x:Name="PasswordInput" Foreground="{StaticResource Black}" FontSize="24"  HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10"/>
+
+        <Button x:Name="LoginBtn" Style="{StaticResource MainButtonStyle}" FontSize="24" Click="LoginBtn_Click">Login</Button>
+        
+    </StackPanel>
     
-    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets\Images\eCcLogo.png"
-           MaxWidth="200" MaxHeight="200">
-        
-        
-        
-    </Image>
 </Window>
