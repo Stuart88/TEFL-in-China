@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TEFL_App.Helpers
+﻿namespace TEFL_App.Helpers
 {
     public class Enums
     {
+        #region Public Classes
+
         public static class Language
         {
-            public const string English = "en-GB";
+            #region Public Fields
+
             public const string Chinese = "zh-CN";
+            public const string English = "en-GB";
+
+            #endregion Public Fields
         }
+
+        #endregion Public Classes
     }
 }

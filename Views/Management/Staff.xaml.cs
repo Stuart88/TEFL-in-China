@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using static TEFL_App.Views.Management.StaffPageTextClass;
 
 namespace TEFL_App.Views.Management
@@ -21,9 +9,7 @@ namespace TEFL_App.Views.Management
     /// </summary>
     public partial class Staff : Page
     {
-        public StaffPageText PageText { get; set; } = App.Settings.CultureInfo == Helpers.Enums.Language.English
-            ? StaffPageTextEN
-            : StaffPageTextZH;
+        #region Public Constructors
 
         public Staff()
         {
@@ -32,12 +18,23 @@ namespace TEFL_App.Views.Management
             FillTableView();
         }
 
+        #endregion Public Constructors
+
+        #region Public Properties
+
+        public StaffPageText PageText { get; set; } = App.Settings.CultureInfo == Helpers.Enums.Language.English
+                    ? StaffPageTextEN
+            : StaffPageTextZH;
+
+        #endregion Public Properties
+
+        #region Private Methods
+
         private void FillTableView()
         {
-
             int rowIndex = 1;
 
-            foreach(var p in App.TEFLProfiles)
+            foreach (var p in App.TEFLProfiles)
             {
                 staffGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
@@ -113,42 +110,42 @@ namespace TEFL_App.Views.Management
 
                 Grid.SetColumn(lastLoginText, 2);
                 Grid.SetRow(lastLoginText, rowIndex);
-                
+
                 Grid.SetColumn(mod1Text, 3);
                 Grid.SetRow(mod1Text, rowIndex);
-                
+
                 Grid.SetColumn(mod2Text, 4);
                 Grid.SetRow(mod2Text, rowIndex);
-                
+
                 Grid.SetColumn(mod3Text, 5);
                 Grid.SetRow(mod3Text, rowIndex);
-                
+
                 Grid.SetColumn(mod4Text, 6);
                 Grid.SetRow(mod4Text, rowIndex);
-                
+
                 Grid.SetColumn(finalExamText, 7);
                 Grid.SetRow(finalExamText, rowIndex);
-                
+
                 Grid.SetColumn(assignmentText, 8);
                 Grid.SetRow(assignmentText, rowIndex);
-                
+
                 Grid.SetColumn(passedText, 9);
                 Grid.SetRow(passedText, rowIndex);
-                
+
                 Grid.SetColumn(passDateText, 10);
                 Grid.SetRow(passDateText, rowIndex);
-
-                
 
                 rowIndex++;
             }
         }
-    }
 
-   
+        #endregion Private Methods
+    }
 
     public sealed class StaffPageTextClass
     {
+        #region Internal Fields
+
         internal static StaffPageText StaffPageTextEN = new StaffPageText
         {
             Name = "Name",
@@ -177,19 +174,28 @@ namespace TEFL_App.Views.Management
             PassDate = "通过日期",
         };
 
+        #endregion Internal Fields
+
+        #region Public Classes
+
         public class StaffPageText
         {
-            public string Name { get; set; }
+            #region Public Properties
+
+            public string Assignment { get; set; }
+            public string FinalExam { get; set; }
             public string LastLogin { get; set; }
             public string Module1 { get; set; }
             public string Module2 { get; set; }
             public string Module3 { get; set; }
             public string Module4 { get; set; }
-            public string FinalExam { get; set; }
-            public string Assignment { get; set; }
-            public string Passed { get; set; }
+            public string Name { get; set; }
             public string PassDate { get; set; }
+            public string Passed { get; set; }
 
+            #endregion Public Properties
         }
+
+        #endregion Public Classes
     }
 }

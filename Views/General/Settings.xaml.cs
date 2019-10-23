@@ -12,9 +12,8 @@ namespace TEFL_App.Views.General
     {
         #region Private Fields
 
-        private DataLayer.DbAppSettings AppSettingsToSave = App.Settings;
-
         private Action AfterSaveComplete;
+        private DataLayer.DbAppSettings AppSettingsToSave = App.Settings;
 
         #endregion Private Fields
 
@@ -33,12 +32,6 @@ namespace TEFL_App.Views.General
                 Helpers.Enums.Language.Chinese => langItemZh,
                 _ => langItemZh,
             };
-        }
-
-        private void SetComponentsText()
-        {
-            saveBtn.Content = PageText.Save;
-            languageLabel.Content = PageText.Language;
         }
 
         #endregion Public Constructors
@@ -70,7 +63,12 @@ namespace TEFL_App.Views.General
             AfterSaveComplete();
 
             Helpers.Functions.ShowMessageDialog("", PageText.SavedSuccess);
+        }
 
+        private void SetComponentsText()
+        {
+            saveBtn.Content = PageText.Save;
+            languageLabel.Content = PageText.Language;
         }
 
         private void SetLanguage()
@@ -94,7 +92,6 @@ namespace TEFL_App.Views.General
             Save = "Save",
             SavedSuccess = "Settings saved!",
             Language = "Language"
-
         };
 
         internal static SettingsPageText SettingsPageTextZH = new SettingsPageText
@@ -112,9 +109,9 @@ namespace TEFL_App.Views.General
         {
             #region Public Properties
 
+            public string Language { get; set; }
             public string Save { get; set; }
             public string SavedSuccess { get; set; }
-            public string Language { get; set; }
 
             #endregion Public Properties
         }

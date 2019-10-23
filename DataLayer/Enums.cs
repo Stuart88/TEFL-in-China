@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TEFL_App.DataLayer
+﻿namespace TEFL_App.DataLayer
 {
     public class Enums
     {
+        #region Public Enums
+
         public enum RememberMeType
         {
             Manager,
             Candidate
         }
+
+        #endregion Public Enums
     }
 }

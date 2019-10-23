@@ -74,7 +74,7 @@ namespace TEFL_App.DataLayer
         {
             DbAppSettings settings = db.Table<DbAppSettings>().FirstOrDefault();
 
-            if(settings == null)
+            if (settings == null)
             {
                 settings = new DbAppSettings();
                 AddSettings(settings);

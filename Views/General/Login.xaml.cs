@@ -3,17 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TEFL_App.DataLayer;
 using TEFL_App.Helpers;
 using TEFL_App.Models;
@@ -25,10 +16,14 @@ namespace TEFL_App.Views.General
     /// </summary>
     public partial class Login : Page
     {
+        #region Private Fields
+
         private Action<Page> SetMainWindowContent;
-        public string Email { get; set; } = "";
-        public string Password { get; set; } = "";
-        public bool RememberMe { get; set; } = false;
+
+        #endregion Private Fields
+
+        #region Public Constructors
+
         public Login(Action<Page> setMainWindowContent)
         {
             InitializeComponent();
@@ -47,6 +42,16 @@ namespace TEFL_App.Views.General
             }
         }
 
+        #endregion Public Constructors
+
+        #region Public Properties
+
+        public string Email { get; set; } = "";
+        public string Password { get; set; } = "";
+        public bool RememberMe { get; set; } = false;
+
+        #endregion Public Properties
+
         #region Private Properties
 
         private DbRememberMe DbRememberMe { get; set; }
@@ -58,6 +63,23 @@ namespace TEFL_App.Views.General
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             ProcessLogin();
+        }
+
+        private void Logout()
+        {
+            SetMainWindowContent(new Login(SetMainWindowContent));
+        }
+
+        private void PasswordInput_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                ProcessLogin();
+            }
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private async void ProcessLogin()
@@ -102,7 +124,6 @@ namespace TEFL_App.Views.General
                         //    await GetAdminsList();
                         //});
 
-
                         SetMainWindowContent(new Management.Layout(Logout));
                     }
                     else
@@ -125,10 +146,6 @@ namespace TEFL_App.Views.General
             }
         }
 
-        private void Logout()
-        {
-            SetMainWindowContent(new Login(SetMainWindowContent));
-        }
         private void RememberMeCheckbox_Checked(object sender, RoutedEventArgs e)
         {
             RememberMe = (bool)((CheckBox)sender).IsChecked;
@@ -165,17 +182,5 @@ namespace TEFL_App.Views.General
         }
 
         #endregion Private Methods
-
-        private void PasswordInput_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == System.Windows.Input.Key.Enter)
-            {
-                ProcessLogin();
-            }
-            //else
-            //{
-            //    e.Handled = false;
-            //}
-        }
     }
 }

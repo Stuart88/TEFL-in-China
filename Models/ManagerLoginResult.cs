@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TEFL_App.Models
 {
     public class ManagerLoginResult
     {
-        public Employer User { get; set; }
+        #region Public Properties
+
         public List<TEFLProfile> TEFLProfiles { get; set; }
+        public Employer User { get; set; }
+
+        #endregion Public Properties
     }
 }

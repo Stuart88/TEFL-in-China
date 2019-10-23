@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TEFL_App.Helpers
+﻿namespace TEFL_App.Helpers
 {
     internal class JsonBasicResult<T>
     {
