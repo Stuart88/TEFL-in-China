@@ -26,7 +26,12 @@ namespace TEFL_App.Models
         public string Mod3QuizScores { get; set; }
         public string Mod4QuizScores { get; set; }
 
+        #region Local Data
+        public DateTime? LastLogin { get; set; }
         public string AppUsername { get; set; } = "";
         public string AppPassword { get; set; } = "";
+        public bool LessonPlanSubmitted { get; set; } = false;
+
+        #endregion
     }
 }

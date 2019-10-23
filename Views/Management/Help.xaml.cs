@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace TEFL_App.Views.Management
 {
     /// <summary>
-    /// Interaction logic for ManagerHome.xaml
+    /// Interaction logic for Help.xaml
     /// </summary>
-    public partial class ManagerHome : Page
+    public partial class Help : Page
     {
-        
-        public ManagerHome()
+        public Help()
         {
             InitializeComponent();
-
-            welcomeText.Text = string.Format("{0}, 你好！", App.ManagerProfile.DisplayNameEn);
-
         }
-
     }
-
-   
 }

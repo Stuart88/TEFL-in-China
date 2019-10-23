@@ -24,7 +24,20 @@ namespace TEFL_App.Helpers
 
         public static void ShowErrorMessageDialog(Exception e)
         {
-            MessageBoxResult result = MessageBox.Show(ErrorMessage(e), "Error", MessageBoxButton.OK);
+            _  = MessageBox.Show(ErrorMessage(e), "Error", MessageBoxButton.OK);              
+        }
+
+        public static void ShowMessageDialog(string title, string message)
+        {
+            _ = MessageBox.Show(message, title, MessageBoxButton.OK);
+        }
+
+        public static bool PassedQuiz(string scoresString)
+        {
+            if (string.IsNullOrEmpty(scoresString))
+                return false;
+            else
+                return scoresString.Split(',').Where(x => !string.IsNullOrEmpty(x)).Select(s => int.Parse(s)).ToList().Max() >= Globals.QuizScorePassMark;
         }
     }
 }

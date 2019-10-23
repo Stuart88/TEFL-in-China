@@ -12,6 +12,8 @@ namespace TEFL_App.Helpers
 
         public const string baseURL = "https://echinacareers.com/TEFLApp/";
 
+        public const int QuizScorePassMark = 70;
+
         #endregion Public Fields
 
         #region Public Methods
