@@ -4,6 +4,7 @@ namespace TEFL_App.Models
 {
     public class TEFLProfile
     {
+
         #region Public Properties
 
         public int? CertificateID { get; set; }
@@ -23,16 +24,21 @@ namespace TEFL_App.Models
         public int PaidAmount { get; set; }
         public DateTime? PaymentDate { get; set; }
         public DateTime RegistrationDate { get; set; }
+        public byte[] AppPassword { get; set; }
+        public string AppUsername { get; set; } = "";
+        public DateTime? LastLogin { get; set; }
 
         #endregion Public Properties
 
         #region Local Data
 
-        public string AppPassword { get; set; } = "";
-        public string AppUsername { get; set; } = "";
-        public DateTime? LastLogin { get; set; }
         public bool LessonPlanSubmitted { get; set; } = false;
 
         #endregion Local Data
+
+        public void ProcessFromServer()
+        {
+            LessonPlanSubmitted = !string.IsNullOrEmpty(LessonPlanPath);
+        }
     }
 }

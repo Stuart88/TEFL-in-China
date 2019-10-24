@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using TEFL_App.DataLayer;
 using TEFL_App.Models;
+using static TEFL_App.Helpers.Enums;
 
 namespace TEFL_App
 {
@@ -17,16 +18,17 @@ namespace TEFL_App
     /// </summary>
     public partial class App : Application
     {
-        public static string UserEmail { get; set; } = "";
+        public static UserType UserType { get; set; }
+        public static string UserLogin { get; set; } = "";
         public static string UserPassword { get; set; } = "";
 
         public static readonly HttpClient client = new HttpClient();
 
         public static Employer ManagerProfile = new Employer();
+        public static TEFLProfile StudentProfile = new TEFLProfile();
         public static List<TEFLProfile> TEFLProfiles { get; set; }
         public static List<DbRememberMe> RememberMeData { get; set; }
         public static DbAppSettings Settings { get; set; }
-
         public static CultureInfo CultureInfo { get; set; }
 
         public App()

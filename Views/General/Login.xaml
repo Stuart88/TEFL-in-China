@@ -8,20 +8,17 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
 
-    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-        <Frame Content="{StaticResource LogoImage}" />
+    <Grid VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        <TextBlock FontSize="26" Text="Welcome to TEFL in China" Foreground="{StaticResource Orange}"  HorizontalAlignment="Center" MaxWidth="300" Margin="0, 0 , 0, 40"></TextBlock>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager" Content="管理登录" />
+            <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student"  Content="学生登录" />
+        </StackPanel>
 
-        <TextBlock Text="Email" Foreground="{StaticResource Grey}" ></TextBlock>
-        <TextBox x:Name="EmailInput" Foreground="{StaticResource Black}" FontSize="24" HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10"
-                 Text="" />
-
-        <TextBlock Text="Password" Foreground="{StaticResource Grey}" ></TextBlock>
-        <PasswordBox x:Name="PasswordInput" Foreground="{StaticResource Black}" FontSize="24"  HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10" KeyUp="PasswordInput_KeyUp" />
-
-        <Button x:Name="LoginBtn" Style="{StaticResource MainButtonStyle}" FontSize="24" Click="LoginBtn_Click">Login</Button>
-
-        <CheckBox x:Name="RememberMeCheckbox" IsChecked="False" Checked="RememberMeCheckbox_Checked" Unchecked="RememberMeCheckbox_Checked" Content="Remember Me" HorizontalAlignment="Center" Margin="10"></CheckBox>
-    </StackPanel>
+        <Frame NavigationUIVisibility="Hidden" VerticalAlignment="Center" Grid.Row="1" x:Name="loginFrame" />
+    </Grid>
 </Page>

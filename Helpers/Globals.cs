@@ -12,9 +12,9 @@
 
         #region Public Methods
 
-        public static string generalURL(string action, string searchTerms) => string.Format("{0}{1}?{2}", baseURL, action, searchTerms);
+        public static string GeneralURL(string action, string searchTerms) => string.Format("{0}{1}?{2}", baseURL, action, searchTerms);
 
-        public static string listURL(string listType, int page, int amount, string searchTerms) => string.Format("{0}{1}?page={2}&amount={3}&{4}", baseURL, listType, page, amount, searchTerms);
+        public static string ListURL(string listType, int page, int amount, string searchTerms) => string.Format("{0}{1}?page={2}&amount={3}&{4}", baseURL, listType, page, amount, searchTerms);
 
         #endregion Public Methods
     }

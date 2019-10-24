@@ -2,19 +2,17 @@
 
 namespace TEFL_App.DataLayer
 {
-    public class DbTEFLProfile
+    public class DbVerified
     {
         #region Public Properties
 
-        public string AppPassword { get; set; } = "";
-
-        public string AppUsername { get; set; } = "";
-
         [NotNull]
-        public int CandidateID { get; set; }
+        public string Email { get; set; }
 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+
+
 
         #endregion Public Properties
     }

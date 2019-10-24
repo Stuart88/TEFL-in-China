@@ -34,13 +34,11 @@ namespace TEFL_App.DataLayer
             _ = db.Insert(adding);
         }
 
-        public static void AddTeflProfile(DbTEFLProfile profile)
+        public static void AddVerified(DbVerified v)
         {
-            DbTEFLProfile adding = new DbTEFLProfile
+            DbVerified adding = new DbVerified
             {
-                AppPassword = profile.AppPassword,
-                AppUsername = profile.AppUsername,
-                CandidateID = profile.CandidateID
+                Email = v.Email
             };
 
             _ = db.Insert(adding);
@@ -48,7 +46,7 @@ namespace TEFL_App.DataLayer
 
         public static void DeleteRememberMe(DbRememberMe data)
         {
-            //DbTEFLProfile updating = db.Find<DbTEFLProfile>(profile);
+            //DbVerified updating = db.Find<DbVerified>(profile);
 
             _ = db.Delete(data);
         }
@@ -58,9 +56,9 @@ namespace TEFL_App.DataLayer
             _ = db.Delete(data);
         }
 
-        public static void DeleteTeflProfile(DbTEFLProfile profile)
+        public static void DeleteVerified(DbVerified profile)
         {
-            //DbTEFLProfile updating = db.Find<DbTEFLProfile>(profile);
+            //DbVerified updating = db.Find<DbVerified>(profile);
 
             _ = db.Delete(profile);
         }
@@ -83,16 +81,16 @@ namespace TEFL_App.DataLayer
             return settings;
         }
 
-        public static List<DbTEFLProfile> GetDbTEFLProfiles()
+        public static List<DbVerified> GetDbVerifieds()
         {
-            return db.Table<DbTEFLProfile>().ToList();
+            return db.Table<DbVerified>().ToList();
         }
 
         public static void Initialise()
         {
             //var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TeflApp.db");
 
-            _ = db.CreateTable<DbTEFLProfile>();
+            _ = db.CreateTable<DbVerified>();
             _ = db.CreateTable<DbRememberMe>();
             _ = db.CreateTable<DbAppSettings>();
         }
@@ -107,7 +105,7 @@ namespace TEFL_App.DataLayer
             _ = db.Update(data);
         }
 
-        public static void UpdateTeflProfile(DbTEFLProfile profile)
+        public static void UpdateVerified(DbVerified profile)
         {
             _ = db.Update(profile);
         }

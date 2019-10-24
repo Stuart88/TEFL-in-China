@@ -1,6 +1,6 @@
 ﻿namespace TEFL_App.Helpers
 {
-    public class Enums
+    public static class Enums
     {
         #region Public Classes
 
@@ -12,6 +12,12 @@
             public const string English = "en-GB";
 
             #endregion Public Fields
+        }
+
+        public enum UserType
+        {
+            Manager,
+            Candidate
         }
 
         #endregion Public Classes

@@ -83,6 +83,17 @@ namespace TEFL_App.Views.General
         #endregion Private Methods
     }
 
+    public sealed partial class SettingsPageText
+    {
+        #region Public Properties
+
+        public string Language { get; set; }
+        public string Save { get; set; }
+        public string SavedSuccess { get; set; }
+
+        #endregion Public Properties
+    }
+
     public sealed class SettingsPageTextClass
     {
         #region Internal Fields
@@ -102,20 +113,5 @@ namespace TEFL_App.Views.General
         };
 
         #endregion Internal Fields
-
-        #region Public Classes
-
-        public class SettingsPageText
-        {
-            #region Public Properties
-
-            public string Language { get; set; }
-            public string Save { get; set; }
-            public string SavedSuccess { get; set; }
-
-            #endregion Public Properties
-        }
-
-        #endregion Public Classes
     }
 }

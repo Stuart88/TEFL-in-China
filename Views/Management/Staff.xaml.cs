@@ -142,6 +142,24 @@ namespace TEFL_App.Views.Management
         #endregion Private Methods
     }
 
+    public sealed partial class StaffPageText
+    {
+        #region Public Properties
+
+        public string Assignment { get; set; }
+        public string FinalExam { get; set; }
+        public string LastLogin { get; set; }
+        public string Module1 { get; set; }
+        public string Module2 { get; set; }
+        public string Module3 { get; set; }
+        public string Module4 { get; set; }
+        public string Name { get; set; }
+        public string PassDate { get; set; }
+        public string Passed { get; set; }
+
+        #endregion Public Properties
+    }
+
     public sealed class StaffPageTextClass
     {
         #region Internal Fields
@@ -175,27 +193,5 @@ namespace TEFL_App.Views.Management
         };
 
         #endregion Internal Fields
-
-        #region Public Classes
-
-        public class StaffPageText
-        {
-            #region Public Properties
-
-            public string Assignment { get; set; }
-            public string FinalExam { get; set; }
-            public string LastLogin { get; set; }
-            public string Module1 { get; set; }
-            public string Module2 { get; set; }
-            public string Module3 { get; set; }
-            public string Module4 { get; set; }
-            public string Name { get; set; }
-            public string PassDate { get; set; }
-            public string Passed { get; set; }
-
-            #endregion Public Properties
-        }
-
-        #endregion Public Classes
     }
 }
