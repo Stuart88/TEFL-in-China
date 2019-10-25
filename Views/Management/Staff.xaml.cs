@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using static TEFL_App.Views.Management.StaffPageTextClass;
 
 namespace TEFL_App.Views.Management
@@ -24,7 +25,7 @@ namespace TEFL_App.Views.Management
 
         public StaffPageText PageText { get; set; } = App.Settings.CultureInfo == Helpers.Enums.Language.English
                     ? StaffPageTextEN
-            : StaffPageTextZH;
+                    : StaffPageTextZH;
 
         #endregion Public Properties
 
@@ -44,6 +45,12 @@ namespace TEFL_App.Views.Management
                     Style = Application.Current.FindResource("TableRowStylePlain") as Style,
                 };
                 Button actionBtn = new Button { Content = "Data" };
+                actionBtn.Click += (s, e) =>  
+                {
+                    General.PopupWindow popUp = new General.PopupWindow(p.Name);
+                    popUp.Content = new Student.StudentProfile(p);
+                    popUp.Show();
+                };
                 TextBlock lastLoginText = new TextBlock
                 {
                     Text = p.LastLogin.HasValue ? p.LastLogin.Value.ToString(App.CultureInfo) : "",

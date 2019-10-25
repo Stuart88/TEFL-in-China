@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using TEFL_App.DataLayer;
 using TEFL_App.Models;
 
@@ -23,6 +26,29 @@ namespace TEFL_App.Helpers
             return e.Message
                 + (e.InnerException != null ? e.InnerException.Message : "")
                 + (e.InnerException != null && e.InnerException.InnerException != null ? e.InnerException.InnerException.Message : "");
+        }
+
+        public static string HighestExamScore(string scores)
+        {
+            if (string.IsNullOrEmpty(scores))
+                return " - ";
+            else
+            {
+                List<int> scoresList = scores.Split(',').Select(s => int.Parse(s)).ToList();
+
+                if (scoresList.Count() > 0)
+                    return scoresList.Max().ToString();
+                else
+                    return " - ";
+            }
+        }
+
+        public static string HighestExamScore(string[] scores)
+        {
+            if (scores.Length > 0)
+                return scores.Max().ToString();
+            else
+                return " - ";
         }
 
         public static bool PassedQuiz(string scoresString)
@@ -68,6 +94,47 @@ namespace TEFL_App.Helpers
            
         }
 
+        public static BitmapImage LoadImage(byte[] imageData)
+        {
+            
+            if (imageData == null || imageData.Length == 0)
+            {
+                throw new Exception("No image data!");
+            }
+            else
+            {
+                BitmapImage image = new BitmapImage();
+
+                using var mem = new MemoryStream(imageData);
+
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+
+                image.Freeze();
+
+                return image;
+            }
+        }
+
+        public static byte[] ImageToByteArray(BitmapImage imageIn)
+        {
+            byte[] data;
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageIn));
+            using (MemoryStream ms = new MemoryStream())
+            {
+                encoder.Save(ms);
+                data = ms.ToArray();
+            }
+
+            return data;
+        }
+
         public static bool AppVerified(out string email)
         {
             email = "";
@@ -92,6 +159,16 @@ namespace TEFL_App.Helpers
             {
                 p.ProcessFromServer();
             }
+        }
+
+        public static string ToStringCustom(this DateTime d)
+        {
+            return App.Settings.CultureInfo switch
+            {
+                Enums.Language.English => d.ToString("dd MMM yyyy", App.CultureInfo),
+                Enums.Language.Chinese => d.ToString("yyyy年MM月dd日", App.CultureInfo),
+                _ => d.ToString("yyyy年MM月dd日", App.CultureInfo)
+            };
         }
 
         #endregion Public Methods

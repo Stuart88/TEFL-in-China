@@ -20,6 +20,16 @@
             Candidate
         }
 
+        public enum ModuleNum
+        {
+            Mod1,
+            Mod2,
+            Mod3,
+            Mod4,
+            FinalExam,
+            Assignment
+        }
+
         #endregion Public Classes
     }
 }

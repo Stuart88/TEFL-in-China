@@ -39,6 +39,11 @@ namespace TEFL_App.Models
         public void ProcessFromServer()
         {
             LessonPlanSubmitted = !string.IsNullOrEmpty(LessonPlanPath);
+
+            Mod1QuizScores = Mod1QuizScores ?? "";
+            Mod2QuizScores = Mod2QuizScores ?? "";
+            Mod3QuizScores = Mod3QuizScores ?? "";
+            Mod4QuizScores = Mod4QuizScores ?? "";
         }
     }
 }

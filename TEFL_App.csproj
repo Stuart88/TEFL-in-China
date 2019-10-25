@@ -111,9 +111,11 @@
     </ApplicationDefinition>
     <Compile Include="DataLayer\DbContext.cs" />
     <Compile Include="DataLayer\DbAppSettings.cs" />
+    <Compile Include="DataLayer\DbProfilePic.cs" />
     <Compile Include="DataLayer\DbVerified.cs" />
     <Compile Include="DataLayer\DbRememberMe.cs" />
     <Compile Include="DataLayer\Enums.cs" />
+    <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Views\Course\CourseHome.xaml.cs">
       <DependentUpon>CourseHome.xaml</DependentUpon>
@@ -130,6 +132,9 @@
     <Compile Include="Views\General\LoginManager.xaml.cs">
       <DependentUpon>LoginManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\General\PopupWindow.xaml.cs">
+      <DependentUpon>PopupWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\General\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -144,6 +149,9 @@
     </Compile>
     <Compile Include="Views\Management\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentProfile.xaml.cs">
+      <DependentUpon>StudentProfile.xaml</DependentUpon>
     </Compile>
     <Page Include="GlobalResources.xaml">
       <SubType>Designer</SubType>
@@ -184,6 +192,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\General\PopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\General\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Management\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,7 +266,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Images\CandidateDefault.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

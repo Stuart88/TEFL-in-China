@@ -13,6 +13,22 @@ namespace TEFL_App.DataLayer
 
         #region Public Methods
 
+        public static void AddProfilePic(DbProfilePic pic)
+        {
+            DbProfilePic adding = new DbProfilePic
+            {
+                CandidateID = pic.CandidateID,
+                ImageBytes = pic.ImageBytes
+            };
+
+            _ = db.Insert(adding);
+        }
+
+        public static bool PictureExists(int candID)
+        {
+            return GetProfilePic(candID, out _);
+        }
+
         public static void AddRememberMe(DbRememberMe rememberMeData)
         {
             DbRememberMe adding = new DbRememberMe
@@ -42,6 +58,18 @@ namespace TEFL_App.DataLayer
             };
 
             _ = db.Insert(adding);
+        }
+
+        public static void DeleteProfilePic(int candID)
+        {
+            if(GetProfilePic(candID, out DbProfilePic deleting))
+            {
+                _ = db.Delete(deleting);
+            }
+        }
+        public static void DeleteProfilePic(DbProfilePic pic)
+        {
+            _ = db.Delete(pic);
         }
 
         public static void DeleteRememberMe(DbRememberMe data)
@@ -86,6 +114,13 @@ namespace TEFL_App.DataLayer
             return db.Table<DbVerified>().ToList();
         }
 
+        public static bool GetProfilePic(int candID, out DbProfilePic pic)
+        {
+            pic = db.Table<DbProfilePic>().FirstOrDefault(x => x.CandidateID == candID);
+
+            return pic != null;
+        }
+
         public static void Initialise()
         {
             //var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TeflApp.db");
@@ -93,11 +128,17 @@ namespace TEFL_App.DataLayer
             _ = db.CreateTable<DbVerified>();
             _ = db.CreateTable<DbRememberMe>();
             _ = db.CreateTable<DbAppSettings>();
+            _ = db.CreateTable<DbProfilePic>();
         }
 
         public static void UpdateAppSettings(DbAppSettings data)
         {
             _ = db.Update(data);
+        }
+
+        public static void UpdateProfilePic(DbProfilePic pic)
+        {
+            _ = db.Update(pic);
         }
 
         public static void UpdateRememberMe(DbRememberMe data)
