@@ -100,7 +100,7 @@ namespace TEFL_App.Views.General
 
                 App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
 
-                string json_data = await App.client.GetStringAsync(Globals.baseURL + "Login");
+                string json_data = await App.client.GetStringAsync(Globals.baseURL + "ManagerLogin");
 
                 if (!string.IsNullOrEmpty(json_data))
                 {

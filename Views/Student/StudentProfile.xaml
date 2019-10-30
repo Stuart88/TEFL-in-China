@@ -10,6 +10,8 @@
       Title="StudentProfile">
 
     <Page.Resources>
+
+        
         <Style TargetType="Label" x:Key="ProfileTitleStyle">
             <Setter Property="Foreground" Value="#33475a"/>
             <Setter Property="Padding" Value="5,0,5,0"/>
@@ -43,7 +45,18 @@
             <Setter Property="Padding" Value="15"/>
             <Setter Property="Margin" Value="1,0,1,0"/>
         </Style>
+        <Style TargetType="Border" x:Key="FinalExamBorderStyle">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="Background" Value="{StaticResource LightGrey}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="1,0,1,0"/>
+        </Style>
         <Style TargetType="StackPanel" x:Key="ModuleScoresPanelStyle">
+            
         </Style>
         <Style TargetType="Label" x:Key="ModuleScoresPanelLabelStyle">
             <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
@@ -101,8 +114,18 @@
                 
             </StackPanel>-->
 
-            <Grid Grid.Row="0" Grid.Column="1">
+            <Grid Grid.Row="0" Grid.Column="1" Margin="0,20,0,20">
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -154,14 +177,17 @@
                 <TextBlock Grid.Row="5" Grid.Column="1"
                            Text="{Binding Path=Profile.ModulesComplete, ElementName=profileWindow}"
                            Style="{StaticResource ProfileTextStyle}"/>
-                
+
+
                 <Label Grid.Row="6" Grid.Column="1" Content="{Binding Path=PageText.ExamScores, ElementName=profileWindow}"
                        Style="{StaticResource ProfileLabelStyle}"/>
                 <TextBlock Grid.Row="7" Grid.Column="1"
                            Text="{Binding Path=Profile.ExamScores, ElementName=profileWindow}"
                            Style="{StaticResource ProfileTextStyle}"/>
 
-                <Grid Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" >
+                <Frame Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LineDivider}" />
+                
+                <Grid Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -172,6 +198,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
+                    
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
                            Content="{Binding Path=PageText.ModuleTestScores, ElementName=profileWindow}"
                            Style="{StaticResource StudentProfileCentreHeadingStyle}"/>
@@ -206,6 +234,48 @@
 
                 </Grid>
                 
+                <Frame Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LineDivider}" />
+
+                <StackPanel Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label  Content="{Binding Path=PageText.FinalExam, ElementName=profileWindow}"
+                           Style="{StaticResource StudentProfileCentreHeadingStyle}"/>
+
+                    <Label  x:Name="FinalExamPassedText" Content=""
+                           Style="{StaticResource StudentProfileCentreHeadingStyle}"
+                            Foreground="Green" FontWeight="Bold"/>
+                </StackPanel>
+               
+                
+                <Border Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource FinalExamBorderStyle}">
+                    <StackPanel 
+                        x:Name="FinalExamScoresPanel" Orientation="Vertical" Style="{StaticResource ModuleScoresPanelStyle}">
+                        <Label Style="{StaticResource ModuleScoresPanelLabelStyle}" Content="{Binding Path=PageText.ExamAttempts, ElementName=profileWindow}"/>
+                    </StackPanel>
+                </Border>
+
+                <Frame Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LineDivider}" />
+
+                <Label  Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2"  Content="{Binding Path=PageText.LessonPlanAssignment, ElementName=profileWindow}"
+                           Style="{StaticResource StudentProfileCentreHeadingStyle}"/>
+
+                <StackPanel Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" x:Name="AssignmentStackPanel" Orientation="Vertical">
+                    <Label   Grid.ColumnSpan="2" 
+                        x:Name="AssignmentText"
+                        Style="{StaticResource ModuleScoresPanelLabelStyle}" />
+                </StackPanel>
+
+                <Frame Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource LineDivider}" />
+
+                <Label  Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2"  Content="{Binding Path=PageText.TEFLCertificate, ElementName=profileWindow}"
+                           Style="{StaticResource StudentProfileCentreHeadingStyle}"/>
+
+                <StackPanel  Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="2" x:Name="TEFLCertStackPanel" Orientation="Vertical">
+                    <Label  
+                        x:Name="TEFlCertText"
+                        Style="{StaticResource ModuleScoresPanelLabelStyle}"  />
+                </StackPanel>
+                
+
             </Grid>
         </Grid>
     </ScrollViewer>

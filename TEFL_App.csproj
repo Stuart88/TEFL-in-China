@@ -150,6 +150,9 @@
     <Compile Include="Views\Management\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Management\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Student\StudentProfile.xaml.cs">
       <DependentUpon>StudentProfile.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Management\Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Management\WelcomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

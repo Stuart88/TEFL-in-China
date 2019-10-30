@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.IO;
 using TEFL_App.Models;
 using static TEFL_App.Helpers.Enums;
 using static TEFL_App.Views.Student.StudentProfilePageTextClass;
@@ -42,7 +44,69 @@ namespace TEFL_App.Views.Student
             AssignModuleScoreLists(ModuleNum.Mod2, Profile.Mod2QuizScores.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToArray());
             AssignModuleScoreLists(ModuleNum.Mod3, Profile.Mod3QuizScores.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToArray());
             AssignModuleScoreLists(ModuleNum.Mod4, Profile.Mod4QuizScores.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToArray());
+            AssignModuleScoreLists(ModuleNum.FinalExam, Profile.ExamScores.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToArray());
+
+            FinalExamPassedText.Content = Helpers.Functions.HighestExamScore(Profile.ExamScores) > Helpers.Globals.QuizScorePassMark
+                ? PageText.Passed
+                : "";
+
+            if (Profile.LessonPlanSubmitted)
+            {
+                AssignmentText.Content = PageText.LessonPlanSubmitted;
+                Button downloadBtn = new Button
+                {
+                    Content = PageText.Download,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Style = FindResource("MainButtonStyle") as Style,
+                    Margin = new Thickness(0, 15, 0, 0),
+                };
+                downloadBtn.Click += DownloadAssignment;
+
+                AssignmentStackPanel.Children.Add(downloadBtn);
+            }
+            else
+            {
+                AssignmentText.Content = PageText.LessonPlanNotSubmitted;
+            }
+
+            if (Profile.CertificateID > 0)
+            {
+                TEFlCertText.Content = PageText.TEFLCertificate;
+            }
+            else
+            {
+                TEFlCertText.Content = " - ";
+            }
         }
+
+        private async void DownloadAssignment(object sender, EventArgs args)
+        {
+            try
+            {
+                var response = await App.client.GetAsync(Profile.LessonPlanPath);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Stream contentStream = await response.Content.ReadAsStreamAsync();
+
+                    SaveFileDialog saveDialog = new SaveFileDialog();
+                    if (saveDialog.ShowDialog() == true)
+                    {
+                        using (var file = File.Create(saveDialog.FileName))
+                        { // create a new file to write to
+                            await contentStream.CopyToAsync(file);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Helpers.Functions.ShowErrorMessageDialog(ex);
+            };
+        }
+
+
 
         public Visibility UserIsCandidate { get; set; } = App.UserType == Helpers.Enums.UserType.Candidate
                      ? Visibility.Visible
@@ -94,6 +158,10 @@ namespace TEFL_App.Views.Student
                     _ = Module4ScoresPanel.Children.Add(new TextBlock { Text = highestScore, Style = FindResource("ModuleScoresHeaderStyle") as Style });
                     _ = Module4ScoresPanel.Children.Add(new Frame { Height = 2, Background = grey , Margin = new Thickness(0, 0, 0, 5) });
                     break;
+                case ModuleNum.FinalExam:
+                    _ = FinalExamScoresPanel.Children.Add(new TextBlock { Text = highestScore, Style = FindResource("ModuleScoresHeaderStyle") as Style });
+                    _ = FinalExamScoresPanel.Children.Add(new Frame { Height = 2, Background = grey, Margin = new Thickness(0, 0, 0, 5) });
+                    break;
             }
 
             ///Assign list values
@@ -115,6 +183,9 @@ namespace TEFL_App.Views.Student
 
                     case ModuleNum.Mod4:
                         _ = Module4ScoresPanel.Children.Add(new TextBlock { Text = s, TextAlignment = TextAlignment.Center });
+                        break;
+                    case ModuleNum.FinalExam:
+                        _ = FinalExamScoresPanel.Children.Add(new TextBlock { Text = s, TextAlignment = TextAlignment.Center });
                         break;
                 }
             }
@@ -195,6 +266,10 @@ namespace TEFL_App.Views.Student
         public string StartDate { get; set; }
         public string StudentProfile { get; set; }
         public string TEFLCertificate { get; set; }
+        public string Passed { get; set; }
+        public string LessonPlanNotSubmitted { get; set; }
+        public string LessonPlanSubmitted { get; set; }
+        public string Download { get; set; }
 
         #endregion Public Properties
     }
@@ -212,6 +287,9 @@ namespace TEFL_App.Views.Student
             ExamScores = "Exam Scores",
             FinishDate = "Finish Date",
             LessonPlanAssignment = "Assignment",
+            LessonPlanNotSubmitted = "Not yet submitted",
+            LessonPlanSubmitted = "Submitted",
+            Download = "Download",
             ModulesCompleted = "Modules Completed",
             StartDate = "Start Date",
             StudentProfile = "Candidate Profile",
@@ -222,7 +300,8 @@ namespace TEFL_App.Views.Student
             Module4 = "Module 4",
             ModuleTestScores = "Module Test Scores",
             TEFLCertificate = "TEFL Certificate",
-            HighestScore = "Highest Score"
+            HighestScore = "Highest Score",
+            Passed = "- Passed ✔",
         };
 
         internal static StudentProfilePageText StudentProfilePageTextZH = new StudentProfilePageText
@@ -234,6 +313,9 @@ namespace TEFL_App.Views.Student
             ExamScores = "考试结果",
             FinishDate = "毕业日期",
             LessonPlanAssignment = "Assignment",
+            LessonPlanNotSubmitted = "没提交",
+            LessonPlanSubmitted = "已提交",
+            Download = "下载",
             ModulesCompleted = "Modules Completed",
             StartDate = "开始日期",
             StudentProfile = "学生资料",
@@ -245,6 +327,7 @@ namespace TEFL_App.Views.Student
             ModuleTestScores = "Module Test Scores",
             TEFLCertificate = "TEFL Certificate",
             HighestScore = "Highest Score",
+            Passed = "- 已通过 ✔",
         };
 
         #endregion Internal Fields

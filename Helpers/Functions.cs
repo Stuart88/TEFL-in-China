@@ -28,7 +28,7 @@ namespace TEFL_App.Helpers
                 + (e.InnerException != null && e.InnerException.InnerException != null ? e.InnerException.InnerException.Message : "");
         }
 
-        public static string HighestExamScore(string scores)
+        public static string HighestExamScoreString(string scores)
         {
             if (string.IsNullOrEmpty(scores))
                 return " - ";
@@ -43,12 +43,40 @@ namespace TEFL_App.Helpers
             }
         }
 
-        public static string HighestExamScore(string[] scores)
+        public static string HighestExamScoreString(string[] scores)
         {
             if (scores.Length > 0)
                 return scores.Max().ToString();
             else
                 return " - ";
+        }
+
+        public static int HighestExamScore(string scores)
+        {
+            if (string.IsNullOrEmpty(scores))
+                return 0;
+            else
+            {
+                List<int> scoresList = scores.Split(',')
+                    .Where(x => !string.IsNullOrEmpty(x))
+                    .Select(s => int.Parse(s))
+                    .ToList();
+
+                if (scoresList.Count() > 0)
+                    return scoresList.Max();
+                else
+                    return 0;
+            }
+        }
+
+        public static int HighestExamScore(string[] scores)
+        {
+            if (scores.Length > 0)
+                return scores.Where(x => !string.IsNullOrEmpty(x))
+                    .Select(s => int.Parse(s))
+                    .Max();
+            else
+                return 0;
         }
 
         public static bool PassedQuiz(string scoresString)

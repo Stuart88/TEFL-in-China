@@ -72,6 +72,11 @@ namespace TEFL_App.Views.General
                     throw new Exception("No result data!");
                 }
             }
+            else
+            {
+                //app not been used yet, so only allow manager login
+                LoginOptionBtnsStackPanel.Visibility = Visibility.Hidden;   
+            }
 
         }
 

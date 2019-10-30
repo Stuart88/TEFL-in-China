@@ -25,6 +25,7 @@ namespace TEFL_App
         public static readonly HttpClient client = new HttpClient();
 
         public static Employer ManagerProfile = new Employer();
+
         public static TEFLProfile StudentProfile = new TEFLProfile();
         public static List<TEFLProfile> TEFLProfiles { get; set; }
         public static List<DbRememberMe> RememberMeData { get; set; }

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http.Headers;
 using System.Windows;
 using System.Windows.Controls;
+using TEFL_App.Helpers;
 using static TEFL_App.Views.General.SettingsPageTextClass;
 
 namespace TEFL_App.Views.General
 {
-    /// <summary>
-    /// Interaction logic for Settings.xaml
-    /// </summary>
+   
     public partial class Settings : Page
     {
         #region Private Fields
@@ -28,10 +29,14 @@ namespace TEFL_App.Views.General
 
             languageComboBox.SelectedItem = App.Settings.CultureInfo switch
             {
-                Helpers.Enums.Language.English => langItemEn,
-                Helpers.Enums.Language.Chinese => langItemZh,
+                Enums.Language.English => langItemEn,
+                Enums.Language.Chinese => langItemZh,
                 _ => langItemZh,
             };
+
+            PasswordChangeArea.Visibility = App.UserType == Helpers.Enums.UserType.Manager
+                ? Visibility.Visible
+                : Visibility.Collapsed;
         }
 
         #endregion Public Constructors
@@ -48,9 +53,9 @@ namespace TEFL_App.Views.General
         {
             AppSettingsToSave.CultureInfo = (((ComboBox)sender).SelectedItem as ComboBoxItem).Tag switch
             {
-                "English" => Helpers.Enums.Language.English,
-                "Chinese" => Helpers.Enums.Language.Chinese,
-                _ => Helpers.Enums.Language.Chinese
+                "English" => Enums.Language.English,
+                "Chinese" => Enums.Language.Chinese,
+                _ => Enums.Language.Chinese
             };
         }
 
@@ -62,13 +67,17 @@ namespace TEFL_App.Views.General
 
             AfterSaveComplete();
 
-            Helpers.Functions.ShowMessageDialog("", PageText.SavedSuccess);
+            Functions.ShowMessageDialog("", PageText.SavedSuccess);
         }
 
         private void SetComponentsText()
         {
             saveBtn.Content = PageText.Save;
             languageLabel.Content = PageText.Language;
+            PasswordInputLabel.Content = PageText.Password;
+            PasswordInputLabel2.Content = PageText.RetypePassword;
+            ManagerPasswordLabel.Content = PageText.ManagerPassword;
+            ChangePasswordBtn.Content = PageText.Submit;
         }
 
         private void SetLanguage()
@@ -81,6 +90,62 @@ namespace TEFL_App.Views.General
         }
 
         #endregion Private Methods
+
+        private void ChangePasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string newPass = PasswordInput.Text;
+            string newPass2 = PasswordInput2.Text;
+
+            if(newPass != newPass2)
+            {
+                Helpers.Functions.ShowMessageDialog("", PageText.PasswordsDoNotMatch);
+            }
+            else
+            {
+                var messageBoxResult = MessageBox.Show(PageText.Confirmation, "", MessageBoxButton.YesNo);
+
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    SubmitNewPassword(newPass);
+                }
+            }
+
+            
+        }
+
+        private async void SubmitNewPassword(string pass)
+        {
+            try
+            {
+                string authHeader = Functions.Base64Encode(string.Format("{0}:{1};{2}", App.ManagerProfile.ID, ManagerPassword.Password, pass));
+
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeader);
+
+                string json_data = await App.client.GetStringAsync(Globals.baseURL + "UpdatePass");
+
+                if (!string.IsNullOrEmpty(json_data))
+                {
+                    JsonBasicResult<object> json = JsonConvert.DeserializeObject<JsonBasicResult<object>>(json_data);
+                    if (json.ok)
+                    {
+                        Functions.ShowMessageDialog("", PageText.SavedSuccess);
+                    }
+                    else
+                    {
+                        throw new Exception(json.message);
+                    }
+                }
+                else
+                {
+                    throw new Exception("No result data!");
+                }
+            }
+            catch (Exception e)
+            {
+                Functions.ShowErrorMessageDialog(e);
+            }
+
+        }
     }
 
     public sealed partial class SettingsPageText
@@ -89,7 +154,13 @@ namespace TEFL_App.Views.General
 
         public string Language { get; set; }
         public string Save { get; set; }
+        public string Confirmation { get; set; }
+        public string Submit { get; set; }
+        public string PasswordsDoNotMatch { get; set; }
         public string SavedSuccess { get; set; }
+        public string Password { get; set; }
+        public string RetypePassword { get; set; }
+        public string ManagerPassword { get; set; }
 
         #endregion Public Properties
     }
@@ -101,15 +172,28 @@ namespace TEFL_App.Views.General
         internal static SettingsPageText SettingsPageTextEn = new SettingsPageText
         {
             Save = "Save",
+            Submit = "Submit",
+            Confirmation = "Are you sure?",
+            PasswordsDoNotMatch = "Passwords do not match!",
             SavedSuccess = "Settings saved!",
-            Language = "Language"
+            Language = "Language",
+            Password = "Password",
+            RetypePassword = "Retype password",
+            ManagerPassword = "Please enter your main login password to continue",
         };
 
         internal static SettingsPageText SettingsPageTextZH = new SettingsPageText
         {
             Save = "保存",
+            Submit = "提交新密码",
+            PasswordsDoNotMatch = "密码不 the same!",
+            Confirmation = "确定？",
             SavedSuccess = "成功！",
-            Language = "语言"
+            Language = "语言",
+            Password = "密码",
+            RetypePassword = "请再次输入密码",
+            ManagerPassword = "请输入你的 main 密码",
+
         };
 
         #endregion Internal Fields

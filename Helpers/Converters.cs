@@ -67,6 +67,7 @@ namespace TEFL_App.Converters
         }
     }
 
+
     public class ExamAttemptsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager" Content="管理登录" />
             <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student"  Content="学生登录" />
         </StackPanel>

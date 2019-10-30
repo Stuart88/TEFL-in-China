@@ -9,7 +9,7 @@
       x:Name="settingsWindow"
       Title="Settings">
 
-    <StackPanel>
+    <StackPanel MaxWidth="400" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Label x:Name="languageLabel" Content="{Binding Path=PageText.Language, ElementName=settingsWindow}" />
         <ComboBox x:Name="languageComboBox" SelectionChanged="ComboBox_Selected" HorizontalAlignment="Left" Width="200">
             <ComboBoxItem x:Name="langItemEn" Content="English" Tag="English" />
@@ -20,5 +20,23 @@
                 HorizontalAlignment="Left"
                 Width="200"
                 Content="{Binding Path=PageText.Save, ElementName=settingsWindow}" />
+
+
+
+        <StackPanel x:Name="PasswordChangeArea">
+            <Label x:Name="PasswordInputLabel" Content="{Binding Path=PageText.Password, ElementName=welcomePane}"/>
+            <TextBox x:Name="PasswordInput"/>
+
+            <Label x:Name="PasswordInputLabel2" Content="{Binding Path=PageText.RetypePassword, ElementName=welcomePane}"/>
+            <TextBox x:Name="PasswordInput2"/>
+
+            <Label x:Name="ManagerPasswordLabel" Content="{Binding Path=PageText.ManagerPassword, ElementName=welcomePane}"/>
+            <PasswordBox x:Name="ManagerPassword"/>
+
+            <Button x:Name="ChangePasswordBtn"  Click="ChangePasswordBtn_Click"
+                    Style="{StaticResource MainButtonStyle}" Content="{Binding Path=PageText.Submit, ElementName=settingsWindow}"/>
+            
+        </StackPanel>
+        
     </StackPanel>
 </Page>

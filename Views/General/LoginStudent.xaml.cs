@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -92,30 +93,36 @@ namespace TEFL_App.Views.General
                 App.UserLogin = UsernameInput.Text;
                 App.UserPassword = PasswordInput.Password;
 
-                TEFLProfile loggingIn = App.TEFLProfiles.FirstOrDefault(x => x.AppUsername == UsernameInput.Text);
+                string userData = Functions.Base64Encode(string.Format("{0};{1}:{2}", App.ManagerProfile.ID, App.UserLogin, App.UserPassword));
 
-                if (loggingIn == null || !Functions.PasswordsCompare(PasswordInput.Password, loggingIn))
+                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
+
+                string json_data = await App.client.GetStringAsync(Globals.baseURL + "StudentLogin");
+
+                if (!string.IsNullOrEmpty(json_data))
                 {
-                    throw new Exception("Username or password incorrect!");
+                    JsonBasicResult<TEFLProfile> json = JsonConvert.DeserializeObject<JsonBasicResult<TEFLProfile>>(json_data);
+                    if (json.ok)
+                    {
+                        if (RememberMe)
+                        {
+                            DbContext.AddRememberMe(new DbRememberMe { Email = UsernameInput.Text, Type = (int)DataLayer.Enums.RememberMeType.Candidate });
+                        }
+                        else if (DbRememberMe != null)
+                        {
+                            DbContext.DeleteRememberMe(DbRememberMe);
+                        }
+
+                        App.UserType = Helpers.Enums.UserType.Candidate;
+                        App.StudentProfile = json.data;
+                        SetMainWindowContent(new Layout(Logout));
+                    }
+                    else
+                        throw new Exception(json.message);
                 }
                 else
-                {
-                    if (RememberMe)
-                    {
-                        DbContext.AddRememberMe(new DbRememberMe { Email = UsernameInput.Text, Type = (int)DataLayer.Enums.RememberMeType.Candidate });
-                    }
-                    else if (DbRememberMe != null)
-                    {
-                        DbContext.DeleteRememberMe(DbRememberMe);
-                    }
+                    throw new Exception("Username or password incorrect!");
 
-                    App.UserType = Helpers.Enums.UserType.Candidate;
-                    App.StudentProfile = loggingIn;
-                    SetMainWindowContent(new Layout(Logout));
-
-                    ///Navigates to home page after getting profile
-
-                }
             }
             catch (Exception ex)
             {
