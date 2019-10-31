@@ -24,10 +24,10 @@ namespace TEFL_App.Views.General
         public Layout(Action onLogout)
         {
             InitializeComponent();
-
             SetLanguage();
+            CreateChapterMenuButtons();
 
-            if(App.UserType == Helpers.Enums.UserType.Manager)
+            if (App.UserType == Helpers.Enums.UserType.Manager)
             {
                 ContentArea.Content = new ManagerHome();
             }
@@ -57,6 +57,93 @@ namespace TEFL_App.Views.General
 
         #region Private Methods
 
+        private Button ChapterSectionBtn(string chapterNum, string chapterTitle)
+        {
+            Grid buttonContent = new Grid { Style = TryFindResource("ChapterSectionGrid") as Style};
+            
+            buttonContent.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            buttonContent.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(5, GridUnitType.Star) });
+
+            var numberText = new TextBlock
+            {
+                Style = TryFindResource("ChapterSectionNumber") as Style,
+                Text = chapterNum
+            };
+            var titleText = new TextBlock
+            {
+                Style = TryFindResource("ChapterSectionText") as Style,
+                Text = chapterTitle
+            };
+
+            buttonContent.Children.Add(numberText);
+            buttonContent.Children.Add(titleText);
+
+            Grid.SetColumn(numberText, 0);
+            Grid.SetColumn(titleText, 1);
+
+            return new Button
+            {
+                Style = TryFindResource("SectionBtnStyle") as Style,
+                Content = new Frame
+                {
+                    Style = TryFindResource("MenuTitleStyle") as Style,
+                    Content = buttonContent
+                }
+            };
+        }
+
+        private Button ChapterTitleBtn(string sectionTitle)
+        {
+            return new Button
+            {
+                Style = TryFindResource("ChapterBtnStyle") as Style,
+                Content = new Frame
+                {
+                    Style = TryFindResource("MenuSectionStyle") as Style,
+                    Content = new Label
+                    {
+                        Content = string.Format("{0}", sectionTitle),
+                        Style = TryFindResource("MenuSectionStyleText") as Style,
+                    }
+                }
+            };
+        }
+
+        private void CreateChapterMenuButtons()
+        {
+            string currentModule = "0";
+            string currentChapter = "0";
+            string currentSection = "0";
+
+            foreach (var x in CourseData.CourseData.Chapters)
+            {
+                //Module numbers take the form "x.x.x" -> "module.chapter.section"
+                string[] moduleData = x.Number.Split('.');
+
+                //Module Title
+                if (currentModule != moduleData[0])
+                {
+                    ModuleChaptersStackPanel.Children.Add(ModuleTitleFrame(currentModule));
+                }
+
+                if (currentChapter != moduleData[1])
+                //Chapter Title
+                {
+                    ModuleChaptersStackPanel.Children.Add(ChapterTitleBtn(x.Title));
+                }
+                else
+                //Section Title
+                {
+                    string sectionTitle = string.Format("Part {0} - {1}", currentChapter, x.Title);
+                    ModuleChaptersStackPanel.Children.Add(ChapterSectionBtn(x.Number, x.Title));
+                }
+
+                currentModule = moduleData[0];
+                currentChapter = moduleData[1];
+                currentSection = moduleData[2];
+            }
+        }
+
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
             App.ManagerProfile = new Models.Employer();
@@ -76,6 +163,19 @@ namespace TEFL_App.Views.General
                 "Help" => new Help(),
                 "Settings" => new Settings(SetLanguage),
                 _ => new ManagerHome()
+            };
+        }
+
+        private Frame ModuleTitleFrame(string module)
+        {
+            return new Frame
+            {
+                Style = TryFindResource("MenuHeaderStyle") as Style,
+                Content = new Label
+                {
+                    Content = string.Format("Module {0}", module),
+                    Style = TryFindResource("MenuHeaderStyleText") as Style
+                }
             };
         }
 

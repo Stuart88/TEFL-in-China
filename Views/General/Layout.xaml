@@ -11,6 +11,67 @@
       x:Name="layoutWindow"
       Title="Management">
 
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="ChapterBtnStyle">
+            <Setter Property="Background" Value="#337ab7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="Button" x:Key="SectionBtnStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="Frame" x:Key="MenuHeaderStyle">
+            <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="Frame" x:Key="MenuTitleStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="Frame" x:Key="MenuSectionStyle">
+            
+        </Style>
+        <Style TargetType="Label" x:Key="MenuHeaderStyleText">
+            <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="0,10,0,10"/>
+        </Style>
+        <Style TargetType="Label" x:Key="MenuTitleStyleText">
+            <Setter Property="Foreground" Value="White"/>
+
+        </Style>
+        <Style TargetType="Label" x:Key="MenuSectionStyleText">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="ChapterSectionGrid">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <!--<Setter Property="Width" Value="Auto"/>-->
+            <Setter Property="Background" Value="White"/>
+            
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ChapterSectionNumber">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+            
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ChapterSectionText">
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+        </Style>
+    </Page.Resources>
+
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White">
 
         <Grid.ColumnDefinitions>
@@ -18,36 +79,54 @@
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" VerticalAlignment="Stretch" Background="{StaticResource Orange}">
+        <Grid  Grid.Column="0" VerticalAlignment="Stretch" Background="{StaticResource Orange}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
-            <Frame Padding="30" Background="White" BorderBrush="{StaticResource Orange}" BorderThickness="4"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" Padding="30" Background="White" BorderBrush="{StaticResource Orange}" BorderThickness="4"
                    Content="{StaticResource LogoImage}" />
 
-            <Button x:Name="managerHomeBtn" Click="MenuBtnClick" Tag="ManagerHome"
+            <Button Grid.Row="1" x:Name="managerHomeBtn" Click="MenuBtnClick" Tag="ManagerHome"
                     Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
                      Visibility="{Binding UserIsManager, ElementName=layoutWindow}"/>
 
-            <Button x:Name="courseHomeBtn" Click="MenuBtnClick" Tag="CourseHome"
+            <Button Grid.Row="2" x:Name="courseHomeBtn" Click="MenuBtnClick" Tag="CourseHome"
                     Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
                      Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}"/>
 
-            <Button x:Name="staffBtn" Click="MenuBtnClick" Tag="Staff"
+            <Button Grid.Row="3" x:Name="staffBtn" Click="MenuBtnClick" Tag="Staff"
                     Content="{Binding Path=PageText.Staff, ElementName=layoutWindow}"
                     Visibility="{Binding UserIsManager, ElementName=layoutWindow}" />
 
-            <Button x:Name="courseBtn" Click="MenuBtnClick" Tag="Course"
+            <Button Grid.Row="4" x:Name="courseBtn" Click="MenuBtnClick" Tag="Course"
                     Content="{Binding Path=PageText.Course, ElementName=layoutWindow}"
                     Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
 
-            <Button x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings"
+            <Button Grid.Row="5" x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings"
                     Content="{Binding Path=PageText.Settings, ElementName=layoutWindow}" />
 
-            <Button x:Name="helpBtn" Click="MenuBtnClick" Tag="Help"
+            <Button Grid.Row="6" x:Name="helpBtn" Click="MenuBtnClick" Tag="Help"
                     Content="{Binding Path=PageText.Help, ElementName=layoutWindow}" />
 
-            <Button x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout"
+            <Button Grid.Row="7" x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout"
                     Content="{Binding Path=PageText.Logout, ElementName=layoutWindow}" />
-        </StackPanel>
+
+            <ScrollViewer Grid.Row="8" VerticalAlignment="Stretch">
+                <StackPanel VerticalAlignment="Stretch" x:Name="ModuleChaptersStackPanel" Orientation="Vertical" >
+
+                </StackPanel>
+            </ScrollViewer>
+            
+        </Grid>
 
         <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
     </Grid>

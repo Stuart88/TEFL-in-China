@@ -8,7 +8,6 @@ using static TEFL_App.Views.General.SettingsPageTextClass;
 
 namespace TEFL_App.Views.General
 {
-   
     public partial class Settings : Page
     {
         #region Private Fields
@@ -96,7 +95,7 @@ namespace TEFL_App.Views.General
             string newPass = PasswordInput.Text;
             string newPass2 = PasswordInput2.Text;
 
-            if(newPass != newPass2)
+            if (newPass != newPass2)
             {
                 Helpers.Functions.ShowMessageDialog("", PageText.PasswordsDoNotMatch);
             }
@@ -109,8 +108,6 @@ namespace TEFL_App.Views.General
                     SubmitNewPassword(newPass);
                 }
             }
-
-            
         }
 
         private async void SubmitNewPassword(string pass)
@@ -144,7 +141,6 @@ namespace TEFL_App.Views.General
             {
                 Functions.ShowErrorMessageDialog(e);
             }
-
         }
     }
 
@@ -152,15 +148,15 @@ namespace TEFL_App.Views.General
     {
         #region Public Properties
 
-        public string Language { get; set; }
-        public string Save { get; set; }
         public string Confirmation { get; set; }
-        public string Submit { get; set; }
-        public string PasswordsDoNotMatch { get; set; }
-        public string SavedSuccess { get; set; }
-        public string Password { get; set; }
-        public string RetypePassword { get; set; }
+        public string Language { get; set; }
         public string ManagerPassword { get; set; }
+        public string Password { get; set; }
+        public string PasswordsDoNotMatch { get; set; }
+        public string RetypePassword { get; set; }
+        public string Save { get; set; }
+        public string SavedSuccess { get; set; }
+        public string Submit { get; set; }
 
         #endregion Public Properties
     }
@@ -193,7 +189,6 @@ namespace TEFL_App.Views.General
             Password = "密码",
             RetypePassword = "请再次输入密码",
             ManagerPassword = "请输入你的 main 密码",
-
         };
 
         #endregion Internal Fields

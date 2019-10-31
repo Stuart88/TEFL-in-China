@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="Grey" Color="#666"></SolidColorBrush>
     <SolidColorBrush x:Key="LightGrey" Color="#eee"></SolidColorBrush>
     <SolidColorBrush x:Key="DarkBlue" Color="#33475a"></SolidColorBrush>
+    
 
     <converters:DatetoStringConverter  x:Key="DatetoStringConverter" />
     <converters:ToCheckmarkConverter  x:Key="ToCheckmarkConverter" />

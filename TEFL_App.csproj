@@ -109,6 +109,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CourseData\CourseData.cs" />
     <Compile Include="DataLayer\DbContext.cs" />
     <Compile Include="DataLayer\DbAppSettings.cs" />
     <Compile Include="DataLayer\DbProfilePic.cs" />
