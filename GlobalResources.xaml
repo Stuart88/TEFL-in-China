@@ -18,6 +18,9 @@
     <!--<Image x:Key="LogoImage" MaxWidth="150" MaxHeight="150" Source="Assets\Images\eCcLogo.png"/>-->
     <Image  x:Key="LogoImage" MaxWidth="150" MaxHeight="150" Source="pack://application:,,,/TEFL_App;component/Assets/Images/eCcLogo.png"/>
 
+    <!-- #region General Resources-->
+
+    
     <Style TargetType="Button" x:Key="MainButtonStyle">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="MinWidth" Value="100" />
@@ -65,5 +68,45 @@
         <Setter Property="Padding" Value="2,5,2,5"/>
         <Setter Property="Background" Value="GhostWhite"/>
     </Style>
+
+    <!--#endregion-->
+
+    <!--#region  TELF Course resources-->
+
+    <Style TargetType="Grid" x:Key="TEFLChapterGrid">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+    </Style>
+    <Style TargetType="StackPanel" x:Key="TEFLChapterPageArea">
+        <Setter Property="MaxWidth" Value="800"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="0,0,0,400"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="TEFLChapterTitle">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
+    </Style>
+    <Style TargetType="Paragraph" x:Key="TEFLChapterSectionTitle">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+    </Style>
+    <Style TargetType="RichTextBox" x:Key="TEFLChapterSectionText">
+        <Setter Property="Padding" Value="40"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+        <Setter Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
+        <Setter Property="Margin" Value="0,20,0,20"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+    </Style>
+   
+
+    <!--#endregion-->
 
 </ResourceDictionary>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using TEFL_App.DataLayer;
 using TEFL_App.Models;
@@ -177,6 +179,31 @@ namespace TEFL_App.Helpers
             return verified != null;
         }
 
+        public static void BringIntoViewByName(this Page page, string name)
+        {
+            var element = page.FindName(name);
+            if (element != null)
+            {
+                (element as RichTextBox).BringIntoView();
+            }
+          
+        }
+
+        public static void ScrollIntoViewByName(this Page page, string name, string scrollerName)
+        {
+            var element = page.FindName(name);
+            var scroller = page.FindName(scrollerName);
+            
+            if (element != null && scroller != null && scroller is ScrollViewer)
+            {
+                var pos = (element as RichTextBox).TranslatePoint(new Point(0, 0), scroller as ScrollViewer);
+
+                (scroller as ScrollViewer).ScrollToVerticalOffset(pos.Y);
+            }
+
+        }
+
+
         public static void SynchroniseAppData(ManagerLoginResult data)
         {
             App.ManagerProfile = data.User;
@@ -189,6 +216,12 @@ namespace TEFL_App.Helpers
             }
         }
 
+        public static void ShowStudentProfile(TEFLProfile profile)
+        {
+            Views.General.PopupWindow popUp = new Views.General.PopupWindow(profile.Name);
+            popUp.Content = new Views.Student.StudentProfile(profile);
+            popUp.Show();
+        }
         public static string ToStringCustom(this DateTime d)
         {
             return App.Settings.CultureInfo switch

@@ -4,7 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using TEFL_App.Views.Course;
 using TEFL_App.Views.Management;
+using System.Linq;
 using static TEFL_App.Views.General.LayoutPageTextClass;
+using System.Windows.Media.Animation;
+using TEFL_App.Helpers;
 
 namespace TEFL_App.Views.General
 {
@@ -16,16 +19,23 @@ namespace TEFL_App.Views.General
         #region Private Fields
 
         private Action OnLogout;
+        private Page ViewingPage = new Page();
+
+        DoubleAnimation HeightToggleAnimation = new DoubleAnimation();
 
         #endregion Private Fields
 
         #region Public Constructors
+
+      
 
         public Layout(Action onLogout)
         {
             InitializeComponent();
             SetLanguage();
             CreateChapterMenuButtons();
+
+            //Loaded += MinimiseMenu;
 
             if (App.UserType == Helpers.Enums.UserType.Manager)
             {
@@ -39,40 +49,48 @@ namespace TEFL_App.Views.General
             OnLogout = onLogout;
         }
 
+        private void MinimiseMenu(object sender, RoutedEventArgs e)
+        {
+            foreach(var obj in ModuleChaptersStackPanel.Children)
+            {
+                if(obj is StackPanel && (obj as StackPanel).Name.StartsWith("ChapterStack"))
+                {
+                    CreateMenuAnimation(obj as StackPanel);
+                }
+            }
+        }
+
         #endregion Public Constructors
 
         #region Public Properties
 
         public LayoutPageText PageText { get; set; }
-
-        public Visibility UserIsCandidate { get; set; } = App.UserType == Helpers.Enums.UserType.Candidate
-            ? Visibility.Visible
-            : Visibility.Collapsed;
-
-        public Visibility UserIsManager { get; set; } = App.UserType == Helpers.Enums.UserType.Manager
-            ? Visibility.Visible
-            : Visibility.Collapsed;
+        public Visibility UserIsCandidate { get; set; } = App.UserType == Helpers.Enums.UserType.Candidate ? Visibility.Visible : Visibility.Collapsed;
+        public Visibility UserIsManager { get; set; } = App.UserType == Helpers.Enums.UserType.Manager ? Visibility.Visible : Visibility.Collapsed;
 
         #endregion Public Properties
 
         #region Private Methods
 
-        private Button ChapterSectionBtn(string chapterNum, string chapterTitle)
+        private Button ChapterSectionBtn(CourseData.ChapterTitleData data)
         {
-            Grid buttonContent = new Grid { Style = TryFindResource("ChapterSectionGrid") as Style};
             
+
+            Grid buttonContent = new Grid { Style = TryFindResource("ChapterSectionGrid") as Style };
+
             buttonContent.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             buttonContent.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(5, GridUnitType.Star) });
+
 
             var numberText = new TextBlock
             {
                 Style = TryFindResource("ChapterSectionNumber") as Style,
-                Text = chapterNum
+                Text = data.Number
             };
             var titleText = new TextBlock
             {
                 Style = TryFindResource("ChapterSectionText") as Style,
-                Text = chapterTitle
+                Text = data.Title
             };
 
             buttonContent.Children.Add(numberText);
@@ -81,20 +99,58 @@ namespace TEFL_App.Views.General
             Grid.SetColumn(numberText, 0);
             Grid.SetColumn(titleText, 1);
 
-            return new Button
+            
+
+            Button sectionButton = new Button
             {
                 Style = TryFindResource("SectionBtnStyle") as Style,
                 Content = new Frame
                 {
                     Style = TryFindResource("MenuTitleStyle") as Style,
                     Content = buttonContent
-                }
+                },
+                //page components are named in the form "Section1_1_1"
+                Tag = data// string.Format("Section{0}", data.Number.Replace('.', '_'))
             };
+
+            sectionButton.Click += SectionButton_Click;
+
+            return sectionButton;
         }
 
-        private Button ChapterTitleBtn(string sectionTitle)
+        private void SectionButton_Click(object sender, RoutedEventArgs e)
         {
-            return new Button
+            CourseData.ChapterTitleData data = (sender as Button).Tag as CourseData.ChapterTitleData;
+
+            //data.Number is of the form "1.1.3a" ---> "module.chapter.section"
+            string[] pageData = data.Number.Split('.');
+
+            string pageGridToFind = string.Format("Mod{0}Chapter{1}Grid", pageData[0], pageData[1]);
+            var findPage = ViewingPage.FindName(pageGridToFind);
+
+
+            if(findPage == null)        //Navigate to correct chapter page
+            {
+                string chapterIdentifier = string.Join(".", pageData.Take(2));
+                ViewingPage = chapterIdentifier switch
+                {
+                    "1.1" => new Course.Modules.Mod1Part1(data.SectionID),
+                    _ => new ManagerHome()
+                };
+                ContentArea.Content = ViewingPage;
+            }
+            else
+            {
+                //Already on page. Bring chosen section into view
+                ViewingPage.ScrollIntoViewByName(data.SectionID, "ScrollArea");
+            }
+        }
+
+        private Button ChapterTitleBtn(CourseData.ChapterTitleData data)
+        {
+           
+
+            Button chapterBtn = new Button
             {
                 Style = TryFindResource("ChapterBtnStyle") as Style,
                 Content = new Frame
@@ -102,11 +158,62 @@ namespace TEFL_App.Views.General
                     Style = TryFindResource("MenuSectionStyle") as Style,
                     Content = new Label
                     {
-                        Content = string.Format("{0}", sectionTitle),
+                        Content = string.Format("{0}", data.Title),
                         Style = TryFindResource("MenuSectionStyleText") as Style,
                     }
-                }
+                },
+                Tag = ChapterStackName(data),
             };
+
+            chapterBtn.Click += AnimateChapterButtonsStack;
+
+            return chapterBtn;
+        }
+
+        private void AnimateChapterButtonsStack(object sender, RoutedEventArgs e)
+        {
+            string panelName = (string)((Button)sender).Tag;
+
+            StackPanel animatingPanel = (StackPanel)FindName(panelName);
+
+            if(animatingPanel != null)
+            {
+                CreateMenuAnimation(animatingPanel);
+
+            }
+
+        }
+
+        private void CreateMenuAnimation(StackPanel animatingPanel)
+        {
+            DoubleAnimation heightAnimation = new DoubleAnimation();
+
+            heightAnimation.Duration = TimeSpan.FromSeconds(0.5);
+            heightAnimation.EasingFunction = new CubicEase();
+
+            if (animatingPanel.Height == 0)
+            {
+                heightAnimation.From = 0d;
+                heightAnimation.To = GetStackPanelHeight(animatingPanel);
+            }
+            else
+            {
+                heightAnimation.From = GetStackPanelHeight(animatingPanel);
+                heightAnimation.To = 0d;
+            }
+
+            animatingPanel.BeginAnimation(StackPanel.HeightProperty, heightAnimation);
+        }
+
+        private double? GetStackPanelHeight(StackPanel animatingPanel)
+        {
+            double height = 0d;
+            foreach(var child in animatingPanel.Children)
+            {
+                height += (child as FrameworkElement).ActualHeight;
+            }
+
+            return height;
         }
 
         private void CreateChapterMenuButtons()
@@ -115,33 +222,74 @@ namespace TEFL_App.Views.General
             string currentChapter = "0";
             string currentSection = "0";
 
-            foreach (var x in CourseData.CourseData.Chapters)
+
+            StackPanel tempPanel = new StackPanel { Orientation = Orientation.Vertical, HorizontalAlignment = HorizontalAlignment.Stretch };
+
+            foreach (var data in CourseData.CourseData.Chapters)
             {
+
+                string[] moduleData = data.Number.Split('.');
                 //Module numbers take the form "x.x.x" -> "module.chapter.section"
-                string[] moduleData = x.Number.Split('.');
 
                 //Module Title
                 if (currentModule != moduleData[0])
                 {
-                    ModuleChaptersStackPanel.Children.Add(ModuleTitleFrame(currentModule));
+                    ModuleChaptersStackPanel.Children.Add(ModuleTitleFrame(moduleData[0]));
                 }
 
                 if (currentChapter != moduleData[1])
                 //Chapter Title
-                {
-                    ModuleChaptersStackPanel.Children.Add(ChapterTitleBtn(x.Title));
+                {                    
+                    //onto new chapter, so add stackpanel containing all buttons from previous chapter
+                    //Buttons are contained in stackpanel for animation. Stackpanel can be toggled open and closed for each chapter
+                    if (tempPanel.Children.Count > 0)
+                    {
+                        this.RegisterName(tempPanel.Name, tempPanel);
+                        //Storyboard.SetTargetName(HeightToggleAnimation, tempPanel.Name);
+                        //Storyboard.SetTargetProperty(HeightToggleAnimation, new PropertyPath(StackPanel.HeightProperty));
+
+                        ModuleChaptersStackPanel.Children.Add(tempPanel);
+                        CreateMenuAnimation(tempPanel);//minimse
+                        
+                        
+                        //clear/reset to new stackpanel
+                        tempPanel = new StackPanel { Orientation = Orientation.Vertical, HorizontalAlignment = HorizontalAlignment.Stretch };
+                    }
+
+                    ModuleChaptersStackPanel.Children.Add(ChapterTitleBtn(data));  
                 }
                 else
                 //Section Title
                 {
-                    string sectionTitle = string.Format("Part {0} - {1}", currentChapter, x.Title);
-                    ModuleChaptersStackPanel.Children.Add(ChapterSectionBtn(x.Number, x.Title));
+                    tempPanel.Children.Add(ChapterSectionBtn(data));
                 }
+
+                //not very efficient, but this needs to be set here. Otherwise chapter number is off by one in "//Chapter Title" logic above.
+                tempPanel.Name = ChapterStackName(data);
 
                 currentModule = moduleData[0];
                 currentChapter = moduleData[1];
                 currentSection = moduleData[2];
             }
+        }
+
+        private string ChapterStackName(CourseData.ChapterTitleData data)
+        {
+            return string.Format("ChapterStack{0}", ChapterNameString(data));
+        }
+
+        /// <summary>
+        /// Returns module and chapter number of string, i.e. takes "4.1.6a" and returns "4_1"
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        private string ChapterNameString(CourseData.ChapterTitleData data)
+        {
+            //Takes module and chapter number, .e.g 4.1.6a ---> {4, 1}
+            var currentChapter = data.Number.Split('.').ToList().Take(2);  
+
+            return string.Join("_", currentChapter);
+
         }
 
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
@@ -154,7 +302,7 @@ namespace TEFL_App.Views.General
 
         private void MenuBtnClick(object sender, RoutedEventArgs e)
         {
-            ContentArea.Content = ((Button)sender).Tag switch
+            ViewingPage = ((Button)sender).Tag switch
             {
                 "ManagerHome" => new ManagerHome(),
                 "CourseHome" => new CourseHome(),
@@ -164,6 +312,8 @@ namespace TEFL_App.Views.General
                 "Settings" => new Settings(SetLanguage),
                 _ => new ManagerHome()
             };
+
+            ContentArea.Content = ViewingPage;
         }
 
         private Frame ModuleTitleFrame(string module)

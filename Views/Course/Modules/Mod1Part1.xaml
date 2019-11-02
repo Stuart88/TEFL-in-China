@@ -1,0 +1,327 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod1Part1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Mod1Part1">
+
+    <Grid  x:Name="Mod1Chapter1Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="0" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+                <TextBlock Text="Module 1, Part 1: Introduction" Style="{StaticResource TEFLChapterTitle}"/>
+
+
+                <RichTextBox x:Name="mod1part1sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.1 A brief story, with forewords by the founders
+                        </Paragraph>
+                        <Paragraph>
+                            The best organizations and projects are founded by experienced people with passion for the field in which they operate. Martin Bragalone and MC Miller are two Americans, born and raised in neighboring small-towns in the so-called, "American Rustbelt”, who wanted more options for their careers and social influences than that which the regional automotive and manufacturing industries could provide at the time. During university, their only contact was in foreign language learning programs. Outside of social media, they had little contact in the first few years after graduation. Going on their separate international paths, Martin traveled to Japan and MC to China.
+                        </Paragraph>
+                        <Paragraph>
+                            Teaching languages has been influenced by linguistics and psychology throughout history. Second Language Acquisition (SLA) research has been evolutionary and many great scholars have proposed wonderful ideas which were new and ideal at that time but have now fallen by the wayside. In this article we will learn about some of the methods proposed through time, and you will learn some of the fundamental points that can be used in the classroom today.
+                        </Paragraph>
+                        <Paragraph>
+                            Contemporaneously, Martin and MC had engaged with the education industries in their respective new homes in East Asia for many years, and they eventually crossed paths in China. Keeping contact after their reunion, they consulted with one another regularly on how to be an effective teacher and education professional in East Asia. That drive for improving their craft brought them to create this educational organization and the TEFL courses offered.
+                        </Paragraph>
+
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            Foreword by Martin Bragalone
+                        </Paragraph>
+
+                        <Paragraph>
+                            Hi there. My name is Martin Bragalone. I am an American who has been living and traveling primarily in Asia for the past 11 years as I teach, design curriculums and run schools.
+                        </Paragraph>
+
+                        <Paragraph>
+                            My journey started with a simple dream to travel the world and learn as many languages as I could along the way. Learning and L2 acquisition theory has been my greatest passion for the past 20 years. In 2009 I studied Linguistics via the Spanish language in Costa Rica and shortly after, studied for one year in Japan. I later returned to Japan where I taught English. I started at a Montessori international kindergarten and later found my way to Tokyo teaching adults. Over time, I moved towards a career of Japanese to English translation &amp; Interpretation. After 6 years in Japan, I found myself in Southeast Asia, China, Europe and back.
+                        </Paragraph>
+
+                        <Paragraph>
+                            What I have learned in these years pursuing over 10 languages is that, if you know the principles behind the acquisition process, all you need to do is identity the processes that line up with those principles which you enjoy best. Next, you simply follow the process without question over a period of time and the results will come. Knowing this as a learner has drastically changed the way in which I approach education as an instructor of foreign languages. I see the "teacher” more as a guide helping the students to discover, to grow and create while following simple processes which always work.
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            Just as there are simple processes to follow to learn languages, there is also a simple process to achieve your dream to travel the world and build wealth as you do. My partner, MC, and I would like to present to you one simple way forward to help you achieve that end.
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            Go on a journey with us. Enroll in our 120-hour TEFL course. Follow the process. Get the certificate. Next is finding your dream job. We are here to assist you even in that step.
+                        </Paragraph>
+
+
+
+                        <Paragraph>
+                            <Run FontWeight="Bold">Step 1:</Run> Enroll in our 120 TEFL Course if you haven’t already.
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            <Run FontWeight="Bold">Step 2:</Run> We recommend you spend a minimum of 6 hours a day to finish the course in under 3 weeks.
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            <Run FontWeight="Bold">Step 3:</Run> Take our test and we will return the results to you within 72 hours of submission. If we need you to resubmit, we will tell you if so and clearly highlight areas that require improvement within 72 hours of submission
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            <Run FontWeight="Bold">Step 4:</Run> Receive your TEFL certificate.
+                        </Paragraph>
+
+
+                        <Paragraph>
+                            <Run FontWeight="Bold">Step 5:</Run> Apply for jobs and you can start earning money by teaching English in schools in countries such as China, Colombia, Malaysia, Japan and Spain right away!
+                        </Paragraph>
+
+                        <Paragraph>
+                            If you need help with Step 5, please tell us and we will happily help introduce you to our ever-expanding network of over 1,000 school partners from China and Vietnam to the US and Australia.
+                        </Paragraph>
+
+                        <Paragraph Style="{StaticResource TEFLChapterSectionTitle}">
+                            Foreword by Martin Bragalone
+                        </Paragraph>
+                        <Paragraph>
+                            I have always been an avid learner, curious about the nature of the world and my place in it. Early on it became apparent to me that through both top-down as well as bottom-up, "grassroots”, forces, the world was becoming increasingly interconnected. It amazed me to witness the birth of the internet as a young man and to observe as the nations of the world began to come online with internet access and, perhaps more importantly, they brought their economies online. Many reformed their laws and institutions, for better or worse, to reflect the changing circumstances they found themselves in.
+                        </Paragraph>
+                        <Paragraph>
+                            Having been brought up in a so-called, "developed country”, I felt on the outside looking into this fascinating world of change. Despite myriad challenges, prosperity and education was spreading to corners of the world once believed to be relegated to persistent poverty far into the indeterminable future. Looking back three decades ago, a place like central China was once only to be discovered in the pages of Natural Geographic, for example. More recently, I have been to central China. I have been going back and forth to there and other regions of the country for nearly a decade now. I met other non-Chinese there who had been making lives for themselves for many years even prior to my arrival, and the numbers of expats are growing. It is no longer novel to speak Chinese as a second language, as I do, and my journey, as has that of many, began with entering the education industry. I became TEFL certified as my first step in engaging with the outside world off-line, and it was only the first step of many.
+                        </Paragraph>
+                        <Paragraph>
+                            To my understanding and judging by my personal experience, becoming TEFL certified is a common and useful means to begin a career either as a professional English teacher abroad, whether in China, as I did, or elsewhere, or it could be the key that opens the door to another adventure you might not even know is available to you, waiting for you just beyond your own national borders.
+                        </Paragraph>
+                        <Paragraph>
+                            I wish you the best in your personal journey and in your career endeavors.
+                        </Paragraph>
+
+                    </FlowDocument>
+
+
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod1part1sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.2 The mission of the North American TEFL Academy
+                        </Paragraph>
+                        <Paragraph>
+                            <Run>
+                                Just as there are simple processes to follow to learn languages, there is also a simple process to achieve your dream to travel the world and build wealth as you do. My partner, MC and I would like to present to you one simple way forward to help you achieve that end.
+                            </Run>
+                        </Paragraph>
+                        <Paragraph>
+                            <Run>
+                                Helping Teachers worldwide to achieve their dreams.
+                            </Run>
+                        </Paragraph>
+                        <Paragraph>
+                            <Run>
+                                Live, Share, Build Wealth and Travel.
+                            </Run>
+                        </Paragraph>
+                        <Paragraph>
+                            <Run>
+                                Helping Teachers Get Where they are going and teach better.
+                            </Run>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.3 Course technology requirements
+                        </Paragraph>
+                        <Paragraph>
+                            <Run>
+                                Access to an internet connection and a standard, modern web browser are the only necessary requirements of the course. 
+                                If you are using an old or outdated browser, such as Internet Explorer, you may need to update. We recommend
+                            </Run>
+                            <Hyperlink NavigateUri="https://www.google.com/chrome/" RequestNavigate="Hyperlink_RequestNavigate">
+                                Google Chrome.
+                            </Hyperlink>
+                            
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.4 Course duration and general time expectations
+                        </Paragraph>
+                        <Paragraph>
+                                It is estimated that reading fully the course material and successfully completing all graded and non-graded assignments will require approximately 120 hours in total. The time required may vary depending on the individual’s pace and environment.
+                        </Paragraph>
+                        <Paragraph>
+                            The course section with the greatest time variable to complete is the final assignment: the lesson plan. This is because feedback might be given and revisions are often necessary.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.5 How to begin and progress through the course
+                        </Paragraph>
+                        <Paragraph>
+                            Follow the program in numeric order, from module one to the final exam and lesson plan assignment.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect6" Style="{StaticResource TEFLChapterSectionText}" >
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.6 Non-graded module self-assessment tests
+                        </Paragraph>
+                        <Paragraph >
+                            Each module will conclude with a non-graded sell-assessment test. You can take the tests as many times as you want. 
+                            Your results will be stored on your
+                            <Button IsEnabled="True" x:Name="ProfilePageLink" Click="ProfilePageLink_Click">Profile Page</Button>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect7" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.7 Graded exam
+                        </Paragraph>
+                        <Paragraph>
+                            After module 4 there is a graded online exam. The exam consists of 50 multiple choice questions, each worth 2 points. A combined score of 70 is required to pass the exam.
+                        </Paragraph>
+                        <Paragraph>
+                            After submitting the exam, your score will be saved and you will be notified if you passed or not.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect8" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.8 Lesson plan assignment
+                        </Paragraph>
+                        <Paragraph>
+                            Following the 4th and final module there will be a lesson plan assignment issued as a template in .doc format. The template can be downloaded in 
+                            the <Hyperlink x:Name="LessonPlanLink" Click="LessonPlanLink_Click">Lesson Plan Assignment section</Hyperlink> .
+                        </Paragraph>
+                        <Paragraph>
+                            When you finish, submit the lesson plan in the Lesson Plan Assigment section.
+                        </Paragraph>
+                        <Paragraph>
+                            If there are no necessary corrections to be made, you will be notified that you have passed. If there are corrections needed, then you will be made aware of this.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect9" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.9 How to pass the course
+                        </Paragraph>
+                        <Paragraph>
+                            Complete all non-graded self-assessments, pass the final exam with a score of at least 70%, and complete the lesson plan exercise, preferably in that order, and that would conclude the course.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect10" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.10 Can the course be retaken if initially failed?
+                        </Paragraph>
+                        <Paragraph>
+                            Absolutely! We are here to help you succeed as a professional English teacher. The crucial point is that all TEFL certification holders successfully comprehend the knowledge required to earn the credential. The time it takes the teacher successfully complete the course is of less concern.
+                        </Paragraph>
+                        <Paragraph>
+                            The North American TEFL Academy will never deny a teacher their well-earned certification, but we will not grant the certification to anyone who has not passed the course requirements listed in section 1.1.9.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part1sect11" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.1.11 How to receive the certificate
+                        </Paragraph>
+                        <Paragraph>
+                            You will recieve a digital certificate to your email inbox upon completion of the course. You will also be assigned a TEFL certificate code which can be accessed and verified via
+                            <Hyperlink NavigateUri="???">eChinaCareers TEFL Verify</Hyperlink>. Potential employers can also use this page to verify the validity of your qualification.
+                        </Paragraph>
+                        <Paragraph>
+                            If you are based in the United States or Canada you will also automatically receive a physical certification shipped to the address in your Teacher Bay profile. If you would like us to post to a different address, please contact us prior to your conclusion of the course.
+                        </Paragraph>
+                        <Paragraph>
+                            If you live outside of the United States or Canada and require a physical copy, we are willing to ship internationally at an additional expense. Please inquire further.
+                        </Paragraph>
+                        <Paragraph>
+                            All physical and digital certifications are processed on the Friday, or in the event of a holiday the following weekday, after your course was successfully completely and will be shipped out or emailed on that day. Rush delivery is available at an additional expense.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

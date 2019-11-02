@@ -47,9 +47,7 @@ namespace TEFL_App.Views.Management
                 Button actionBtn = new Button { Content = "Data" };
                 actionBtn.Click += (s, e) =>  
                 {
-                    General.PopupWindow popUp = new General.PopupWindow(p.Name);
-                    popUp.Content = new Student.StudentProfile(p);
-                    popUp.Show();
+                    Helpers.Functions.ShowStudentProfile(p);
                 };
                 TextBlock lastLoginText = new TextBlock
                 {
