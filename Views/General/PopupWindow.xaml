@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         ScrollViewer.CanContentScroll="True"
         ScrollViewer.VerticalScrollBarVisibility="Visible"
-        Title="PopupWindow" Height="600" Width="1000" >
+        Title="Popup Window" Height="600" Width="1000" >
     
 </Window>

@@ -21,8 +21,6 @@ namespace TEFL_App.Views.General
         private Action OnLogout;
         private Page ViewingPage = new Page();
 
-        DoubleAnimation HeightToggleAnimation = new DoubleAnimation();
-
         #endregion Private Fields
 
         #region Public Constructors
@@ -122,19 +120,22 @@ namespace TEFL_App.Views.General
         {
             CourseData.ChapterTitleData data = (sender as Button).Tag as CourseData.ChapterTitleData;
 
-            //data.Number is of the form "1.1.3a" ---> "module.chapter.section"
-            string[] pageData = data.Number.Split('.');
+            string[] pageData = data.Number.Split('.');                                                 //data.Number is of the form "1.1.3a" ---> "module.chapter.section"
 
-            string pageGridToFind = string.Format("Mod{0}Chapter{1}Grid", pageData[0], pageData[1]);
+            string pageGridToFind = string.Format("Mod{0}Chapter{1}Grid", pageData[0], pageData[1]);    //Mod{0}Chapter{1}Grid is based on x:Name value given to each module page.  
+
             var findPage = ViewingPage.FindName(pageGridToFind);
 
 
-            if(findPage == null)        //Navigate to correct chapter page
+            if(findPage == null)                                                                        //Navigate to correct chapter page
             {
                 string chapterIdentifier = string.Join(".", pageData.Take(2));
                 ViewingPage = chapterIdentifier switch
                 {
-                    "1.1" => new Course.Modules.Mod1Part1(data.SectionID),
+                    "1.1" => new Course.Modules.Mod1Part1(data.SectionID, NavigateTo),
+                    "1.2" => new Course.Modules.Mod1Part2(data.SectionID, NavigateTo),
+                    "1.3" => new Course.Modules.Mod1Part3(data.SectionID, NavigateTo),
+                    "2.1" => new Course.Modules.Mod2Part1(data.SectionID, NavigateTo),
                     _ => new ManagerHome()
                 };
                 ContentArea.Content = ViewingPage;
@@ -302,18 +303,26 @@ namespace TEFL_App.Views.General
 
         private void MenuBtnClick(object sender, RoutedEventArgs e)
         {
-            ViewingPage = ((Button)sender).Tag switch
+            Page selectedPage = ((Button)sender).Tag switch
             {
                 "ManagerHome" => new ManagerHome(),
                 "CourseHome" => new CourseHome(),
                 "Staff" => new Staff(),
                 "Course" => new TEFLCourse(),
+                "Assignment" => new LessonPlanPage(),
                 "Help" => new Help(),
                 "Settings" => new Settings(SetLanguage),
                 _ => new ManagerHome()
             };
 
-            ContentArea.Content = ViewingPage;
+
+            NavigateTo(selectedPage);
+        }
+
+        private void NavigateTo(Page page)
+        {
+            ViewingPage = page;
+            ContentArea.Content = page;
         }
 
         private Frame ModuleTitleFrame(string module)
@@ -336,6 +345,7 @@ namespace TEFL_App.Views.General
             courseBtn.Content = PageText.Course;
             staffBtn.Content = PageText.Staff;
             settingsBtn.Content = PageText.Settings;
+            assignmentBtn.Content = PageText.LessonPlan;
             helpBtn.Content = PageText.Help;
             logoutBtn.Content = PageText.Logout;
         }
@@ -357,6 +367,7 @@ namespace TEFL_App.Views.General
         #region Public Properties
 
         public string Course { get; set; }
+        public string LessonPlan { get; set; }
         public string Help { get; set; }
         public string Home { get; set; }
         public string Logout { get; set; }
@@ -375,6 +386,7 @@ namespace TEFL_App.Views.General
             Home = "Home",
             Staff = "Staff",
             Course = "TEFL Course",
+            LessonPlan = "Lesson Plan",
             Settings = "Settings",
             Help = "Help",
             Logout = "Log Out"
@@ -385,6 +397,7 @@ namespace TEFL_App.Views.General
             Home = "主页",
             Staff = "人工",
             Course = "TEFL 教程",
+            LessonPlan = "Lesson Plan",
             Settings = "设备",
             Help = "Help",
             Logout = "退出"

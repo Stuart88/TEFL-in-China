@@ -1,0 +1,694 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod1Part3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 1 - Part 3">
+
+    <Grid  x:Name="Mod1Chapter3Grid" Style="{StaticResource TEFLChapterGrid}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 1, Part 3: Grammar for Teachers" Style="{StaticResource TEFLChapterTitle}"/>
+        
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod1part3sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.3.1 Grammar Overview
+                        </Paragraph>
+                        <Paragraph>
+                            Grammar is a set of rules that make up a language. Grammar is also used as a term to refer to the prescriptive rules of a given language, which may change over time. The way people spoke in the 1700s is not the way we speak today. Languages are living organisms and evolve over time so grammar must also evolve and change over time.
+                        </Paragraph>
+                        <Paragraph>
+                            Grammar may be separated into two common categories: descriptive and prescriptive. Both views of grammar are used today, although in general, linguists tend towards a descriptive approach to grammar, while people teaching a specific language (English) might tend towards a more prescriptive approach.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Descriptive Grammar
+                        </Paragraph>
+                        <Paragraph>
+                            A descriptive grammar tries to look at the grammar of any language as it is actually used, judging whether a sentence is grammatical or not based on the rules of the speech group in which it is spoken, rather than the set of rules. For example, in many speech communities, a sentence such as, "Ya'll ain't getting' that," would be entirely grammatical, and an entire set of rules of grammar can be deduced that explain why that formation is used. In another speech community, however, that sentence might be considered ungrammatical. The only accepted version such as, "You are not getting that," would be considered acceptable.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Prescriptive Grammar
+                        </Paragraph>
+                        <Paragraph>
+                            A prescriptive grammar covers the norms of speech as given by authoritative sources, such as an upper-class or academics, and creates strict rules by which all speech within that language must abide to be considered grammatical. Few linguists take a prescriptive approach to grammar in modern times, preferring to describe language as it exists in a given speech community. Many teachers and pedagogues, however, still use a prescriptive approach towards grammar, adhering to standardized rules as being the only proper way to speak.
+                        </Paragraph>
+                        <Paragraph>
+                            Prescriptive grammar is also used to some extent in teaching a language to nonnative speakers. When teaching English, for example, it can be useful to employ a standard form of English as a baseline to teach from. This usually helps reduce confusion among students. Once the language has been acquired, of course, a less-prescriptive approach will necessarily take over, as the non-native speaker learns regional rules and new dialects that may not conform to the prescriptive grammar he or she originally learned.
+                        </Paragraph>
+                        <Paragraph>
+                            For an interesting overview of the types of arguments that can arise between proponents of prescriptive and descriptive grammars, see:
+                            <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Disputes_in_English_grammar" RequestNavigate="Hyperlink_RequestNavigate">
+                                http://en.wikipedia.org/wiki/Disputes_in_English_grammar
+                            </Hyperlink>.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod1part3sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.3.2 Parts of Speech
+                        </Paragraph>
+                        <Paragraph>
+                            Parts of speech are very important in grammar since they are the groups in which words are categorized. They allow you to label a word in a sentence and provide the framework for the rules to follow in a sentence. Learn these parts of speech and be able to label or name a part of speech in a sentence.
+                        </Paragraph>
+
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Nouns
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Nouns</Bold> point out or name people, places, things or ideas.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Proper Nouns – a name of one specific person, place or thing that is capitalized.
+                                    <LineBreak/>
+                                    E.g. Peter, London, Washington
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Common Nouns – one specific class or group that is not capitalized.
+                                    <LineBreak/>
+                                    E.g. dog, lock, pen
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Noun as a subject – The dog broke the lock.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Noun as a direct object – The dog broke the lock.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Noun as an indirect object – I gave Harold the lock.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Pronouns: Pronouns are used in place of a noun.</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Pronouns
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Pronouns</Bold> refer to someone or something that is participating or is directly mentioned in a sentence
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Personal (subject) – I, you, he, she, it, we, you, they</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Interrogative – who, what, where, when, how, why, which, whom</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Relative – who, which, that, when, whose</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Indefinite – anyone, someone, somebody, anybody, nobody, no one</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Demonstrative – these, those, this, that</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Reflexive – myself, himself, herself, itself, themselves, yourselves, ourselves</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Possessive – mine, yours, his, hers, its, ours, yours, theirs</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Possessive Adjectives – my, your, his, her, its, our, your, their</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Object – me, you, him, her, it, us, you, them</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Adjectives
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Adjectives:</Bold> Words used to describe a noun or a pronoun. What kind, how many or which one.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Comparative – bigger than, richer than, better than (John is bigger than Peter)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Superlative – the biggest, the richest, the best (He is the richest man in the world)</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Verbs
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Verbs</Bold> describe the state of being of a subject. They can also be used to describe or to show physical or mental action.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Transitive – relates an action that has an object. (Gives transit)
+                                    <LineBreak/>
+                                    E.g. Helen baked a cake.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Intransitive – does not need an object.
+                                    <LineBreak/>
+                                    E.g. The baby cried.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Linking – links the subject and the complement.
+                                    <LineBreak/>
+                                    E.g. The old man seems tired.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Regular – form their past and past participle form with –d and –ed. (work-worked, dance-danced)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Irregular – forms completely change. (go-went, sleep-slept)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Auxiliary – helping verbs; when used with main verb it shows mood and tense. (will, have, to be)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Modal – used to indicate possibility, a need, willingness, ability or obligation. (can, could, may, should)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Infinitive – verbs that are always preceded by a "to". (to go, to dance, to speak)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Bare infinitive – verbs that are not preceded by a "to" (go, dance, speak)</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph>
+                            Verbs can also be used in <Bold>active</Bold> or <Bold>passive</Bold> voice.
+                        </Paragraph>
+                        <Paragraph>
+                            <Underline>Active Voice</Underline> – When the subject is the doer of the action.</Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>Mary had helped John</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>The French built the Eiffel Tower</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Colombians grow coffee</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            <Underline>Passive Voice</Underline> – When the subject becomes the receiver of the action.
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>The Eiffel Tower was built by the French</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>John had been helped by Mary</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Rice is grown by Chinese</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Adverbs
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Adverbs</Bold> describe a verb, an adjective or another adverb.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Adverbs of Frequency – always, often, never</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Adverbs of Time – before, yet, still</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Adverbs of Place – there, here, everywhere, somewhere, anywhere</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Adverbs of Degree – almost, nearly, barely, hardly, just</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Many adverbs are formed by simply adding a –ly to an adjective or a noun.
+                            <LineBreak/>
+                            E.g. He ran very quickly; It is extremely dangerous; This place feels homely.
+                        </Paragraph>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Prepositions
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Prepositions</Bold> express relationships between people, things and actions by placing words in front of nouns, noun phrases or pronouns to connect them to another word.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Prepositions of Place: at, in, beside, between, for, behind, off, on</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Prepositions of Time: in, on, at, about, off, on</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>Examples:</Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>He was in the garden</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I spoke to Mr. Hall on Friday about the hole in our roof</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>Prepositions can also be used to introduce a phrase which completes the meaning of a verb.</Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I told him about...</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Conjunctions
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Conjunctions</Bold> are words that connect parts of speech.
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>but, because, and;</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I like tea, but I don't like coffee because it's too strong for me</Paragraph>
+                            </ListItem>
+                        </List>
+
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Interjections
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Interjections</Bold> are words to express feelings or emotions.
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>HELP! OUCH! Yummy! Wow! Yuck!</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Help! Call the police!</Paragraph>
+                            </ListItem>
+                        </List>
+                        
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part3sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.3.3 Tenses
+                        </Paragraph>
+                        <Paragraph>
+                            In this objective, we will cover the 12 tenses in the English language and provide you with examples, the formula and key time expressions. Tenses are the foundation of the language. One of the challenges that you will face when teaching English is that students will challenge you to see how much you know about grammar. They want to know if you really know the tenses and their formulas. It is helpful if you are able to explain them clearly and effectively.
+                        </Paragraph>
+                        <Paragraph>
+                            If you are a native speaker, you have been exposed to the language since birth. If you are not a native speaker, then this was the first information that you learned. Whether you are a native speaker or not, knowing this information is extremely important, and it is also an essential part of the graded for this course. At the end of this objective you should have learned the tenses, be able to provide examples, the formula and the use of the tense. If you were to compare the tenses to a house, the tenses would be the beams of a house. The tenses would be the columns that hold the structure together.
+                        </Paragraph>
+                        <Paragraph>
+                            We highly recommend that you purchase a grammar book (online or paper-back). Make sure that it is a grammar book for teachers and not for students. A grammar book is a vital tool that all teachers should have when preparing their lessons plans. To learn these tenses I would recommend that you write sample sentences, underneath write the formula and compare them to the information here.
+                        </Paragraph>
+
+
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Simple Tenses
+                        </Paragraph>
+                        
+                        <Paragraph>
+                            <Bold>Simple Past / Past Simple/ Preterite</Bold>
+                            <LineBreak/>
+                            We use the simple past when we talk about a completed action or condition.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I was in Spain last week</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>She played the piano when she was a child</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>We didn't go to the mall the other day</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + verb in the past tense + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: last, ago, yesterday, often, sometimes, always
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Simple Present / Present Simple</Bold>
+                            <LineBreak/>
+                            We use the simple present to describe facts, habits, and recurring actions or situations.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I work in Rome</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I walk the dog every day</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>She goes to the gym three times a week</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + verb
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: every, usually, sometimes, often, frequently, never, now, always, after, when, as
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Simple Future</Bold>
+                            <LineBreak/>
+                            We use "will" when discussing unplanned future events and predictions without evidence. We use "going to" when talking about planned future events and predictions with evidence.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List MarkerStyle="None">
+                            <ListItem>
+                                <Paragraph>Going to:</Paragraph>
+                                <List>
+                                    <ListItem>
+                                        <Paragraph>It's going to rain later</Paragraph>
+                                    </ListItem>
+
+                                    <ListItem>
+                                        <Paragraph>We're going to spend a few days with my mother</Paragraph>
+                                    </ListItem>
+                                </List>
+                              
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Will:</Paragraph>
+                                <List>
+                                    <ListItem>
+                                        <Paragraph>I will travel to Asia next month</Paragraph>
+                                    </ListItem>
+
+                                    <ListItem>
+                                        <Paragraph>The plane will land in 20 minutes</Paragraph>
+                                    </ListItem>
+                                </List>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + will + bare infinitive + complement / subject + to be + going to + bare infinitive + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: next, tomorrow, in, after
+                        </Paragraph>
+
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Progressive or Continuous Tenses
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Past Progressive</Bold>
+                            <LineBreak/>
+                            We use this tense to talk about something that was in progress at a specific time in the past.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I was having a horrible nightmare when my alarm clock rang</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>The sun was shining when we were swimming</Paragraph>
+                            </ListItem>
+                            
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + was/were + -ing form of the verb + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: while, when, as
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Present Progressive</Bold>
+                            <LineBreak/>
+                            WWe use the present progressive when we're talking about an action taking place at the moment of speaking.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I am teaching English now</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>We are watching a movie right now. I can't talk to you</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>The weather forecast was not good, but the sun is shining now</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + to be + –ing form of the verb
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: now, presently, currently, these days, always, forever, constantly
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Future Progressive</Bold>
+                            <LineBreak/>
+                            We use this to talk about something which will be in progress at a time in the future.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I will be leaving soon</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Will you be coming to the party?</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I won't be seeing Steve until next week</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + will be + present participle (base verb + -ing)
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: next, tomorrow, soon, in, later
+                        </Paragraph>
+
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Simple Tenses
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Perfect Tenses</Bold>
+                            <LineBreak/>
+                            The past perfect refers to an action taking place before the story being told. It is used to make it clear that one event happened before another in the past. It is also known as the past of the past.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>He wasn't very tired because he had slept well the night before</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Robert had gone out when I arrived at the office</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: subject + had + past participle of the verb + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: before, until, after, just, went
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Present Perfect</Bold>
+                            <LineBreak/>
+                            When we talk in the present perfect we're talking about past actions that are relevant today or actions that happened in the past but when they occurred is not important. It also can refer to the recent past.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>They have not lived there for years</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I have worked here since 1999</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Have you just finished work?</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Someone has just eaten my candy!</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + have/has + past participle of verb + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: since, before, until, yet, already, ever, never, just
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Future Perfect</Bold>
+                            <LineBreak/>
+                            The future perfect refers to a completed action in the future. We can also use this tense when we project ourselves into the future and when we are looking back at the completed action at a time later
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>You will have arrived by then</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Will you have finished your report on time?</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>I will not have left, by the time you read this</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + will have + past participle of verb
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: by
+                        </Paragraph>
+
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Present Perfect Progressive
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Past Perfect Progressive</Bold>
+                            <LineBreak/>
+                            We use the past perfect progressive when you want to focus on an action which was in progress up to or near a time in the past, rather than a completed event.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>I hadn't been sleeping long when you called</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>It had been raining hard for several hours and the streets were very wet</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Had you been waiting long before the taxi arrived?</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + had + past participle of “to be” (been) + -ing form of the verb + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: since
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Past Perfect Progressive</Bold>
+                            <LineBreak/>
+                            We use the present perfect progressive to talk about an action that started in the past and stopped recently. We can also talk about an action that started in the past and is continuing now.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>She has been dancing for three hours</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>They have been waiting for you all day</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + have/has + been + –ing + complement
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: since, for
+                        </Paragraph>
+
+                        <Paragraph>
+                            <Bold>Future Perfect Progressive</Bold>
+                            <LineBreak/>
+                            These are actions or events in a time between now and some future time, that may be unfinished.
+                        </Paragraph>
+                        <Paragraph>
+                            Examples:
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>We will have been living in Madrid for 5 years in June</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>We will have been working out for 2 hours at 6 o'clock</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Formula: Subject + will have + been + present participle (base form –ing)
+                        </Paragraph>
+                        <Paragraph>
+                            Key Time Expressions: by, after
+                        </Paragraph>
+
+                    </FlowDocument>
+                </RichTextBox>
+
+
+
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

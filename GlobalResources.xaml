@@ -77,6 +77,7 @@
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
     </Style>
     <Style TargetType="StackPanel" x:Key="TEFLChapterPageArea">
         <Setter Property="MaxWidth" Value="800"/>
@@ -85,13 +86,24 @@
     </Style>
     <Style TargetType="TextBlock" x:Key="TEFLChapterTitle">
         <Setter Property="Padding" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{StaticResource LightGrey}"/>
         <Setter Property="FontSize" Value="32"/>
         <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
         <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
     </Style>
     <Style TargetType="Paragraph" x:Key="TEFLChapterSectionTitle">
         <Setter Property="Padding" Value="10"/>
+        <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
         <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style TargetType="Paragraph" x:Key="TEFLParagraphTitle">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Background" Value="{StaticResource LightGrey}"/>
         <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
     </Style>
     <Style TargetType="RichTextBox" x:Key="TEFLChapterSectionText">
@@ -99,13 +111,19 @@
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
         <Setter Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
-        <Setter Property="Margin" Value="0,20,0,20"/>
+        <Setter Property="Margin" Value="10,20,10,20"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="IsDocumentEnabled" Value="True"/>
         <Setter Property="Background" Value="White"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
     </Style>
-   
+    <Style TargetType="ListItem" x:Key="IndentedListItem">
+        <Setter Property="Margin" Value="40,0,0,0"/>
+    </Style>
+    <Style TargetType="ListItem" x:Key="SpacedListItem">
+        <Setter Property="Margin" Value="25,0,0,10"/>
+    </Style>
 
     <!--#endregion-->
 

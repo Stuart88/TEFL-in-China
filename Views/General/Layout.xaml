@@ -9,7 +9,7 @@
       VerticalAlignment="Stretch"
       d:DesignHeight="450" d:DesignWidth="800"
       x:Name="layoutWindow"
-      Title="Management">
+      Title="">
 
     <Page.Resources>
         <Style TargetType="Button" x:Key="ChapterBtnStyle">
@@ -20,6 +20,8 @@
         <Style TargetType="Button" x:Key="SectionBtnStyle">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="BorderBrush"  Value="{StaticResource LightGrey}"/>
+
         </Style>
         <Style TargetType="Frame" x:Key="MenuHeaderStyle">
             <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
@@ -66,8 +68,10 @@
         <Style TargetType="TextBlock" x:Key="ChapterSectionText">
             <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="Padding" Value="5,5,5,0"/>
+            <Setter Property="LineHeight" Value="20"/>
             <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
         </Style>
     </Page.Resources>
@@ -75,13 +79,14 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" MinWidth="280" />
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
 
         <Grid  Grid.Column="0" VerticalAlignment="Stretch" Background="{StaticResource Orange}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -111,16 +116,20 @@
                     Content="{Binding Path=PageText.Course, ElementName=layoutWindow}"
                     Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
 
-            <Button Grid.Row="5" x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings"
+            <Button Grid.Row="5" x:Name="assignmentBtn" Click="MenuBtnClick" Tag="Assignment"
+                    Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
+                     Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}"/>
+
+            <Button Grid.Row="6" x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings"
                     Content="{Binding Path=PageText.Settings, ElementName=layoutWindow}" />
 
-            <Button Grid.Row="6" x:Name="helpBtn" Click="MenuBtnClick" Tag="Help"
+            <Button Grid.Row="7" x:Name="helpBtn" Click="MenuBtnClick" Tag="Help"
                     Content="{Binding Path=PageText.Help, ElementName=layoutWindow}" />
 
-            <Button Grid.Row="7" x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout"
+            <Button Grid.Row="8" x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout"
                     Content="{Binding Path=PageText.Logout, ElementName=layoutWindow}" />
 
-            <ScrollViewer Grid.Row="8" VerticalAlignment="Stretch">
+            <ScrollViewer Grid.Row="9" VerticalAlignment="Stretch">
                 <StackPanel VerticalAlignment="Stretch" x:Name="ModuleChaptersStackPanel" Orientation="Vertical" >
 
                 </StackPanel>
@@ -128,6 +137,7 @@
             
         </Grid>
 
-        <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Frame x:Name="ContentArea" NavigationUIVisibility="Visible"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
     </Grid>
 </Page>

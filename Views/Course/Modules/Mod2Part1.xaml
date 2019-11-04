@@ -1,0 +1,465 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod2Part1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 2 - Part 1">
+
+    <Grid  x:Name="Mod2Chapter1Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 2, Part 1: Different Student Ages and Language Levels" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod2part1sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.1 Overview
+                        </Paragraph>
+                        <Paragraph>
+                            An English teacher needs to know and understand as much as possible about the learner. Students are different and learn differently. They also have different needs, abilities, competences, goals and expectations when learning a new language. Adult learners, for example, will have an immediate need for the language, whereas the opposite may be true for young learners, who do not understand the global perspective.
+                        </Paragraph>
+                        <Paragraph>
+                            As teachers we need to recognize the different needs that our students bring to the classroom and the effects that our planning and teaching methods will have on their learning processes. We should strive to lower our student's fears about learning a language and prepare engaging lessons that will keep our students happy and motivated to continue their language learning process.
+                        </Paragraph>
+                    </FlowDocument>
+
+
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod2part1sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.2 The Significance of Student Age
+                        </Paragraph>
+                        <Paragraph>
+                            When we make decisions about how and what we teach, the age of our students is a major factor to take into consideration. People with different ages have different needs, competences and cognitive skills. A child might acquire much of a foreign language through play, whereas with adults we can expect a greater use of abstract thought.
+                        </Paragraph>
+                        <Paragraph>
+                            One of the most common beliefs about age and language learning is that young children learn much faster and more effectively than any other age group. When children move to a new country, they appear to pick up a new language effortlessly. However, this is not always true for all children, and it may be that the story of children's facility with languages is something of a myth. What does appear to be true is that children who learn a new language early on have a facility with pronunciation. Children reproduce the accents of their teachers with dead-on accuracy. In some cases children have been heard saying, "Listen. Quiet down now. Attention, please!" with perfect imitation.
+                        </Paragraph>
+                        <Paragraph>
+                            However, aside from pronunciation, it seems that older children (children about the age of 12) are far better language learners than younger ones. While English is being taught at younger and younger ages, and may contribute to great benefits relating to multiculturalism, democracy, citizenship, and tolerance, early learning does not always appear to offer the substantial success often claimed for it. This is especially true from primary to secondary school, in circumstances where there is ineffective transfer of skills and methodology. However, this is not to suggest that young learners cannot acquire second languages successfully; in fact, many of them do achieve significant competence, especially in bilingual situations.
+                        </Paragraph>
+                        <Paragraph>
+                            On the other hand, recent studies have shown that it is older children and adolescents who make more progress than younger learners, especially in formal educational settings. This may have something to do with their increased cognitive abilities, which allow them to benefit from more abstract approaches to language teaching.
+                        </Paragraph>
+                        <Paragraph>
+                            Another myth is that it is difficult for adult students to be effective language learners. Over and over, adult learners have proven that they can reach high levels of proficiency in their second language. While they may have more difficulty in approximating native speaker pronunciation than children do, this can even be deliberate or subconscious retention of their cultural and linguistic identity.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.3 Teaching Children and Early Learners
+                        </Paragraph>
+                        <Paragraph>
+                            Generally, we refer to the age group between 4 and 11 as young or early learners. Very young children learn differently from older children, adolescents and adults, especially those up to the ages of nine or ten. Teaching children can be great fun as young learners are enthusiastic and energetic when they like something, and are eager to participate in any activity that the teacher brings to class. They bring less obstacles and preconceived ideas about language to the classroom, and are not as self-conscious about making mistakes as adults or teenagers.
+                        </Paragraph>
+                        <Paragraph>
+                            Some of the features of the way very young children learn are:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Even if they do not understand individual words, they respond to meaning</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They learn indirectly, rather than directly; that is they take in information from all sides, learning from everything around them rather than only focusing on the precise topic they are being taught</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Their understanding comes not just from explanation, but from what they see, hear and touch, and by having a chance to interact with the world around them</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They display a curiosity and an enthusiasm for learning about the world around them</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They respond well to learning that uses themselves and their own lives as the main topics in the classroom, as they are naturally keen to talk about themselves</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They have a need for attention and approval from the teacher</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They focus on the use of the language and do not feel embarrassed about making mistakes</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Grammar rules are difficult for them to grasp</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Unless activities are extremely engaging, students can get bored easily, losing interest after ten minutes or so, because of their limited attention span</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            When teaching children, the key is to have short activities and lots of them, as they are unable to sustain high levels of concentration for long periods of time. They also need plenty of repetition in order to assimilate correct forms. Within this varied and varying age span, it is important when discussing young learners to take account of changes which take place. While learners 10 and 11 years of age like games, puzzles and songs most, those who are 12 and 13 years old like activities built around dialogues, question and answer activities and matching exercises. Teachers at this level need to provide a rich diet of learning experiences which encourage their students to get information from a variety of sources. They need to work with their students individually and in groups, developing good and affective relationships. They need to plan a range of activities for a given time period, and be flexible enough to move on to the next exercise when they see that their students are getting bored.
+                        </Paragraph>
+                        <Paragraph>
+                            Teachers of young learners need to spend time understanding how their students think and operate. They need to be able to pick up on their student's current interests so that they can use them to motivate the children. Since speaking and listening are the skills which will be used most at this age, students need good oral skills in English. Children imitate very well so the teacher's pronunciation really matters.
+                        </Paragraph>
+                        <Paragraph>
+                            There is a worldwide need for highly skilled and dedicated teaching once a decision has been taken to teach English to younger learners. If teachers do their job well and the student's success is followed up as they move to a new school or grade, there is no reason why young learners cannot become highly successful learners even though they may well be the most difficult age to teach.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod2part1sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.4 Teaching Young Adults
+                        </Paragraph>
+                        <Paragraph>
+                            Adolescents are often seen as problem students, despite their relative success as language learners. Yet, they may well be the most exciting students, once they are engaged, with their greater ability for abstract thought and commitment to what they are doing. We can ask them to address learning issues directly, in a way that younger learners might not appreciate. With the right goals, they can be responsible enough to do what's asked of them, as most of them understand the need for learning.
+                        </Paragraph>
+                        <Paragraph>
+                            There are times when things don't seem to go very well. Adolescents, in their search for identity and their need for self-esteem, want to feel valued by their teacher and their peers. They are extremely vulnerable to negative judgments of their own age group. From a practical perspective, this means it is vital not to challenge them, or make them look small, in front of their classmates. Any "issues" that arise in the classroom should be put to one side, and dealt with in private after the class. Try never to allow a situation to escalate to the point where you reach a stand-off with one of your teenage students. Remember that you are the adult and it is your place to be mature, even where a student seems to be challenging your authority as a teacher.
+                        </Paragraph>
+                        <Paragraph>
+                            Many problems with teenagers result in part from the teacher's failure to build bridges between what they want and have to teach, and their student's worlds of thought and experience. Teenagers, once interested and passionate about a particular topic, are not difficult to teach. Our job as teachers is to engage these students with topics that are relevant to them, and create lessons that are exciting and dynamic.
+                        </Paragraph>
+                        <Paragraph>
+                            Previous knowledge of the language will also make it easier to teach teens. You will find yourself teaching teens who have been learning the language for quite some time and may be at an intermediate level. This means you can engage them in often quite advanced discussions on topics of interest to them, and this will make your teaching life much easier.
+                        </Paragraph>
+                        <Paragraph>
+                            Adolescents must be encouraged to respond to texts and situations with their own thoughts and experiences, rather than just by answering questions and doing disconnected learning activities. Part of our job is to provoke intellectual activity by helping them to be aware of contrasting ideas and concepts which they can resolve for themselves. There are many ways of studying language and practicing language skills, and most of these are appropriate for teenagers.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.5 Teaching Adults
+                        </Paragraph>
+                        <Paragraph>
+                            FPeople tend to think that adults are the easiest age group to teach, and in some ways this may be true. Adults tend to be less problematic and more disciplined in learning a language. They usually have a clear idea and understanding of why they are learning the language and how to take advantage of it. Adults are able to sustain their level of motivation for a longer period of time because they know that learning a language is not going to be an overnight experience. Additionally, we can draw on their previous knowledge and life experiences to engage them in different topics.
+                        </Paragraph>
+                        <Paragraph>
+                            Adult language learners are notable for a number of special characteristics:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They can engage with abstract thought. This suggests that we do not have to rely exclusively on activities such as games and songs, though these may be appropriate for some groups of students</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They bring to the classroom rich experience which allows teachers to use a wide range of activities with them</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They have expectations about the learning process, and they already have their own set of patterns of learning</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Adults tend, on the whole, to be more disciplined than other age groups, and crucially, they are often prepared to struggle on, despite boredom</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Many adults are able to sustain a level of motivation by holding on to a distant goal in a way that teenagers find more difficult, due to the fact that motivation itself is a critical factor in successful learning, and knowing what they want to achieve is an important part of this</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Adults are, however, never truly problem-free learners, and they have a number of characteristics which can sometimes make learning and teaching problematic. They can be critical of your teaching methods and activities. Their previous learning experiences may have predisposed them to one particular methodological style which makes them uncomfortable with unfamiliar teaching patterns. Conversely, they may be hostile to certain teaching and learning activities which replicate the teaching they received earlier in their educational careers.
+                        </Paragraph>
+                        <Paragraph>
+                            Adults tend to be under-confident about their language learning process. They may have experienced failure or criticism at school which makes them anxious and under-confident about learning a language. Many older students worry that their intellectual powers may be diminishing with age. They are concerned to keep their creative powers alive, to maintain a sense of "generativity". This is directly related to how much learning has been going on in their adult lives before they come to a new learning experience.
+                        </Paragraph>
+                        <Paragraph>
+                            Good teachers of adults take all of these factors into consideration. They are aware that their students will often be prepared to stick with an activity for longer than younger learners, though too much boredom can have a disastrous effect on motivation. As well as involving their students in more indirect learning through reading, listening and communicative speaking and writing, they also allow them to use their intellects to learn consciously where this is appropriate.
+                        </Paragraph>
+                        <Paragraph>
+                            As teachers of adults we should recognize the need to minimize the negative effects of past learning experiences. We can diminish the fear of failure by offering activities which are achievable and by paying special attention to the challenge presented by exercises. We need to listen to student's concerns and modify what we do to suit their learning needs in many cases.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect6" Style="{StaticResource TEFLChapterSectionText}" >
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.5a reating Adults Like Adults
+                        </Paragraph>
+                        <Paragraph >
+                            Children conceive of themselves as dependent persons, but as they grow toward adulthood they experience a need for others to see them as being capable of self-direction. This change from a self-concept of dependency to one of autonomy is what we call psychological maturity, or adulthood. Because of this self-concept, adults tend to resent being put into situations that violate their feeling of maturity, such as being talked down to, being judged, being treated with a lack of respect or otherwise being treated like children.
+                        </Paragraph>
+                        <Paragraph>
+                            When adults are faced with learning a new language, their mature self-concept is often in conflict with the fact that they have reverted, of necessity, to childlike language patterns. This makes it even more essential that language instructors treat these individuals as adults. When adults find that they are capable of self-direction in learning, they often experience a remarkable increase in motivation to learn and to continue the learning process on their own initiative.
+                        </Paragraph>
+                        <Paragraph>
+                            This discovery points out a major difference between the assumption of child learning, pedagogy, and adult learning. This difference exists in the relationship between teacher and learner and in the learner's concept of self with regard to the capacity for self-direction.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect7" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.6 The Common European Framework of Reference (CEFR)
+                        </Paragraph>
+                        <Paragraph>
+                            Teachers around the world use different terminology to refer to the level of English a student has achieved: you may hear descriptions of levels such as Starter, Beginner, Basic, Pre-Intermediate, Intermediate, Advanced, Proficient and any number of other variations on these. While an experienced teacher may intuitively understand these levels, a far more useful and structured way of understanding students' levels is to become familiar with The Common European Framework of Reference for Languages (CEFR).
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect8" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.7 CEFR: Common Reference Levels (CRLs)
+                        </Paragraph>
+                        <Paragraph>
+                            See 7a and 7b below for details on the CEFR Common Reference Levels
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect9" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.7a Global Scale
+                        </Paragraph>
+                        <Paragraph>
+                            The following table shows the Council of Europe's standardized Global Scale.
+                        </Paragraph>
+
+                        <Table>
+                            <Table.Resources>
+                                <Style TargetType="TableCell" x:Key="BlueHeadingCell">
+                                    <Setter Property="Background" Value="CornflowerBlue"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="Padding" Value="0,80,0,0"/>
+                                </Style>
+                                <Style TargetType="TableCell" x:Key="BlackBoldCentred">
+                                    <Setter Property="Foreground" Value="{StaticResource Black}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="Padding" Value="0,30,0,0"/>
+                                </Style>
+                                <Style TargetType="TableCell" x:Key="GeneralTableText">
+                                    <Setter Property="Foreground" Value="{StaticResource Black}"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                </Style>
+                            </Table.Resources>
+                            <Table.Columns>
+                                <TableColumn Width="130 " />
+                                <TableColumn Width="40" />
+                                <TableColumn />
+                            </Table.Columns>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlueHeadingCell}" RowSpan="2">
+                                        <Paragraph>
+                                            Basic User
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>A1</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. Can introduce him/herself and others and can ask and answer questions about personal details such as where he/she lives, people he/she knows and things he/she has. Can interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>A2</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. very basic personal and family information, shopping, local geography, employment). Can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters. Can describe in simple terms aspects of his/her background, immediate environment and matters in areas of immediate need.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlueHeadingCell}" RowSpan="2">
+                                        <Paragraph>
+                                            Independent User
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>B1</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc. Can deal with most situations likely to arise whilst travelling in an area where the language is spoken. Can produce simple connected text on topics which are familiar or of personal interest. Can describe experiences and events, dreams, hopes &amp; ambitions and briefly give reasons and explanations for opinions and plans.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>B2</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand the main ideas of complex text on both concrete and abstract topics, including technical discussions in his/her field of specialisation. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party. Can produce clear, detailed text on a wide range of subjects and explain a viewpoint on a topical issue giving the advantages and disadvantages of various options.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlueHeadingCell}" RowSpan="2">
+                                        <Paragraph>
+                                            Proficient User
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>C1</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand a wide range of demanding, longer texts, and recognise implicit meaning. Can express him/herself fluently and spontaneously without much obvious searching for expressions. Can use language flexibly and effectively for social, academic and professional purposes. Can produce clear, well-structured, detailed text on complex subjects, showing controlled use of organisational patterns, connectors and cohesive devices.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell Style="{StaticResource BlackBoldCentred}">
+                                        <Paragraph>C2</Paragraph>
+                                    </TableCell>
+                                    <TableCell Style="{StaticResource GeneralTableText}">
+                                        <Paragraph>
+                                            Can understand with ease virtually everything heard or read. Can summarise information from different spoken and written sources, reconstructing arguments and accounts in a coherent presentation. Can express him/herself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in more complex situations.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                        <Paragraph Foreground="{StaticResource Grey}">
+                            Source:
+                            <Hyperlink Foreground="{StaticResource Grey}" NavigateUri="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale
+                            </Hyperlink>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect10" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.7b CEFR Self-Assessment
+                        </Paragraph>
+                        <Paragraph>
+                            Click here for the Council of Europe's Self-Assessment guide to more clearly understand based on what factors levels are assigned:
+                            <Hyperlink NavigateUri="https://echinacareers.com/downloads/CEFR_assessment_grid_english.pdf"
+                                RequestNavigate="Hyperlink_RequestNavigate">
+                                CEFR Assessment Grid PDF
+                            </Hyperlink>
+                        </Paragraph>
+                        
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect11" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.8 Understanding Students at Different CEFR Levels
+                        </Paragraph>
+                        <Paragraph>
+                            The content and objectives of a course (and each lesson) should reflect students' progress in learning English. Two of the most common questions beginner teachers ask are: what should I teach? And how much do my students know already? Here is a brief description of the study time implied by the three broad CEFR levels:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>Basic:</Bold> Basic level students are those students who have a very limited knowledge of the language. They have only been exposed to the language for a brief period of time. They may have only been in the classroom for up to 120 hours.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>Independent:</Bold> Intermediate level students are those students who still have limited knowledge of the language but can communicate fully at a basic level. They have been in a longer learning process. They may have been in the classroom for up to 300 hours.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>Proficient:</Bold> Advanced level students are those students who now have knowledge of the language but can still improve certain skills and can always expand their vocabulary. They have been learning the language for a longer period of time. They may have only been in the classroom for up to 500 hours.
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part1sect12" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.1.9 The International English Language Testing System (IELTS)
+                        </Paragraph>
+                        <Paragraph>
+                            While the CEFR is a more widely used metric for labeling levels of foreign language attainment, the International English Language Testing System (IELTS) is also an important measuring tool. IELTS is testing system used to measure only the English language proficiency of non-native English speakers (NNES) and is primarily used for acceptance into programs, such as academic programs at universities, and for immigration to the United Kingdom, Australia, New Zealand, and Canada. While the TOEFL test is more commonly accepted in the United States for academic purposes, the IELTS is accepted by over 3,000 institutions across the United States.
+                        </Paragraph>
+                        <Paragraph>
+                            For information about how the IETLS score is calculated, see the following link from the IELTS official website:
+                            <Hyperlink NavigateUri="https://www.ielts.org/en-us/ielts-for-organisations/ielts-scoring-in-detail"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                https://www.ielts.org/en-us/ielts-for-organisations/ielts-scoring-in-detail
+                            </Hyperlink>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

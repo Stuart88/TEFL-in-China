@@ -9,7 +9,8 @@
         WindowStartupLocation="CenterOwner"
         WindowState="Maximized" 
         x:Name="loginWindow"
-        Title="eChinaCareers TEFL">
+        Title="eChinaCareers TEFL"
+        >
 
   
     

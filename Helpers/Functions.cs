@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using TEFL_App.DataLayer;
 using TEFL_App.Models;
@@ -191,14 +192,14 @@ namespace TEFL_App.Helpers
 
         public static void ScrollIntoViewByName(this Page page, string name, string scrollerName)
         {
-            var element = page.FindName(name);
-            var scroller = page.FindName(scrollerName);
+            var element = page.FindName(name) as RichTextBox;
+            var scroller = page.FindName(scrollerName) as ScrollViewer;
             
             if (element != null && scroller != null && scroller is ScrollViewer)
             {
-                var pos = (element as RichTextBox).TranslatePoint(new Point(0, 0), scroller as ScrollViewer);
+                var pos = (element).TransformToAncestor(scroller.Content as StackPanel).Transform(new Point(0, 0));
 
-                (scroller as ScrollViewer).ScrollToVerticalOffset(pos.Y);
+                (scroller).ScrollToVerticalOffset(pos.Y);
             }
 
         }
@@ -218,9 +219,16 @@ namespace TEFL_App.Helpers
 
         public static void ShowStudentProfile(TEFLProfile profile)
         {
-            Views.General.PopupWindow popUp = new Views.General.PopupWindow(profile.Name);
-            popUp.Content = new Views.Student.StudentProfile(profile);
-            popUp.Show();
+            try
+            {
+                Views.General.PopupWindow popUp = new Views.General.PopupWindow(profile.Name);
+                popUp.Content = new Views.Student.StudentProfile(profile);
+                popUp.Show();
+            }
+            catch(Exception e)
+            {
+                ShowErrorMessageDialog(e);
+            }
         }
         public static string ToStringCustom(this DateTime d)
         {

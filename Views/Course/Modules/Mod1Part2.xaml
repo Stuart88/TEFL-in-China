@@ -1,0 +1,485 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod1Part2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 1 - Part 2">
+
+    <Grid  x:Name="Mod1Chapter2Grid" Style="{StaticResource TEFLChapterGrid}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+                   Text="Module 1, Part 2: Language Teaching Theory and Method" Style="{StaticResource TEFLChapterTitle}"/>
+        
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod1part2sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.1 Overview
+                        </Paragraph>
+                        <Paragraph>
+                            There are many widely accepted approaches to language teaching. Chief among them is the Communicative Approach (CA), also known as Communicative Language Teaching (CLT). A consensus has been built over a century of study, debate and implementation. However, prior to recent decades seldom did language teaching professionals agree on which method was superior in any given setting. Most notably, while most professionals subscribe to the Communicative Approach, especially in the western world, the Grammar Translation Method is nearly as popular, and for better or worse slowly practitioners of the Grammar Translation Method are adopting the Communicative Approach or a hybrid of multiple methods.
+                        </Paragraph>
+                        <Paragraph>
+                            Teaching languages has been influenced by linguistics and psychology throughout history. Second Language Acquisition (SLA) research has been evolutionary and many great scholars have proposed wonderful ideas which were new and ideal at that time but have now fallen by the wayside. In this article we will learn about some of the methods proposed through time, and you will learn some of the fundamental points that can be used in the classroom today.
+                        </Paragraph>
+                        <Paragraph>
+                            Since the end of the 18th century, the definitive solution to successful EFL/ESL instruction has been discovered many times. There is always another tried-and-tested methodology from yet another expert theorist who may or may not have had first-hand experience learning a second language.
+                        </Paragraph>
+                        <Paragraph>
+                            Before the late nineteenth century, second-language instruction mirrored the so-called Classical Method of teaching Latin and Greek; lessons were based on mental exercises—repetition drills and out-of-context vocabulary drills as well as lots of reading and translations of ancient texts. Brown notes that languages were "not being taught primarily to learn oral/aural communication, but to learn for the sake of being ‘scholarly' or…for reading proficiency". Theories of second-language acquisition didn't start to pop up until the instructional objective became oral competence.
+                        </Paragraph>
+                        <Paragraph>
+                            We will now look at some of the most widely used met
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod1part2sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.2 Grammar-Translation
+                        </Paragraph>
+                        <Paragraph>
+                            From the turn of the nineteenth century until the late 1940s, The Grammar-Translation method was the method of choice. Despite its antiquity, or because of it, the grammar-translation method is still alive but disappearing in language classrooms throughout Europe, Asia, and even in the Americas.
+                        </Paragraph>
+                        <Paragraph>
+                            It is easy to teach; it requires no more than the ability to memorize lists of isolated vocabulary words; and it aims low in terms of oral communication and aural comprehension—no one teaching or learning a target language is required to speak, pronounce, or even understand the spoken language. Because the target language is taught in the students' native language, it is possible for students to have studied it for years without having been required to participate in the most elementary conversation. Indeed, the only real challenge confronting students and teachers in the grammar-translation classroom is a test.
+                        </Paragraph>
+                        <Paragraph>
+                            A typical one-hour class might begin with ten minutes of synchronized verb reviewing. This might be followed by the instructor's explanation of a particular grammatical feature of the target language. The instructor might then assign students a series of fill-in-the-blank exercises or sentence constructions that demonstrate the grammar point. Other features of the grammar-translation class include translations of literary passages from the target language into the native language, identifying antonyms and synonyms, drilling vocabulary words, memorizing vocabulary lists, creating sentences with the new vocabulary words, and writing compositions in the target language. Except for the repetition drills, most of the above work is written.
+                        </Paragraph>
+                        <Paragraph>
+                            One might wonder why this obviously antiquated method is still used. Aside from being easy for both teacher and student, some claim it is the most effective way to introduce literature in the target language. That is, in learning how to read in the target language, students are exposed to a variety of grammatical structures, thousands of vocabulary words in context, and they learn to translate across linguistic borders. It does not teach oral communicative skills, but that is not necessarily the scope of a language class.
+                        </Paragraph>
+                        <Paragraph>
+                            Most ESL instructors have witnessed the results of the grammar-translation method in students who have studied English as a foreign language in their native countries. They are often able to read and write English—sometimes better than native speakers—but they have had no experience listening to or speaking the language. In fact, ESL teachers face the challenge of helping students overcome deviations in pronunciation. Furthermore, grammar-translation students are accustomed to doing fill-in-the-blank exercises, learning grammar rules before applying them, memorizing lists of vocabulary words, and creating artificial sentences to prove their mastery of the vocabulary and grammar. When they are exposed to more creative methods of language instruction, they often find it difficult to perform.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.2a Summary of the Grammar-Translation Methodology
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>Classes are taught in L1 (native language)</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Memorizing lists of vocabulary</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>In depth grammar explanations</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Reading of difficult texts for translation</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Little or no emphasis on pronunciation</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Grammar rules for constructing sentences</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+
+                <RichTextBox x:Name="mod1part2sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.3 The Direct Method
+                        </Paragraph>
+                        <Paragraph>
+                            Second-language theorists maintain that the first real method of language teaching was the Direct Method, which was developed as a reaction against the monotony and ineffectiveness of grammar-translation classes.
+                        </Paragraph>
+                        <Paragraph>
+                            The Direct Method was developed by Charles Berlitz, a nineteenth-century linguist whose schools of language learning are famous throughout the world. He tried to imitate the naturalistic approach. Berlitz wanted to immerse students in the target language. He believed that one could learn a second language by imitating the way children learn their first language; that is, directly and without explanations of grammatical points and using only the target language. Therefore, grammar was taught inductively. The focus was on speaking and listening comprehension, not translation. For this reason, vocabulary was introduced in context and through demonstrations and pictures, and an emphasis was placed on correct usage and pronunciation. Students learned to write by taking dictation in the target language.
+                        </Paragraph>
+                        <Paragraph>
+                            A typical Direct Method class has few students. Students might first take turns reading aloud, preferably a dialogue or anecdotal passage. To test for understanding, the teacher would then ask questions in the target language and students would have to respond appropriately in the target language. Following the question-response session, the instructor might dictate the passage to the students three times. Students would then read the dictation back to the class.
+                        </Paragraph>
+                        <Paragraph>
+                            The Direct Method was popular in Europe and the United States, especially during the first quarter of the twentieth century. Nevertheless, its very intensity and necessarily small class sizes made the method impossible for public schools. In addition, it was considered a weak method because it was not supported by heavy-duty theories and it depended too much on the teachers' ability to teach, as well as their fluency in the target language.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.3a Summary of the Direct Method
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>Classes taught in target language - L2 (second or foreign language)</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Only everyday language taught</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Small intensive classes</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Grammar learned inductively</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>New language modelled and practiced</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Vocabulary is presented through demonstration, object and pictures</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Correct pronunciation and grammar taught</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect6" Style="{StaticResource TEFLChapterSectionText}" >
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.4 The Audiolingual Method
+                        </Paragraph>
+                        <Paragraph>
+                            The Audiolingual Method (ALM) was first known as the Army Method because it had been adopted by the military during the Second World War. ALM is not unlike the Direct Method in that its purpose is to teach students to communicate in the target language.
+                        </Paragraph>
+                        <Paragraph>
+                            The Audiolingual Method is a purely behavioristic approach to language teaching. It is based on drill work (repetition) that aims to form good language "habits", and it makes use of extensive conversation practice in the target language. Students enter the target-language classroom without any knowledge and they receive various linguistic stimuli and respond to them. If they respond correctly, they enjoy a reward and repeat the response, which promotes good habit formation. If they respond incorrectly, they receive no reward which represses the incorrect response. The objective is to become fluent in the language.
+                        </Paragraph>
+                        <Paragraph>
+                            Its theoretical support also comes from post-war structural linguists. Structural linguists analyze how language is formed as it is "currently spoken in the speech community" (Stafford paragraph 3). Language was seen as a set of abstract linguistic units that made up a whole language system. The realization that all languages are complex, unique systems allowed linguists to understand the multifaceted, singular structure of English, without comparing it to Latin. This led to new thinking in terms of how language should be taught. Individual structures should be presented one at a time and practiced via repetition drills. Grammar explanations should be minimal or non-existent, as it was expected that students would learn grammatical structures by inductive analogy.
+                        </Paragraph>
+                        <Paragraph>
+                            A typical ALM class consists of ten-minute drill periods interspersed with activities such as the reading and memorization of a dialogue. The instructor then examines a grammar point by contrasting it with a similar point in the students' native language. (The teacher speaks in the native language, but discourages its use among students.) This is followed by more drills—repetition drills, substitution drills. Target language vocabulary is introduced and learned in context, and teachers make abundant use of visual aids. Like its predecessors, ALM focuses on the surface forms of language and rote learning.
+                        </Paragraph>
+                        <Paragraph>
+                            While some students, especially those who could memorize dialogues, did well in the classroom, they still were not able to use the target language with any proficiency.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect7" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.4a Summary of the Audiolingual Method
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>
+                                    New material is presented in a dialogue
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Grammar structures presented one at a time
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Structures presented using repetitive drills
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Little or no grammar explanation
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Heavy emphasis on pronunciation
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Use of L1 severely limited
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Dependent on memory, body language and over-learning
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Heavy reliance on CDs, language labs and visuals
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect8" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.5 Suggestopedia
+                        </Paragraph>
+                        <Paragraph>
+                            This method was developed by Georgi Lozanov in 1979. It works on the assumption that when the mind and body are relaxed, the brain absorbs knowledge without effort.
+                        </Paragraph>
+                        <Paragraph>
+                            The Suggestopedia classroom uses music—particularly Baroque music with its ideal sixty beats per minute—to help soothe students as teachers employ various language-learning activities. In this classroom, even adult learners are encouraged to behave as pliable, suggestible children, and to regard their teacher as a super mentor parental figure. Imagery, music, suggestion, relaxation, comfortable armchairs, and dim lighting are the essential ingredients of the Suggestopedia classroom. With soft music playing in the background, students role-play and learn vocabulary under the guidance of the all-powerful teacher.
+                        </Paragraph>
+                        <Paragraph>
+                            In a typical lesson—or concert—the teacher plays a piece of music, preferably Baroque, but any emotionally charged music will do. The teacher then reads a passage from a text in the target language, trying to harmonise with the music while maintaining a slow, rhythmic pace. Students follow along with their own texts and translation. Students then return their translations to the teacher, close their eyes and settle back to listen to a replay of the music and reading performance.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect9" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.5a Summary of Suggestopedia
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>Uses the power of "suggestion"</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Use of Baroque music in the background for relaxation</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Comfortable "classrooms" that were similar to a living room</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Students could choose a name in the given language</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect10" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.6 Total Physical Response (TPR)
+                        </Paragraph>
+                        <Paragraph>
+                            Total Physical Response goes back to the Direct Method of the mid-nineteenth century. James Asher reasoned that since children in the process of acquiring their native language seem to listen more than they speak and often react physically to speech, second-language learners might learn a target language in the same way. In addition, he felt that language classes were too stressful for learners, and he wanted to create an atmosphere in which learners didn't have to do anything other than respond to imperatives such as "Go to the door!" or "Walk slowly to the chalkboard!"
+                        </Paragraph>
+                        <Paragraph>
+                            Students could absorb other linguistic forms, such as questions by watching and imitating the teacher shrug his/her shoulders, look confused, and ask, “Where is the book?" In these ways, students magically begin asking questions and creating their own commands. In theory, this process guides them to fluency in the target language.
+                        </Paragraph>
+                        <Paragraph>
+                            TPR can be an effective methodology in small doses when language learners have no knowledge of the target language or are children. It has the advantage of getting students out of their seats, which alleviates boredom and allows students to associate specific actions with specific language.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect11" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.6a Summary of Total Physical Response (TPR)
+                        </Paragraph>
+                        <List>
+                            <ListItem>
+                                <Paragraph>Based upon the way children learn their mother tongue</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Language-body conversations</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Listening skills are developed first and speech emerges later</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Very active involvement and participation from students</Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>Great for young learners</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect12" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.7 Communicative Language Teaching
+                        </Paragraph>
+                        <Paragraph>
+                            Communicative Language Teaching (CLT) (also known as the Communicative Approach (CA) or was developed during the 1970s by the Council of Europe. This method is a more recent phenomenon that comprises all sorts of techniques from different methods.
+                        </Paragraph>
+                        <Paragraph>
+                            Communicative Language Teaching is still the method of choice. CLT does not Teach about language; rather, it teaches language. It is often associated with the Functional-Notional Approach; that is, the emphasis is on functions such as time, location, travel and measurements. In short, it seeks to recreate real-life social and functional situations in the classroom to guide students toward communicative competence.
+                        </Paragraph>
+                        <Paragraph>
+                            The linguistic accuracy that was deemed so essential in Grammar-Translation, the Direct Method, and other approaches is not as important in the Communicative classroom. Teachers avoid upsetting their students by requiring them to identify or recognize nouns, verbs, or direct objects; instead, they guide them to second language proficiency by employing “the PPP" lesson shape — presentation, practice, and production. Teachers present the target language via everyday situations; they give students time to practice the language via structured situational dialogues; and, finally, they step aside for students' production of the language—the phase in which they are able to function independently in the target language. Grammar has recently made a comeback in CLT and teachers now incorporate grammar in their lessons.
+                        </Paragraph>
+                        <Paragraph>
+                            Students work in pairs or small groups. The student is the centre of the class and the teacher is a guide or a facilitator.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect13" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.8 Multiple Intelligences
+                        </Paragraph>
+                        <Paragraph>
+                            The theory of multiple intelligences (MI) broadens the traditional view of intelligence as solely composed of verbal/linguistic and logical/mathematical abilities. MI theory maintains that all humans possess at least eight different intelligences that represent a variety of ways to learn and demonstrate understanding. This section outlines the basic tenets of MI theory and describes how it has been applied in teaching English as a Second Language (ESL) to adults.
+                        </Paragraph>
+                        <Paragraph>
+                            Intelligence has traditionally been defined in terms of intelligence quotient (IQ), which measures a narrow range of verbal/linguistic and logical/mathematical abilities. Howard Gardner (1993) argues that humans possess a number of distinct intelligences that manifest themselves in different skills and abilities. All human beings apply these intelligences to solve problems, invent processes, and create things. Intelligence, according to MI theory, is being able to apply one or more of the intelligences in ways that are valued by a community or culture. The current MI model outlines eight intelligences, although Gardner (1999) continues to explore additional possibilities.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Linguistic Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to use language effectively, both orally and in writing.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Logical/Mathematical Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to use numbers effectively and reason well.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Visual/Spatial Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to recognize form, space, color, line, and shape, and to graphically represent visual and spatial ideas.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Bodily/Kinesthetic Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to use the body to express ideas and feelings, and to solve problems.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Musical Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to recognize rhythm, pitch, and melody.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Naturalist Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to recognize and classify plants, minerals, and animals.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Interpersonal Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to understand another person's feelings, motivations, and intentions, and to respond effectively.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Intrapersonal Intelligence</Bold>
+                            <LineBreak/>
+                            The ability to know about and understand oneself, and recognize one's similarities to and differences from others.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod1part2sect14" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            1.2.9 Conclusion
+                        </Paragraph>
+                        <Paragraph>
+                            Teaching English as a second language or a foreign language has come a long way since rote learning. Still, it has a long way to go. The trend since the late 1990s has been toward eclecticism, and this is probably the healthiest approach for it accommodates many styles of learning. Furthermore, an eclectic approach allows teachers to glean the effective elements from many methods that really work in the classroom. In any CLT lesson you may find elements from all the approaches described above:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Teachers may use music in the classroom to lower students' anxiety.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>They may use pronunciation drills or vocabulary drills</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>They may use their students L1 to compare grammatical structures or for a quick vocabulary translation/explanation</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>They may use elements physical actions to reinforce vocabulary or structures</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>They may choose to focus on a specific grammar point</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            However, in all CLT lessons, the aim will be to enable students to actually use and produce language and to improve communicative competence.
+                        </Paragraph>
+                        <Paragraph>
+                            The eclectic approach takes the best that theorists have to offer and incorporates it with techniques that work. Language learning is a difficult business. Students' attitudes about school and authority, their home situations, literacy, self-confidence, academic level, identification with their native language and country are only a few factors that affect their ability to learn or acquire a new language. In the end, teachers face a tremendous challenge in trying to give their students the tools with which to function on all levels in the target language. They shouldn't therefore be shy about trying out different ideas and experimenting with new techniques.
+                        </Paragraph>
+                        <Paragraph>
+                            Teachers who use MI theory inform their curriculum development team that they gain a deeper understanding of students' learning preferences and a greater appreciation of their strengths. Students are likely to become more engaged in learning as they use learning modes that match their intelligence strengths. In addition, students' reflection on their learning broadens their definitions of effective and acceptable teaching and learning practices. Increased engagement and success in learning stimulates teachers to raise their expectations, initiating a powerful expectation-response cycle that can lead to greater achievement levels for a student. View this video for more on MI:
+                            <Hyperlink NavigateUri="https://youtu.be/l2QtSbP4FRg" RequestNavigate="Hyperlink_RequestNavigate">
+                                https://youtu.be/l2QtSbP4FRg
+                            </Hyperlink>
+                        </Paragraph>
+                       
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

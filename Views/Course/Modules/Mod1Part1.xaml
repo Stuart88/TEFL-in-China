@@ -6,21 +6,23 @@
       xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Mod1Part1">
+      Title="Module 1 - Part 1">
 
     <Grid  x:Name="Mod1Chapter1Grid" Style="{StaticResource TEFLChapterGrid}" >
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer x:Name="ScrollArea" Grid.Row="0" Grid.Column="0" >
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 1, Part 1: Introduction" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
             <StackPanel Style="{StaticResource TEFLChapterPageArea}">
 
-                <TextBlock Text="Module 1, Part 1: Introduction" Style="{StaticResource TEFLChapterTitle}"/>
 
 
                 <RichTextBox x:Name="mod1part1sect1" Style="{StaticResource TEFLChapterSectionText}">
@@ -41,7 +43,7 @@
                             Contemporaneously, Martin and MC had engaged with the education industries in their respective new homes in East Asia for many years, and they eventually crossed paths in China. Keeping contact after their reunion, they consulted with one another regularly on how to be an effective teacher and education professional in East Asia. That drive for improving their craft brought them to create this educational organization and the TEFL courses offered.
                         </Paragraph>
 
-                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
                             Foreword by Martin Bragalone
                         </Paragraph>
 
@@ -97,8 +99,8 @@
                             If you need help with Step 5, please tell us and we will happily help introduce you to our ever-expanding network of over 1,000 school partners from China and Vietnam to the US and Australia.
                         </Paragraph>
 
-                        <Paragraph Style="{StaticResource TEFLChapterSectionTitle}">
-                            Foreword by Martin Bragalone
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Foreword by MC Miller
                         </Paragraph>
                         <Paragraph>
                             I have always been an avid learner, curious about the nature of the world and my place in it. Early on it became apparent to me that through both top-down as well as bottom-up, "grassroots”, forces, the world was becoming increasingly interconnected. It amazed me to witness the birth of the internet as a young man and to observe as the nations of the world began to come online with internet access and, perhaps more importantly, they brought their economies online. Many reformed their laws and institutions, for better or worse, to reflect the changing circumstances they found themselves in.
@@ -165,13 +167,17 @@
                                 Access to an internet connection and a standard, modern web browser are the only necessary requirements of the course. 
                                 If you are using an old or outdated browser, such as Internet Explorer, you may need to update. We recommend
                             </Run>
-                            <Hyperlink NavigateUri="https://www.google.com/chrome/" RequestNavigate="Hyperlink_RequestNavigate">
+                            <Hyperlink x:Name="GoogleChromeLink" 
+                                       NavigateUri="https://www.google.com/chrome/" 
+                                       RequestNavigate="Hyperlink_RequestNavigate" >
                                 Google Chrome.
                             </Hyperlink>
-                            
+
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
+
+                
 
                 <RichTextBox x:Name="mod1part1sect4" Style="{StaticResource TEFLChapterSectionText}">
                     <RichTextBox.Effect>
@@ -218,7 +224,7 @@
                         <Paragraph >
                             Each module will conclude with a non-graded sell-assessment test. You can take the tests as many times as you want. 
                             Your results will be stored on your
-                            <Button IsEnabled="True" x:Name="ProfilePageLink" Click="ProfilePageLink_Click">Profile Page</Button>
+                            <Hyperlink x:Name="ProfilePageLink" Click="ProfilePageLink_Click">Profile Page</Hyperlink>
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
@@ -307,7 +313,7 @@
                         </Paragraph>
                         <Paragraph>
                             You will recieve a digital certificate to your email inbox upon completion of the course. You will also be assigned a TEFL certificate code which can be accessed and verified via
-                            <Hyperlink NavigateUri="???">eChinaCareers TEFL Verify</Hyperlink>. Potential employers can also use this page to verify the validity of your qualification.
+                            <Hyperlink NavigateUri="https://www.echinacareers.com/" RequestNavigate="Hyperlink_RequestNavigate">eChinaCareers TEFL Verify</Hyperlink>. Potential employers can also use this page to verify the validity of your qualification.
                         </Paragraph>
                         <Paragraph>
                             If you are based in the United States or Canada you will also automatically receive a physical certification shipped to the address in your Teacher Bay profile. If you would like us to post to a different address, please contact us prior to your conclusion of the course.
