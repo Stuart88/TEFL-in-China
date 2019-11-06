@@ -1,0 +1,291 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod3Part1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 3 - Part 1">
+
+    <Grid  x:Name="Mod3Chapter1Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 3, Part 1: Teaching Vocabulary" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod3part1sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.1.1 Practical Approach to the Basics of Teaching Vocabulary
+                        </Paragraph>
+                        <Paragraph>
+                            Teaching vocabulary (lexis) is essential in the classroom. When you teach English, it is common for students to come to class with new words, expressions or phrases that they have seen in manuals, at the office, in an email, heard on the radio or on TV. The more vocabulary that our students know, the easier it will be for them to be able to communicate.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>TEACHING TIP:</Bold> Students need to know at least 4000 words by the time they reach a high-intermediate level.
+                        </Paragraph>
+                        <Paragraph>
+                            When teaching new vocabulary it is essential that you present the vocabulary within a context, rather than asking students to remember random lists of words. Teach vocabulary based on categories (e.g. - clothing items, parts of the body, fruit, vegetables, etc…), and remember that students need to be able to remember whole expressions or phrases rather than just isolated words.
+                        </Paragraph>
+                        <Paragraph>
+                            One common mistake teachers make is that they tend to present too many words in one lesson and expect students to go home and memories them. We should present no more than about 10 NEW words per session as is difficult to retain any more. Memorizing endless lists of vocabulary out of context is not a communicative activity, and should therefore be avoided.
+                        </Paragraph>
+                        <Paragraph>
+                            Getting students to read texts or listen to recordings in class gives them new language input, and enables students to see exactly how these words are used in specific contexts.
+                        </Paragraph>
+                        <Paragraph>
+                            Then, give your students a reason to use this new vocabulary immediately. Design speaking or writing tasks that require the use of the new words
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod3part1sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.1.2 The Scope of Vocabulary Teaching Stages and Methods
+                        </Paragraph>
+                        <Paragraph>
+                            We can usefully think of teaching vocabulary in different stages:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Presenting new vocabulary for the first time - helping students to understand the new word</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Checking that students have understood the meaning of the new words</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Techniques for helping students expand their vocabulary</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Getting students to use the new words in a communicative context</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Periodically reviewing/revising vocabulary - helping students to remember new vocabulary</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            The following are some practical ideas on how to teach vocabulary:
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Elicitation</Bold>
+                            <LineBreak/>
+                            Ask students about a particular word before you show/explain the meaning. By eliciting the meaning, we can have a student-centred classroom and the focus will be on the student and not the teacher. Students may or may not know the meaning, but if one student knows the meaning, he or she can then present it to the class.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Mind Map</Bold>
+                            <LineBreak/>
+                            One way of eliciting words is by putting a key word in a circle then getting students to brainstorm related words.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Flash Cards/Visual Aids</Bold>
+                            <LineBreak/>
+                            The use of visual aids is one of the best ways to teach a word. Showing a picture of a "football" is much easier to get the meaning across than trying to explain it. 80 per cent of our students are visual learners, so use as many visual aids as possible.
+                        </Paragraph>
+                        <Paragraph>
+                            A teacher should have their own flash cards. They can be purchased from a book store, but they can also be made from magazines, newspapers, manuals, old textbooks, etc.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Miming</Bold>
+                            <LineBreak/>
+                            We can mime the meaning of words to our students to give a visual cue. It is much easier to mime the verb "swim" than to try to explain the meaning in words. It would take a long time for you to explain and the class would become very teacher-centered. Miming comes from Total Physical Response (TPR) methodology, and is ideal in particular when working with young learners.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Word Definition/Translation</Bold>
+                            <LineBreak/>
+                            Sometimes it is easier and quicker to just give students the meaning of the word, rather than eliciting or acting it out. If you know how to say it in your students' language, do so. Many words in English have different meanings and uses depending on the context. Present one or two meanings at a time rather than multiple meanings as this may confuse students.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Matching a Word with its Definition</Bold>
+                            <LineBreak/>
+                            If you have a number of words you are presenting for the first time, you could mix up the definitions for them. Students may already know some of them or be able to guess, and through a process of elimination, be able to work out the definitions of the others. This is made easier if they have already seen the words in a context, for example in a text or a listening.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Fill in the blank/gap</Bold>
+                            <LineBreak/>
+                            A very simple activity that checks vocabulary attainment by filling in missing information. We can provide our students an incomplete sentence such as:
+                        </Paragraph>
+                        <Paragraph>
+                            Ex.: "Do you wear it on your head?" (No) "Do you wear it on your foot?" (Yes).
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Word Roots and Affixes</Bold>
+                            <LineBreak/>
+                            We can use the root of the word to show the meaning; when students understand/know the root, they can guess the meaning of unknown words. For example, "Bio" is a word root meaning "life"; students may be able to guess that "biology" means "the study of life". Another example is "Geo" meaning "earth" – words that begin with geo – eg, "geology" or "geometry". This technique helps students learn those words quickly.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Word Circles</Bold>
+                            <LineBreak/>
+                            Students are given a word and they have to think of words that go with it. For example 'book' could be bookworm, book club, book case etc. These are called compound nouns or collocations.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Language Comparison</Bold>
+                            <LineBreak/>
+                            Some of the Latin or Germanic languages have many of the same roots as English. It can be useful, if you are able to, to point out these similarities. For example, in Spanish, almost without exception, words ending in –cion or –sion have the same meaning as English words ending in -tion or –sion.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Roleplay</Bold>
+                            <LineBreak/>
+                            Put your students in small groups. Give each group 5 of the new words learnt that day. Together they need to design a roleplay where all of the words are used in a reasonable context.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Discussions</Bold>
+                            <LineBreak/>
+                            Create a set of discussion questions which promote the use of the new vocabulary. Put students in small groups to discuss the questions.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Ordering/Pyramid Activities</Bold>
+                            <LineBreak/>
+                            For some categories of words, it may be possible to ask students to list in order which are the most important for them or their favorite items. Eg, domestic electrical appliances. They would then repeat the exercise with a partner and have to reach an agreement on the order of items. The pair would then join with another pair and repeat the exercise. This is known as a Pyramid Activity.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Desert Island</Bold>
+                            <LineBreak/>
+                            Similar to the ordering activity, but ss would be asked to decide as a group on 5 items that they would consider essential on a desert island.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Writing</Bold>
+                            <LineBreak/>
+                            Generally, writing activities can be used to reinforce whatever students have learned in class that day. If it is vocabulary, they could be asked to write a short story incorporating the new vocab, write down the dialogue created by the roleplay, etc.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Pictionary</Bold>
+                            <LineBreak/>
+                            Put your students into teams. You then give them a word that they have to draw on the board. The other team members have to guess what the word is.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Back to the board/Hot Seat</Bold>
+                            <LineBreak/>
+                            An old favorite which is always popular. One member of the team sits with their back to the board; the teacher then writes a word on the board. The other members have to explain the word without saying what it is.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>A – Z</Bold>
+                            <LineBreak/>
+                            Students have to think of a word starting with each letter of the alphabet starting with 'A'. It can be used in categories such as words relating to clothes.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Hangman</Bold>
+                            <LineBreak/>
+                            Great for reviewing vocabulary. Students guess the letters that go into a word while the teacher draws one part of the hangman for everyone they get wrong.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Charades</Bold>
+                            <LineBreak/>
+                            Not only to use at Christmas! Students have to say whether it is a book, film or song and how many syllables, then act it out and the others have to guess what it is.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Provide an example</Bold>
+                            <LineBreak/>
+                            Ask students for a sample sentence using the word, but make sure that it is in their own context.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Identifying the word</Bold>
+                            <LineBreak/>
+                            Very common with young learners; you can present your students with two words and the student needs to identify the one you mentioned or they heard.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Concept Check Questions</Bold>
+                            <LineBreak/>
+                            If you ask a student "do you understand?" They will probably say "yes" even if they don´t. A way of avoiding this is to use Concept Check Questions. Concept Check Questions are generally yes/no questions, to ensure that students have understood. For example, if you want to check they understand the word 'shoe' you could ask:
+                        </Paragraph>
+                        <Paragraph>
+                            Ex.: "Do you wear it on your head?" (No) "Do you wear it on your foot?" (Yes).
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part1sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.1.3 Using Dictionaries
+                        </Paragraph>
+                        <Paragraph>
+                            The greatest single resource that students have at their disposal, whether it is in book form, electronic, online, or on CD, is a dictionary. However, these are sometimes neglected despite their wealth of information and part of teaching our students to be autonomous is to ensure that they know how (and when) to use dictionaries.
+                        </Paragraph>
+                        <Paragraph>
+                            Reference dictionaries are the most widely used. In these one can look up a word to see what it means, how it is used, and the way it is spelt and pronounced.
+                        </Paragraph>
+                        <Paragraph>
+                            Production dictionaries, on the other hand, are designed for students to use the other way around, starting with a meaning they wish to express and looking for the word that expresses it. For example, if the student wishes to express the idea of someone secretly listening to someone else while standing near him, perhaps on the other side of a door, a native speaker would immediately choose the word "eavesdrop" to describe the situation. The foreign student might find this in a bilingual dictionary, but would have more trouble with a reference dictionary since, not knowing the word in the first place, he or she would not be able to look it up. In a production dictionary, students look for a general word that they already know which is similar. In the case of "eavesdrop", for example, that word might be "listen". The student opens the production dictionary, finds the entry, and by going down the column, they come across the word which they can see, through its definitions and the examples given.
+                        </Paragraph>
+                        <Paragraph>
+                            Many teachers are frustrated by student's overuse of dictionaries, especially electronic dictionaries. Students tend to want to check the meanings of words at every stage of the lesson, therefore not giving their full attention when the teacher or other students are in the middle of saying something.
+                        </Paragraph>
+                        <Paragraph>
+                            We need to make it clear when dictionary use is appropriate and acceptable, and when it is not. They need to know that if they use their dictionaries when they should be listening, they are losing the benefit of hearing natural spoken English; and if they are reading they need to understand how important it is to read for gist (understanding) before they reach for their dictionaries to check for the meaning of words they are unfamiliar with.
+                        </Paragraph>
+                        <Paragraph>
+                            We should, however, remain sympathetic to the student's desire to understand every word. One way to do this is to bargain with the students when they can and can't use dictionaries. This, together with our use of dictionary activities, can ensure successful and appropriate dictionary use in our lessons.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+
+                <RichTextBox x:Name="mod3part1sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.1.3a Teaching Dictionary Skills
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    For low level students, you could give them some words written on cards. They then have to focus on the words at the top of the pages of the dictionaries and put the cards in the correct page of the dictionaries.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    An interesting activity to get the 'feel' of the relative numbers of words each section of a dictionary has is to shout out a letter. Students then have to just hold those pages from the dictionary with words for that letter. It is interesting to see that 'Q', for example, has a lot less words than 'S'.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    A popular classroom activity is Call My Bluff. The class is divided into teams. One team chooses the most difficult word they can find in the dictionary and writes the definition on a piece of paper. The other teams write what they think will be the definition on their pieces of paper. Each team has to decide which definition is correct. Of course, the only team that knows the real answer is the one with the dictionary.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    When working on phrasal verbs, students can be asked to find all the phrasal verbs that go with, for example, come. You will be surprised how many there are.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Any good dictionary will have phonemic symbols next to the words. Students can be asked to write the phonemic spelling of the word on a piece of paper; it is then passed to the next pair who then has to try to work out what the real word is.
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

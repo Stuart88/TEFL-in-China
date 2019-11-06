@@ -1,0 +1,282 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod3Part3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 3 - Part 3">
+
+    <Grid  x:Name="Mod3Chapter3Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 3, Part 3: Teaching Reading" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod3part3sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.3.1 Reading Skills Overview
+                        </Paragraph>
+                        <Paragraph>
+                            When we read in our native language, we automatically apply certain skills that perhaps, we are completely unaware of. We have a pretty good idea of the content of a text, before even reading the first word, based on the text genre and our existing knowledge and experience of the world. However, students of a new language tend to forget their native reading skills and think that they must understand every word of a text, line by line, in order to get the meaning. This can lead to reading becoming a frustrating experience, as it involves asking someone or using a dictionary to look up every other word.
+                        </Paragraph>
+                        <Paragraph>
+                            Reading skills help students to get the most out of reading in another language. It follows that if we are going help our students improve their reading skills we need to help them to develop a range of strategies.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod3part3sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.3.2 Reading Approaches and Skills
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Top-Down Approach
+                        </Paragraph>
+                        <Paragraph>
+                            Using this approach, students won't worry about trying to understand every single word of the text. They will try to reach an overall understanding, based on previous knowledge and using any clues available. These could be the text genre (is it a magazine article? a novel? a research paper?); any titles, headers, pictures, diagrams, captions, etc. They will also look at the structure of the text to help them (how are the paragraphs divided? Is it a list?). This approach is related to skimming.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Bottom-Up
+                        </Paragraph>
+                        <Paragraph>
+                            This is more related to scanning. It focuses on a specific group of words to get the meaning. For example, in the above recipe, you may look at the specific ingredients to work out exactly what the dish is, or if you are allergic to anything. From the above examples, it is clear that we can use both a top-down and bottomup approach in any particular reading.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Skimming
+                        </Paragraph>
+                        <Paragraph>
+                            Skimming involves reading a text quickly to get a general idea of the main topic. Often, you don't need to skim a text at all, as the main topic may be clear from the title/headline or an accompanying photograph. You may still, however, want to skim it to see whether it is sufficiently interesting for you to read in depth.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Scanning
+                        </Paragraph>
+                        <Paragraph>
+                            This involves reading quickly to find specific information such as a date or a number. After scanning, you may also wish to read it in more depth. This, however, may not be true in the case of reading a timetable to find out when a train departs, or reading a menu to find out whether they have vegetarian.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Predicting and Previewing
+                        </Paragraph>
+                        <Paragraph>
+                            It is important that learners develop the ability to predict what a text might be about either from the genre (type of magazine / technical book), from the title (newspaper headline/book title) or from accompanying photographs or captions, for example. This can help them to approach a text from the right direction and give them an idea of the structure and content of the text.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Guessing from context
+                        </Paragraph>
+                        <Paragraph>
+                            Constantly turning to a dictionary to look up unknown words takes time and can be frustrating. We need to teach our learners, therefore, to practice the ability to guess what a word or phrase means by looking for clues elsewhere in the text. These could be context clues or linguistic clues.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Paraphrasing
+                        </Paragraph>
+                        <Paragraph>
+                            Learners can practice re-telling in their own words what the general meaning of the text is. This is a good method to check that learners have understood, although it must be remembered that this also involves a good level of production (writing) skills.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part3sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.3.3 Extensive Reading Tasks
+                        </Paragraph>
+                        <Paragraph>
+                            Students have their own likes and interests so, because with extensive reading they essentially choose their own texts, it is unlikely that students will be reading the same texts as each other. Because of this, we could encourage students to report on their reading in a number of ways:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They could present a 'book report' to the class in which they tell their classmates about books they have enjoyed or found to be a complete waste of time. Their classmates should be encouraged to ask questions or comment at this time.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Not all students read at the same pace or are as comfortable speaking in front of their classmates, so we could ask them to write a weekly reading diary or learning journal.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They could write book reviews.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They could have reading charts to fill in where they record the title, author, and overall rating of the book.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students could write questions for an oral interview with their partner about the books that they are reading.</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod3part3sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.3.4 Intensive Reading Tasks
+                        </Paragraph>
+                        <Paragraph>
+                            Students find that tasks that allow them to bring in their own emotion and knowledge (also known as "personalization") are far more engaging than just posing technical comprehension or language questions. We need to engage students by allowing them to voice their opinions and feelings about the reading texts.
+                        </Paragraph>
+                        <Paragraph>
+                            Another way of classifying Intensive Reading tasks is into 'pre-reading', 'while reading' and 'post-reading'. It should be remembered that, whenever possible, reading tasks should be communicative - ask students to work in pairs or groups as much as possible.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Pre-Reading Tasks
+                        </Paragraph>
+                        <Paragraph>
+                            These generally fall into the top-down category. It is important for learners to have an idea of what they are likely to find in a text before they read it; therefore, these tend to be prediction activities. Here are some ideas:</Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Before asking students to read, we may brainstorm the subject of the text.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Students could predict what they are likely to find in a text (based on a heading, title or even just the topic) and write down some key words that they think they might come up.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Get students to guess/predict the story from headings, random words or pictures.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    The teacher could take some key words out of the text and give them to the students. They then have to discuss what the text might be about and what information might be in the text.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Give them the heading or topic of the reading. Ask them to brainstorm together make a list under the headings: Things I Know (about this topic) and Questions I Would Like to Ask. Then, when they read the text they can see how many of their questions are answered. Although they may not get all the information, it will contribute to them reading with more interest.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Write random sentences from the text on the board and ask students to guess the correct order. When they actually read the text, they can check their answers.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Pre-teach some of the key words that you think they will definitely need in order to understand the text. See the section on teaching vocabulary for more ideas on working with new words.
+                                </Paragraph>
+                            </ListItem>
+                          </List>
+                        <Paragraph>
+                            Some classroom materials present fictitious stories. Stories often convey significant principles of life and can lead to very engaging class discussion. In this case, the teacher can follow up the stories with ways to relate them to the students' personal lives. When the language can be applied to the actual lives of the students, it becomes more real and thus more easily learned.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            While-Reading Tasks
+                        </Paragraph>
+                        <Paragraph>
+                            Reading sequences require more than one reading skill, so we may start by asking students to read for gist (overall understanding) and then have them re-read the text for more detailed comprehension or language analysis.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>TEACHING TIP:</Bold> Remember to set a time limit, and bring the students' attention to the questions before they read – this gives them a purpose for reading. Reading should be done individually, but as a general rule, ask students to compare their answers, before conducting a brief feedback session after each set of tasks.
+                        </Paragraph>
+                        <Paragraph>
+                            Gist tasks should be limited to 2-4 questions to do with overall understanding of the text. Some examples of "gist" tasks (first reading) could be:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Simple open questions or True/False questions related to the overall opinion of the author.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Multiple Choice questions on key points in the text.</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Post-Reading Tasks
+                        </Paragraph>
+                        <Paragraph>
+                            These are usually more communicative, often involving discussions about the students' opinions of the topic of the text.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>General questions on agreement or disagreement with the opinion of the author, or extension questions asking for students' opinions on the general topic of the text. For example, after a reading about the death penalty.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>If there are a number of characters in the text, students can be asked to act out a role-play.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Retelling the story. One option would be to ask the students to change an aspect of the story, for example telling it from the point of view of one of the characters or changing the tense to the past.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students can be asked to continue the story. This could be done orally first and then as a writing task, either in class or for homework.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students could be asked to reconstruct/write a summary of the text. This could also be done orally or as a written task.</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part3sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.3.5 The Role of the Teacher in Intensive Reading Lessons
+                        </Paragraph>
+                        <Paragraph>
+                            There are different roles we need to adopt when asking students to read intensively, but first, we need to work to create interest in the topics and tasks in order to get students to read enthusiastically in class.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Organizer
+                        </Paragraph>
+                        <Paragraph>
+                            We need to give our students a clear purpose for reading by providing them with a set of tasks, and a time limit in which to complete each task. If we wish to avoid our students trying to understand every single word, it is very important to set a brief, but "do-able", time limit for a specific task.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Observer
+                        </Paragraph>
+                        <Paragraph>
+                            By passively observing we restrain ourselves from interfering in students' reading by giving them their own space. We can gain valuable information about a student's progress from how well they are doing individually and collectively.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Feedback Organizer
+                        </Paragraph>
+                        <Paragraph>
+                            After each task, the teacher should conduct a brief feedback session. Organizing our students into pairs or small groups to compare their answers after a completed task will encourage them to pool their knowledge and responsibility for answers. This is also creates opportunities for verbal communication between the students. When students give answers, it is important that they always say where in the text they found the information. This tells us of any comprehension problems that the student might have; it also provokes a detailed study of the text, which will come in handy the next time they deal with a similar reading passage.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Prompter
+                        </Paragraph>
+                        <Paragraph>
+                            After students have read a text, they can be prompted into noticing language features contained in it. We can direct them to certain features of text construction, clarify ambiguities, and make them aware of issues of text structures that they may not be familiar with.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

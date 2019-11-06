@@ -1,0 +1,186 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod2Part2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 2 - Part 2">
+
+    <Grid  x:Name="Mod2Chapter2Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 2, Part 2: Lesson Planning" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod2part2sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.1 Practical Notes on Lesson Planning
+                        </Paragraph>
+                        <Paragraph>
+                            Planning is an essential part of our daily lives. We have plans for almost everything we do in life. When we wake up in the morning the first thing that we think about is what we plan to do for the rest of the day. Schools teach their students to plan through assignments and tasks. Travelling, shopping and cooking are some of the things that we do in our daily lives and they all must be planned. Making your favorite dish needs preparation (planning) or following instructions. Our jobs, duties and chores are all planned.
+                        </Paragraph>
+                        <Paragraph>
+                            Lesson planning is compulsory in most academic institutions around the world. Local education authorities also require schools to keep records of all plans written by teachers in preparation for class. Formats vary from country to country and also from institution to institution. Some academic institutions are very strict on having a lesson plan before the session starts. Other academic institutions demand that you turn in your lesson plans for the week, month or academic period. Many have formats for monthly, weekly or daily planners.
+                        </Paragraph>
+                        <Paragraph>
+                            A lesson plan contains a lot of information: Information about the students' level, teacher's objective for the class, students' objective for the class, materials needed, page numbers, names of websites or file names on a memory stick and of course, all the steps to be taken to perform the various activities.
+                        </Paragraph>
+                        <Paragraph>
+                            A lesson plan should be detailed enough that you don't forget anything, but not too dense – it's no good having a plan if you can't read it clearly and quickly in class. Some teachers create very detailed lesson plans including the exact words they are going to use, others write a simple series of steps, some teachers draw up their complete whiteboard layouts so that they know exactly how their board is going to look.
+                        </Paragraph>
+                        <Paragraph>
+                            At the top of the lesson plan template, you'll find a number of simple headings such as: Name, Date, Level, Objective, Length and Age Group. Train yourself to fill these out diligently, before you begin planning
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod2part2sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.2 Stages of a Lesson Plan
+                        </Paragraph>
+                        <Paragraph>
+                            There are approximately six stages in a typical EFL lesson; each has an important function.
+                        </Paragraph>
+                        <List MarkerStyle="Decimal">
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Warm-up / review - This stage is intended to welcome the students, lower the students' affective filters, allow some time for late arrivals, and focus the students on speaking English</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Introduction - Here, the objective of the class is presented</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Presentation - New language is presented to the students</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Practice - Students are given ample time to practice this new language amongst themselves</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Monitoring &amp; evaluation - The class is evaluated. Students are given feedback, teacher notes the effectiveness of the class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Application - Students are given further activities to revise the material learnt today outside the classroom</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            These stages will be developed further in this module.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part2sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.3 Warm-up Guidelines
+                        </Paragraph>
+                        <Paragraph>
+                            Warm-up / review: 10 – 15 mins. (Teacher - Student talk time ratio 20/80)
+                        </Paragraph>
+                        <Paragraph>
+                            Our main objective in this stage is to lower our students' levels of stress, in the same way that an athlete needs time to physically and mentally prepare before running a marathon.
+                        </Paragraph>
+                        <Paragraph>
+                            There are a number of benefits of doing a warm-up before starting the main body of the class:
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Emotional:</Bold> Students arrive in all manner of distress and tiredness. We don't want to confuse and frighten them by starting our lesson with new material. They may be sad, happy but distracted, worried about the class, angry after having a near accident in their car, distressed because a relative is in hospital. A short exercise at the beginning of class helps relax and focus.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Physical:</Bold> The muscles in the mouth, jaw, throat and tongue need to be physically stretched and loosened up, as many of the sounds they make in English will be different to those that they use in their native language.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Neurological:</Bold> A warm-up also gets the necessary vocabulary from inactive into active vocabulary. If you don't know what that means, imagine your brain as a computer. It has fast RAM for the information that it needs access to right now. Information that is not needed for the task at hand is kept on the slower hard disk. If your students speak Korean in their normal life, when they get to class, the part of the brain that holds their active vocabulary is filled with Korean. If they need an English word, the brain has to "search the hard disk" to retrieve that word. Just as with a computer, this can mean minutes of trying to find the right word. If it is decided that the word may be needed again soon, your brain keeps it in active vocabulary for faster and less energy consuming retrieval. Note that this happens to everybody all the time, even in your native language. Most cultures have a phrase to describe the experience: "It's on the tip of my tongue."
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Academic:</Bold> Even on exam or quiz days you should do a warm-up. Five or ten minutes of a fun activity that focuses on the type of language they need in the test can really help your students reach their true potential.
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Practical:</Bold> It is also a good way of allowing for late arrivals, before getting into the details of the class. In many cultures, up to 15 minutes late is "on time", and for beach cultures this can stretch to 30 minutes! So by doing this, we keep those more diligent students learning and entertained whilst we wait for the stragglers.
+                        </Paragraph>
+                        <Paragraph>
+                            Note that these reasons apply to the teacher as much as the student.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod2part2sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.4 Choose Age and Level-Appropriate Warm-up Exercises
+                        </Paragraph>
+                        <Paragraph>
+                            So long as you select appropriate language that they need to revise, virtually any exercise can be used for any level or age group. There are obvious exercises that are too difficult for children, but for adults and advanced students don't discount anything at first – you'll be surprised how much adults love reading a children's story in another language. For example, the Dr. Seuss books are loved by young and old alike. It not only transports them back to their own childhood for a few minutes, it also gives them important cultural background information, whilst revising the basics.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part2sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.5 Establishing Lesson Objectives
+                        </Paragraph>
+                        <Paragraph>
+                            The shortest section, but by no means unimportant – the introduction allows you to establish the purpose of the lesson. It should be said out loud and it should also be written on the board. This section is an opportunity to generate interest and enthusiasm, by giving them the communicative objective. In most situations, try to stay away from mentioning or writing grammar or the tense name here. It's meaningless for most people and often frightening for your students, who may not be very good at remembering the grammar terms.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod2part2sect6" Style="{StaticResource TEFLChapterSectionText}" >
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            2.2.6 Lesson Plan Sample
+                        </Paragraph>
+                        <Paragraph >
+                            Please review this sample. You will receive a template to create your own at a later stage of the course.</Paragraph>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="https://echinacareers.com/downloads/SampleLessonPlan.doc" RequestNavigate="Hyperlink_RequestNavigate">
+                                Sample Lesson Plan - MS Word Document
+                            </Hyperlink>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,603 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod3Part2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 3 - Part 2">
+
+    <Grid  x:Name="Mod3Chapter2Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 3, Part 2: Teaching Speaking" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod3part2sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.1 Basics of Foreign Language Skills
+                        </Paragraph>
+                        <Paragraph>
+                            Speaking is defined as the 'action of conveying information or expressing one's thoughts and feelings in spoken language' (dictionary.com). It is interesting to note that virtually no-one finds speaking difficult in their native language, yet many students find it one of the most difficult of the skills to learn in L2. It is also the main motivation for most students to want to study English in the first place – to be able to speak to other English speakers.
+                        </Paragraph>
+                        <Paragraph>
+                            Speaking is more than just being able to produce sounds correctly or use appropriate stress and intonation patterns. Students will also have to learn to be able to use a range of conversational strategies, to be able to communicate in the different situations they may find themselves in.
+                        </Paragraph>
+                        <Paragraph>
+                            There are four skills needed to have complete command of a language and for effective communication to take place. In our first year of life we develop listening skills first, then speaking (14 months of age), then we go to school and begin to learn reading and writing.
+                        </Paragraph>
+                        <Paragraph>
+                            These are called the four basic language skills. When we teach English based on The Communicative Approach, we develop these fours skills simultaneously.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Listening comprehension</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Oral production (Speaking)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Reading comprehension</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Writing</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            There are receptive skills and productive skills. Receptive skills are Listening and Reading since you are receiving information. Productive skills are Speaking and Writing since you are producing information verbally or in written form. Grammar, pronunciation, vocabulary and spelling are sometimes called sub-skills. You will now learn how to develop these four skills and how to plan your lessons according to each skill.
+                        </Paragraph>
+                        <Paragraph>
+                            In this module you will learn how to develop these four skills, beginning with speaking.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod3part2sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.2 Teaching Speaking Skills
+                        </Paragraph>
+                        <Paragraph>
+                            When developing speaking skills you need to know that it is more than just being able to pronounce sounds correctly or use appropriate stress and intonation patterns. Along with the need to survive in typical functional exchanges, students will have to be able to use a range of conversational strategies, as well as a number of different genres and situations.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Different speaking events
+                        </Paragraph>
+                        <Paragraph>
+                            When discussing speaking events, we can make a distinction between transactional and interpersonal functions as they relate to describe different speaking situations. The main purpose of transactional functions is in its conveying of information and facilitating the exchange of goods and services. Interpersonal functions, however, is all about maintaining and sustaining good relations between people.
+                        </Paragraph>
+                        <Paragraph>
+                            However we choose to describe the purpose of the speaking event, it is one that we can characterize as interactive or non-interactive. When we buy a newspaper or a bag of milk in a store, it's interactive, whereas leaving a voicemail on someone's cell phone is non-interactive.
+                        </Paragraph>
+                        <Paragraph>
+                            Lastly, in speaking, we might make a difference between speaking that is planned, such as at a wedding or in a school play, or speaking that is unplanned or spontaneous, like when we run into someone at the store.
+                        </Paragraph>
+                        <Paragraph>
+                            We can describe speaking in terms of purpose (largely transactional), participation (interactive) and planning (partly planned) an event such as a job interview.
+                        </Paragraph>
+                        <Paragraph>
+                            However, being that these distinctions are not absolute, we may find that some speaking in a job interview may be for the sole purpose of maintaining and sustaining good interpersonal relations, as most interviewees plan out what they are going to say, just as interviewers plan their questions ahead of time. If we can think of speaking in terms or purpose, participation and planning, it will help us provide activities in speaking from all six categories and in different combinations of each.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Conversational strategies
+                        </Paragraph>
+                        <Paragraph>
+                            Face-to-face interaction depends on knowledge and successful execution of turn-taking, furthermore, speakers use various discourse markers to buy time (ummm … well … you know …), to start a turn in the conversation (well … I'd just like to say … ) or to signal the beginning or the end of a segment (right … now … anyway ...).
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Conversational rules and structure
+                        </Paragraph>
+                        <Paragraph>
+                            We can add further courses of discourse such as conversational openings (How are you? That's a beautiful baby! I love summer, don't you?), interrupting (Sorry to interrupt, but …), topic shift (Oh, by the way, that reminds me …), and closings (It was nice meeting you … Well, I don't want to keep you from your friends … Call me, we'll go for lunch sometime).
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Survival and repair strategies
+                        </Paragraph>
+                        <Paragraph>
+                            To be successful in face-to-face conversation students must be able to ask for repetition using formulaic expressions, repeating up to the point where there was a breakdown in conversation. Along with these repair strategies, such abilities as paraphrasing (It's a kind of …), using an all-purpose phrase to get around a problem of not knowing a word (You know, it's a what-d'you-call-it), and being able to ask for help (What's the word for … ?) can be added.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Real Speaking
+                        </Paragraph>
+                        <Paragraph>
+                            When students are involved in one on one conversation outside the classroom, it is usually with competent English language speakers, so they need to be exposed to more then just the questions found in coursebooks if they are to be able to communicate spontaneously.
+                        </Paragraph>
+                        <Paragraph>
+                            For students to be aware of what real conversation looks like, other then that of question reformulation strategies (e.g. Did you consider the possibility of an alliance with other organizations?) that are directed at more advanced language learners, we can get them to analyze transcripts of real speech, giving them help using some of the more important phrases in English, and directing their attention to how speakers ask questions, and respond to the questions of others.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Functional language, adjacency pairs and fixed phrases
+                        </Paragraph>
+                        <Paragraph>
+                            A lot of language is made up of phrases or colloquial language such as "Catch you later", "Back in a sec.", "Can I call you back in a couple of minutes?" etc. These pop up in many functional exchanges, so we can offer people things such as a drink, a coffee, etc., by saying, "Would you like a …?" Can I get you a … ?"
+                        </Paragraph>
+                        <Paragraph>
+                            Because they follow a set pattern, these exchanges work well. An adjacency paired response is one such when someone says to you, "Nice day isn't it?" they expect a paired response, such as, "Yes, it is." Or if we say, "Can I make you a tea?" the adjacency pair is either, "Yes, please." or "No, thank you."
+                        </Paragraph>
+                        <Paragraph>
+                            We can have our students look at transcripts of typical exchanges and watch film clips to see this kind of language in use because we need to make students aware of such fixed phrases, functional sequences and adjacency pairs when teaching English.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Students and speaking
+                        </Paragraph>
+                        <Paragraph>
+                            If we give students a suitable topic and task, and the class atmosphere is good, we can get students to speak in class fairly easily. But there are times when we choose the wrong topic or perhaps the class mix is undesirable to the students, so we'll find it hard to get the students motivated. When dealing with reluctant students that don't want to speak or take part, the teacher's role here is crucial.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Shy or Reluctant students
+                        </Paragraph>
+                        <Paragraph>
+                            Students that are not predisposed to expressing themselves in front of other people or that are otherwise shy are often reluctant to speak, especially when personal information or opinions are being asked for. These students also worry about losing face in front of their classmates if they speak badly. In these situations we can help by doing a number of things.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Preparation and wait time
+                        </Paragraph>
+                        <Paragraph>
+                            Students perform much better if they have a chance to think about what they are going to say and how they are going to say it. We can let them practice dialogues in pairs or just give them some quiet time to think about how they might speak before they go out in public.
+                        </Paragraph>
+                        <Paragraph>
+                            By practicing in one's own head, for example, students can practice giving directions to a taxi driver when they're on the bus, or they can just practice having conversations with themselves in different situations, such as describing how they would like their hair cut.
+                        </Paragraph>
+                        <Paragraph>
+                            Some students record themselves doing a presentation before they actually do it, transcribe it, correct the errors and hand it over to the teacher for further comment before their actual presentation.
+                        </Paragraph>
+                        <Paragraph>
+                            We can put students into groups to brainstorm ideas so that they have something to say when they need to take part in a discussion.
+                        </Paragraph>
+                        <Paragraph>
+                            There are many times we want to encourage spontaneous use of the language but at other time we need to allow students to prepare for themselves any speaking that they need to do.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            The value of repetition
+                        </Paragraph>
+                        <Paragraph>
+                            As we know, repetition has numerous beneficial effects as each new encounter with a word or phrase helps fix it into a student's memory. It also allows students to improve what they did before, how they can re-word things or just get a feel for how it sounds.
+                        </Paragraph>
+                        <Paragraph>
+                            With each repetition of a student's speaking task, the student gains more confidence, because they are more comfortable as they are not attempting to get the words out for the first time. Repetition works even better if a student is able to analyze what they have done. By letting students rehearse conversational exchanges by planning, performing, analyzing, and repeating, they will do it much more comfortably and fluently the second time.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Big groups, small groups
+                        </Paragraph>
+                        <Paragraph>
+                            A common reason that students are reluctant to take part in speaking activities is that they aren't too keen on big groups. If we can get them to interact in smaller groups they'll have more opportunities to participate and practice their speaking.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Compulsory participation
+                        </Paragraph>
+                        <Paragraph>
+                            Often, when doing group work, we find ourselves having to deal with 'social loafers', students who sit back and let everyone else do the work. A suggestion might be having the students assign a number to everyone in their group, and at the end of that activity, the teacher randomly chooses a number, and that student must report on what happened.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part2sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.3 The Role of the Teacher in Teaching Speaking Skills
+                        </Paragraph>
+                        <Paragraph>
+                            If we are trying to get students to speak fluently, there are three different roles that have relevance during different speaking activities. Below you will see the roles:
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Prompter
+                        </Paragraph>
+                        <Paragraph>
+                            There are times when our students are going to get lost, can't think of anything to say, or are otherwise struggling on their own. We can leave them to work it out for themselves, however, we may be able to help the activity and the student to progress by offering discrete suggestions. If we can do this supportively, without disrupting the discussion or forcing students out of a role, it will stop the sense of frustration that students encounter when they come to a dead end of either language or ideas.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Participant
+                        </Paragraph>
+                        <Paragraph>
+                            Participating in discussions and role-plays is a great way for teachers to ensure student engagement and maintain a creative atmosphere. However, teachers need to be careful not to participate too much, either by drawing too much attention to themselves or by dominating the speaking.
+                        </Paragraph>
+                        <Paragraph>
+                            Engaging in one-on-one conversation creates special moments between the teacher and student as it allows them to talk together communicatively as near-equal participants. Again, we have to be careful so that students don't lose speaking opportunities.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Feedback provider
+                        </Paragraph>
+                        <Paragraph>
+                            When and how to give feedback in speaking activities is a question answered by considering carefully the effect of possible approaches.
+                        </Paragraph>
+                        <Paragraph>
+                            Over-correction may inhibit them and take the communicativeness out of the activity. However, gentle and helpful correction may help the students out of difficult misunderstanding and hesitations. It all depends on our tact and the appropriacy of our feedback in particular situations.
+                        </Paragraph>
+                        <Paragraph>
+                            It is vital that we allow students to assess what they have done after they have completed a task, and in our opinion, what went well.
+                        </Paragraph>
+                        <Paragraph>
+                            When organizing a speaking task, it is of utmost importance that the students know exactly what it is they are supposed to do. By giving clear instructions and, where appropriate, demonstrating the activity with students so that no one has any doubt what they should be doing, we can ensure this.
+                        </Paragraph>
+                        <Paragraph>
+                            We focus on developing speaking skills throughout our entire lesson. In the practice stage, our major focus is on developing fluency. It is at this stage in our lesson plan that we come up with different activities that work on developing speaking skills. We also work in class using whole class, small group, pair work and individual activities. By having activities where students have to interact among themselves, we are focusing in a student-centered classroom and the students are at center stage.
+                        </Paragraph>
+                        <Paragraph>
+                            If you have been speaking for more than 3 minutes, then the center of attention is you and not the student. You already know how to speak English and your students don´t. Try to focus on having your students do the talking. Remember that our role at this stage is to guide, lead and motivate our students to work on their speaking skills.
+                        </Paragraph>
+                        <Paragraph>
+                            If your students do not work on speaking skills in the classroom (EFL setting), they will not have a chance to work on it at home. The only chance of speaking will be missed. Your major focus on an EFL class should be developing communicative skills and not grammar knowledge.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod3part2sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.4 Creating a Practice Stage; A Structured Environment
+                        </Paragraph>
+                        <Paragraph>
+                            Don´t forget to come up with structured, semi-structured and unstructured activities during your practice stage. Many times you will find out that three activities are not enough and that you will need to have additional activities for your students to participate.
+                        </Paragraph>
+                        <Paragraph>
+                            Don´t allow the use of the native language in the classroom. Initially your students will not have enough knowledge of English to able to communicate but do not use the native language to translate. Translation does not develop fluency. Translation tends to impede the acquisition of language and fluency. As your students progress in their level of learning, stop the use of the native language in the classroom.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Characteristics of Effective Communicative Activities
+                        </Paragraph>
+                        <Paragraph>
+                            An essential part of communicative teaching is the activities that are included in the class. Activities, in a very real sense, drive the class and determine whether it flows smoothly and succeeds or not. It is the teachers' responsibility to incorporate into their lesson plans opportunities for meaningful interaction among the students. Let's look at some of the characteristics of classroom activities that work well to generate communication.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Well-constructed communicative activities require student-to-student interaction and communication of information. The teacher acts as the facilitator, not the main performer.
+                                    <LineBreak/>
+                                </Paragraph>
+                                <Paragraph>
+                                    Whenever considering use of an activity, teachers should ask themselves some important questions: What will my role be in this activity? Will my speaking dominate this activity, or will it encourage the students to speak to one another? If your answers to these questions indicate that the activity requires you to do the majority of the speaking, then, unless it is specifically a listening focus exercise, you should modify the activity to give the students greater chance to practice their oral skills.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Effective communicative activities, while focusing on improving speaking and listening proficiency, are often actually multi-skill, with one skill reinforcing another. Indeed, an activity categorized under a particular skill, for example under "Listening Activities" or "Reading Activities," might sometimes involve another skill. The point is that the skills of listening, speaking, reading, and writing are frequently integrated and practiced in a single communicative lesson.
+                                    <LineBreak/>
+                                </Paragraph>
+                                <Paragraph>
+                                    When creating a lesson plan, you can think in terms of integrating skills. For instance, a brief lecture by the teacher can offer focused practice in listening comprehension. Following the lecture, the students can speak about the subject of the lecture using the same vocabulary. Thus, the two skills reinforce each other. Likewise, a pre-reading, speaking-listening activity can prepare students to read a particular passage: Having discussed a topic, they can then read about it. This kind of reinforcement is very valuable in the learning process. Rarely do we learn anything from initial exposure. Instead, mastery often requires multiple contacts with a subject. Language learning is no different.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Effective activities often involve the students getting up and physically moving around the classroom. This prevents students from getting sleepy, tuning out, and becoming disengaged, and instead invigorates their minds. It also gives the students the chance to speak with different members of the class, not just those classmates who sit close by.
+                                    <LineBreak/>
+                                </Paragraph>
+                                <Paragraph>
+                                    In traditional classrooms, the students stay glued to their chairs. This is fine in some situations, but having the students stand occasionally and move about gets the blood flowing, and often makes the learning process livelier and more fun. And when students have fun, they can learn better.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    The activities are contextualized in a variety of media, including stories, pictures, videos, and songs. Real-life situations and people, including students and their own lives, can also provide context. There are so many possible sources of materials. Teachers need to be made aware of how to apply these resources to their courses in order to make the classes more interactive and engaging. That is one of the main goals of this course.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Communicative activities often involve an information gap between pairs of students, in which one student has some information that his or her partner does not have. These dynamic activities provide opportunities for students to bridge that information gap by transferring information from one person to another. The result is that, students can accomplish the goals of the activity only if they communicate information effectively and listen attentively.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    The best activities are interesting to the students. No one wants to cover boring topics in any class. The teacher should select subjects which the students will find appealing. This means that teachers should have a good idea of what their classes will find intriguing, and which materials bore the students.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Successful activities often give the class the chance to talk about their own lives. Students enjoy sharing personal information in a controlled, safe, and respectful environment. They appreciate the opportunity to talk about themselves and to hear about the lives of the other students in the class.
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    Successful activities frequently use materials that can teach the students not only the language but also something about the real world. The class can learn the language and simultaneously learn about culture, law, art, history, science, economics, or whatever. This makes the class more interesting.
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Some classroom materials present fictitious stories. Stories often convey significant principles of life and can lead to very engaging class discussion. In this case, the teacher can follow up the stories with ways to relate them to the students' personal lives. When the language can be applied to the actual lives of the students, it becomes more real and thus more easily learned.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part2sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.5 Sample Games and Activities for Speaking Lessons
+                        </Paragraph>
+                        <Paragraph>
+                            Below you will find lots of speaking activities to use in your lesson plans. These activities can be adapted to different age groups and levels.
+                        </Paragraph>
+                        <List MarkerStyle="Decimal">
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask a student to demonstrate a dance explaining the steps in English.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Alter the pacing of your class. If you rush through your class at full speed, slow things down and take time to ask your students personal questions based on the materials you are using. If you tend to proceed at a snail's pace, prepare some additional activities and push yourself to accomplish more than you usually do.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask students to name as many objects in the classroom as they can while you write them on the board.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask students to present to the class a gesture that is unique to their own culture.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask students to write one question they would feel comfortable answering (without writing their name) on an index card. Collect all of the index cards, put them in a bag, have students draw cards, and then ask another student the question on that card.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask your students if there are any songs running through their heads today. If anyone says yes, encourage the student to sing or hum a little bit, and ask the others if they can identify it.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Assign students to take a conversation from their coursebook that they are familiar with and reduce each line to only one word.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>At the end of class, erase the board and challenge students to recall everything you wrote on the board during the class period. Write the expressions on the board once again as your students call them out.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Begin by telling your students about an internal struggle between two sides of your personality (bold side vs. timid side OR hardworking side vs. lazy side), providing a brief example of what each side says to you. After a few minutes of preparation in pairs, have students present their struggles to the class.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Bring a cellular phone (real or toy) to class, and pretend to receive calls throughout the class. As the students can only hear one side of the conversation, they must guess who is calling you and why. Make the initial conversation very brief, and gradually add clues with each conversation. The student who guesses correctly wins a prize.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Bring a fork, knife, spoon, bowl, plate and chopsticks (if you have them) to class and mime eating some different dishes letting students guess what they are. Then let your students take a turn.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Bring an artifact from the student's culture to class, and ask them questions about it.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Bring in some snacks that you think your students haven't tried before, and invite the students to sample them and give their comments.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Call on a student to draw his or her country's flag on the board, then teach him or her how to describe the flag to the class (It has three stripes...).</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Choose one topic (food, sports) and elicit a list of examples (food - chicken, pudding, rice). Then have your student come up with the most unusual combinations of items from that list(chocolatebeef or wrestling- golf).</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Collaborate with your students on a list of famous people, including movie stars, politicians, athletes, and artists. Have every student choose a famous person, and put them in pairs to interview each other.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Come to class dressed differently than usual and have students comment on what's different.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Copy a page from a comic book, white out the dialogue, make copies for your class, and have them supply utterances for the characters.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Copy pages from various ESL textbooks (at an appropriate level for your students), put them on the walls, and have students wander around the classroom and learn a new phrase, then have them teach each other what they learned.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Copy some interesting pictures of people from magazine ads. Give a picture to each student, have the student fold up the bottom of the picture about half an inch, and write something the person might be thinking or saying. Put all the pictures up on the board, and let everyone come up and take a look.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Describe something observable in the classroom (while looking down), and tell students to look in the direction of what you described.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Draw a map of your country or another country that your students know well. By drawing lines, show students where you went on a trip, and tell them about it. Then call on several students to do the same. The trips can be truthful or fictional.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Draw a pancake-shape on the board, and announce that the school will soon be moving to a desert island. Invite students one by one to go to the board and draw one thing they would like to have on the island.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Draw a party scene on the board and invite students to come up and draw someone they would like to have at the party.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Empty a bag of coupons onto a table, and have students find a coupon for a product that they have no need for.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Experiment with how you write on the board, altering your writing style, the size of the letters, the direction you write, and the color of the chalk/pens.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Explain to your students what it means to call someone a certain animal (dog, pig, fox) in English, and then ask them what these mean in their languages.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Fill the board with vocabulary your students have encountered in previous classes (make sure to include all parts of speech) and get them to make some sentences out of the words.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Find out what famous people your students admire and work together with the class to write a letter to one of them.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Find out what your students are interested in early in the semester. Go to the Internet from time to time to collect articles on these subjects for students to read during the class period.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>First, instruct your students to write on a slip of paper the name of one book, CD, or movie that changed them in some way. Collect the papers, call out the titles, and ask the class if they can guess who wrote it. Finally, let the writer identify him or herself, explaining his or her choice.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Give each student a piece of chalk/pen and tell them to fill the board with pop song lyrics. Then put them in pairs and get them to use the words on the board to create a new dialogue.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Give students a reward (such as a candy or a sticker) each time they take the artificial language in your textbook and turn it into an authentic question or comment about someone in the class.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Hand a student a ball of yellow yarn. Have him toss it to another student, while saying something positive about that student and holding onto the end of the yarn. Continue in this manner until there is a web between all the students.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Hand each student an index card and tell them to write down a sentence that includes an error they have made this week, along with the correct version of the sentence. Next, tape all the index cards on the board for students to look over.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Hang up four different posters (example - one of a world map, one of a famous singer, one of a flower, and one of Einstein) in the four corners of your room. Tell students to choose one corner to stand in and talk about why they chose that poster.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Have each student make a list of the five most useful phrases for tourists visiting an English-speaking country.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Have students come to the board one by one, draw a poster for an English language movie (without the title) they think the other students have seen, and let the other students guess which movie it is.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Hire a musician (flute? harmonica? banjo?) to play for a few minutes of your class period.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>In small groups, have your students design a billboard for something other than a product (wisdom, humility, friendship, etc.).</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Inquire to see if your students have any unusual talents (can wiggle their ears, can bark like a dog), and encourage them to demonstrate.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Instead of saying "Very good!" all the time, vary the ways you praise (and correct) students as much as possible.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Instruct your students to find something in their wallets/purses/pencil boxes and tell the story behind it.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Invite your students to stand up and explore the classroom from new angles (look in drawers, under desks, behind posters, on top of cabinets).</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Just a few minutes before the bell rings, call on your students to choose the ten most useful words they came in contact with during this class period, then have them narrow it down to the three most useful words.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Pass around some magazines, and have each student choose an ad that he or she likes. Give students an opportunity to explain their choices.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Play a listening activity from your book an additional time with the lights turned off.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Play a recording of instrumental music and have some students draw on the board what the music makes them think of.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Play five very different sounds from a sound effects tape or CD, and assign students in pairs to create a story based on three of the sounds.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Play music that enhances certain activities (quiet music for a reading activity, dance music for an energetic TPR activity). Ask your students for their reactions.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Prepare colored letters of the alphabet on cardboard squares and put them in a bag. Students must draw a letter from the bag and work together to create a sentence on the board. Each student must raise his or her hand to contribute, but the word the student calls out must begin with the letter he or she chose. Put the expanding sentence on the board, adding words only when the grammar is correct.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Prepare several paper bags, each with a different scent inside (perfume, cinnamon, cheese), pass the bags around the class, and let students describe what they smell.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Print phrases such as "in the library" "at an elegant dinner with the Royal Family" "in a noisy bar", and "in a dangerous neighborhood" on separate strips of paper, put them in envelopes, and tape them to the underside of a few students' desks/tables before they arrive. Write on the board a useful expression like "Excuse me. Could I borrow a dollar?" When students arrive, tell them to look for an envelope under the desks/tables. The ones who find envelopes must say the sentence on the board as if in the context written on the page. Other students must guess the context from the student's tone of voice and body language.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Produce a list of commonly used sentence-modifying adverbs on the board, such as suddenly, actually, unfortunately, and happily. Then launch into a story, which each student must contribute to, with the rule that everyone must begin the first sentence of his or her contribution with a sentence-modifying adverb.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Provide each student with a list of the current top ten popular songs. Play excerpts from some or all of the songs, and choose some questions to ask your students, such as: Did you like the song? Have you heard this song before? How did the song make you feel? What instruments did you hear?</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Purchase a postcard for each member of your class, writing his or her name in the name and address space. Turn them picture side up on a table, have each student choose one (without looking at the name), then he or she will write a message to the person whose name is on the other side. If a student chooses the postcard that has his or her own name on it, the student must choose again.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Put students in pairs and ask them to guess three items in their partner's wallet/purse/pencil box.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Put students in pairs. Tell them to converse, but to deliberately make one grammatical error over and over, stopping only when one student can spot the other's intentional error.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Put students into small groups to create an application form for new students to the school.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Put the students in small groups and ask each group to plan a vacation for you. They must plan where you will go, what you will do, who you will go with, and what you will buy. When they are finished, have each group present their plans.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Review a phrase or sentence that you want students to remember, by holding a competition to see "Who can say it the loudest/the quietest/the quickest/the slowest/in the deepest voice/in the highest pitched voice?".</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Set up a board in your classroom where students can buy and sell used items from each other by writing notes in English.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Supply each student with a copy of the entertainment section of the local newspaper and tell them to choose somewhere to go next weekend.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Take a particularly uninteresting page from your coursebook and put students in groups to redesign it.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Teach on a different side of the room than you usually do.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Tell each student to report the latest news in their country or city to the class.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Tell your students to practice a conversation from their coursebook that they are familiar with, but this time they can only use gestures, no words.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>When they are practicing a dialogue, have students play around with the volume, intonation, pitch, or speed of their voices.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Write "Tell me something I don't know." on the board, then ask students questions about things they know about and you don't, such as their lives, cultural background, interests, and work.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Write a common adjacency pair (Thank you./You're welcome OR I'm sorry./That's alright) on the board. Ask students if they know of any expressions that could replace one of the ones you just wrote. Write any acceptable answers on the board.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Write a number of adjectives, such as mysterious, happy, peaceful, sad, angry, and frustrated on the board. Call out a color, and ask your students to tell you which adjective they associate with that color.</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part2sect6" Style="{StaticResource TEFLChapterSectionText}" >
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.2.6 Correcting Errors in Speech
+                        </Paragraph>
+                        <Paragraph >
+                            The main issue at hand during oral work is whether or not to correct students as they make mistakes. Mistakes may be numerous and in various areas (grammar, vocabulary choice, pronunciation of both words and correct stressing in sentences). On the other hand, correction of written work boils down to how much correction should be done. In other words, should teachers correct every single mistake, or should they give a value judgment and correct only major mistakes.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Mistakes Made During Discussions and Activities
+                        </Paragraph>
+                        <Paragraph>
+                            With oral mistakes made during class discussions, there are typically two schools of thought:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Correct often and thoroughly</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Let students make mistakes</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            Sometimes, teachers refine their choice by choosing to let beginners make many mistakes while correcting advanced students often.
+                        </Paragraph>
+                        <Paragraph>
+                            However, many teachers are taking a third route these days. This third route might be called 'selective correction'. In this case, the teacher decides to correct only certain errors. Which errors will be corrected is usually decided by the objectives of the lesson, or the specific exercise that is being done at that moment. In other words, if students are focusing on simple past irregular forms, then only mistakes in those forms are corrected (i.e., goed, thinked, etc.). Other mistakes, such as mistakes in a future form, or mistakes of collocations (for example: I made my homework) are ignored.
+                        </Paragraph>
+                        <Paragraph>
+                            Finally, many teachers also choose to correct students after the fact. Teachers take notes on common mistakes that students make. During the follow-up correction session the teacher then presents common mistakes made so that all can benefit from an analysis of which mistakes were made and why.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

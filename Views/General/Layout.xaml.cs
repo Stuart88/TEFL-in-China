@@ -136,6 +136,10 @@ namespace TEFL_App.Views.General
                     "1.2" => new Course.Modules.Mod1Part2(data.SectionID, NavigateTo),
                     "1.3" => new Course.Modules.Mod1Part3(data.SectionID, NavigateTo),
                     "2.1" => new Course.Modules.Mod2Part1(data.SectionID, NavigateTo),
+                    "2.2" => new Course.Modules.Mod2Part2(data.SectionID, NavigateTo),
+                    "3.1" => new Course.Modules.Mod3Part1(data.SectionID, NavigateTo),
+                    "3.2" => new Course.Modules.Mod3Part2(data.SectionID, NavigateTo),
+                    "3.3" => new Course.Modules.Mod3Part3(data.SectionID, NavigateTo),
                     _ => new ManagerHome()
                 };
                 ContentArea.Content = ViewingPage;
