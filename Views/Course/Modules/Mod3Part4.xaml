@@ -1,0 +1,308 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod3Part4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 3 - Part 4">
+
+    <Grid  x:Name="Mod3Chapter4Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 3, Part 4: Teaching Listening" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod3part4sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.4.1 Listening Skills Overview
+                        </Paragraph>
+                        <Paragraph>
+                            When we listen in our native language, we use skills that were acquired when we were very young, but these do not necessarily transfer automatically when studying a second language. There is also the added problem that students will be exposed to different accents, dialects and colloquial language.
+                        </Paragraph>
+                        <Paragraph>
+                            For this reason, it is important to understand some of the skills which will be needed if we are going to successfully teach our students how to listen.
+                        </Paragraph>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Enabling Skills
+                        </Paragraph>
+                        <Paragraph>
+                            Enabling skills are the skills we teach our students to enhance their ability to understand a speaker´s accent or pronunciation, their grammar, vocabulary, and meaning. An able listener can perform these four things simultaneously. Below are listed the enabling skills we try to help our students with, in order from easiest to most difficult:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Predicting what people are going to talk about.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Guessing what unknown words or phrases mean (without panicking!)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Identifying relevant points and discarding irrelevant information.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Recognizing discourse markers such as 'you know', 'I mean' 'like' etc.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Retaining relevant points by note-taking and summarizing.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Understanding different intonation patterns and use of stress.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Understanding inferred information.</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph  Style="{StaticResource TEFLParagraphTitle}">
+                            Top-down and Bottom-up Listening
+                        </Paragraph>
+                        <Paragraph>
+                            Consider two separate conversations: in the first a friend is telling you about their weekend - you listen and make a few comments about how nice it must have been. In the second conversation someone is telling you about a party you are invited to - you listen very carefully to get the time and directions how to get there. The first is an example of top-down listening: you were listening for general information and made a few comments when expected. The second conversation is an example of bottom-up listening: you were trying to get specific information, namely the time and place of the party.
+                        </Paragraph>
+                        <Paragraph>
+                            These are two types of listening that we all do every day (or a combination of them both) and we need to teach our students to be able to do them in English.
+                        </Paragraph>
+                        <Paragraph>
+                            In order to develop top-down listening we give our students activities with general questions to listen for gist and to get an overall idea of the topic. To develop bottom-up listening students will be given tasks where they have to find specific information, such as the name of someone, the price of something or the time something will happen.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod3part4sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.4.2 Extensive listening skills
+                        </Paragraph>
+                        <Paragraph>
+                            Extensive listening is when students are exposed to many types of inputs outside the classroom, at their convenience.
+                        </Paragraph>
+                        <Paragraph>
+                            All students have different learning styles and varied tastes with regards to music, movies etc. What students choose to listen to for pleasure and general language improvement can have a huge impact on their language learning. This type of listening usually takes place outside the classroom in the students' homes, cars or when travelling. When students make their own choices about what they listen to, the motivational power of these activities increases dramatically.
+                        </Paragraph>
+                        <Paragraph>
+                            Teach your students to get the most out of extensive listening by:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Explaining clearly the benefits of practicing their listening skills outside the classroom.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Pointing them in the right direction by recommending the best sources for their level and interests.</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Reminding them that they should not worry if they do not understand everything, and they should set themselves a reasonable task such as just understanding the gist. They should also be relaxed both mentally and physically</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part4sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.4.3 Intensive Listening Skills
+                        </Paragraph>
+                        <Paragraph>
+                            Intensive listening is when students are exposed to listening in a classroom and have to find particular information. For example, listening to directions and finding out which building is being described on a map, or what time a concert starts. Materials for these listening activities can be found from any number of sources:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Podcasts</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>On-line English language broadcasts on news websites such as CNN or the BBC</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>CD or MP3 files that are usually provided with course books</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>Radio broadcasts are good for higher level students</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource IndentedListItem}">
+                                <Paragraph>For lower levels, children's broadcasts and TV programs can be more suitable</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod3part4sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.4.4 Using Audio Materials
+                        </Paragraph>
+                        <Paragraph>
+                            There are a number of advantages to using audio material in the classroom:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students get a chance to listen to a variety of different voices, accents and dialects other than their teachers'</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Audio material is portable and also readily available. With audio material now being offered in digital format, teachers can play recorded content in class directly from computers</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They provide useful practice for speaking on the telephone or listening to the radio, circumstances where visual clues are not available</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Recordings can be stopped, rewound and paused so students can listen as many times as they wish</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            The following are problems that students encounter when developing listening comprehension skills.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Understanding pronunciation, especially connected speech: They hear – I wanna an orange (I want an orange) / mount (Mountain) or pose (I suppose). This shows the link between listening skills and pronunciation skills</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Colloquial terminology: they may not understand items such as 'stuff' (things) and 'mate' (friend)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Colloquial terminology: they may not understand items such as 'stuff' (things) and 'mate' (friend)</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Physical setting: There are often external noises. In large classrooms, the acoustics can sometimes cause difficulties in hearing</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Another problem might be that everyone has to listen at the speed dictated by the recording not the listener. This makes the process more difficult and stressful for the student</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>They cannot interact with the speakers on the audio track or see any gestures or body language to help with communication. This makes audio-only material unrealistic</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students tend to want to understand every word, and panic if they can't. This leads to desperate calls for the teacher to "Repeat, repeat". However, in real life situations (eg, listening to a lecture, interacting with other people) discourse is rarely 'replayed', so we should encourage our students to get as much information as is necessary or appropriate for their level the first time they listen. Extracting general or specific information from one listening is an important skill so it is critical that the tasks we give our students train them gradually in effective listening</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod3part4sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            3.4.5 Lesson Planning for Listening Practice
+                        </Paragraph>
+                        <Paragraph>
+                            Listening can occur at a number of points in a teaching sequence. Sometimes it forms the jumping-off point for the activities which follow; sometimes it is the first stage of a 'listening and acting out' sequence where students role-play the situation they have heard on the recording. Sometimes listening may be a prelude to a piece of writing or a grammar presentation. Other lessons, however, have listening training or practice as their main objective.
+                        </Paragraph>
+                        <Paragraph>
+                            A lesson where the main focus is on practicing listening skills should be organized into the following stages:
+                            <Bold>pre-listening</Bold>,
+                            <Bold>while listening</Bold> and
+                            <Bold>post listening</Bold>.
+                        </Paragraph>
+                        
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Pre-listening activities
+                        </Paragraph>
+                        <Paragraph>
+                            You need to set the scene and prepare your students for the listening input; 5 - 10 minutes should be spent on this sub-stage. Below you will find some sample activities.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Brainstorming or discussion activities about the topic, possibly based on photographs, the title of the listening etc</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Encouraging students to exchange ideas/opinions about the topic</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ask students to predict the words and expressions likely to appear in the listening, related to the topic. The teacher writes them on the blackboard in the form of a mind-map</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Games to warm them up and help them with basic skills. Some examples could be miming words and expressions that might be heard in the listening, or word games such as hangman</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>uiding questions that will help the student exploit the recording. For example, if a recording is a news broadcast, you could ask them questions about personalities in the news, or questions to find out what they already know about that day's news</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            While-listening activities
+                        </Paragraph>
+                        <Paragraph>
+                            You need to use a recording (conversation, song, broadcast etc.) in this sub-stage to help your students develop their listening skills. These are some activities you could do with your students.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Comparing: They could compare what they understand from the passage with what they suggested in the pre-listening brainstorming activities</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Following instructions: Students listen to the audio material and complete a task such as following directions on a map</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Filling in gaps: They could be given a gap-fill activity to complete either using questions about the listening or a transcript of the listening itself</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Prediction: Students hear the utterances of only one of the participants and are asked to guess what the other person replies</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Repetition: Students are asked to repeat short phrases or complete recorded utterances</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Ticking off items (bingo): Students listen to a list of words and tick off or categorize them as they hear them</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Sequencing: Students are asked to give the right order for a series of pictures, phrases or events</Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Post-Listening
+                        </Paragraph>
+                        <Paragraph>
+                            The post listening stage should wrap up the listening comprehension activity. Below you will find activities that you can use.
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Answering comprehension questions: these could be either multiple choice or true/false</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Problem solving: students hear all the information relevant to a particular problem and then set themselves to solve it</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Summarizing: students are given several possible summary-sentences and are asked to say which of them fits a recording</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Writing follow-up activities: for example, letters/emails/postcards/messages/ or students' own opinions on a subject, for example</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Speaking follow-up activities: these could be in the form of debates /interviews / group or class discussions /role plays /dramatizations, for example</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

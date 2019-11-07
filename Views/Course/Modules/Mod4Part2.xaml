@@ -1,0 +1,145 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod4Part2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 4 - Part 2">
+
+    <Grid  x:Name="Mod4Chapter2Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 4, Part 2: Final Guidance Notes" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod4part2sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.2.1 The Final Exam
+                        </Paragraph>
+                        <Paragraph>
+                            The
+                            <Hyperlink Click="FinalExamPage_Click">
+                                Final Exam
+                            </Hyperlink> 
+                            consists of 50 multiple choice questions based on the content detailed in this course.</Paragraph>
+                        <Paragraph>
+                            To pass the exam, you must obtain a score of at least 70%. The exam grading is automatic, and each attempt is saved against your profile.
+                        </Paragraph>
+                        <Paragraph>
+                            After completing the exam, you will be able to submit your Lesson Plan Assignment for marking by one of our tutors.
+                        </Paragraph>
+                    </FlowDocument>
+
+
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod4part2sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.2.2 The Lesson Plan Assignment
+                        </Paragraph>
+                        <Paragraph>
+                            After completing the Final Exam, you will be able to submit your assessed lesson plan via the
+                            <Hyperlink x:Name="LessonPlanLink" Click="LessonPlanLink_Click">
+                                Lesson Plan Assignment section
+                            </Hyperlink>
+                            page.
+                        </Paragraph>
+                        <Paragraph>
+                            Refer to Module 2, Part 2 to refresh yourself on how to prepare a lesson.
+                        </Paragraph>
+                        <Paragraph>
+                            When you feel ready, select the age group you aim to teach in your first assignment as teacher of English as a foreign language. Here at the North American TEFL Academy, we want you to develop the direction you aim to go, whether that is as a kindergarten teacher or a high school teacher. Please find a lesson topic you feel you are both comfortable with and one that is realistic.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Some suggestions
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>For Kindergarten:</Bold> Animals, food, colors and shapes
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>For Grade School:</Bold> Greetings, geography, school
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>Young Adult:</Bold> Expressing ideas and emotions, describing the family, career aspirations
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>
+                                    <Bold>Adult:</Bold> Office environment, current issues, business etiquette
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                        <Paragraph>
+                            You can refer to the following template for guidance:
+                            <Hyperlink NavigateUri="https://echinacareers.com/Downloads/Planning%20a%20Lesson%20-%20Template.docx"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                Planning a Lesson - Template.docx
+                            </Hyperlink>
+                        </Paragraph>
+                        <Paragraph>
+                            Before you can submit your assignment, you must first complete the Final Exam.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod4part2sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.2.3 Conclusion
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Congratulations!</Bold>
+                        </Paragraph>
+                        <Paragraph>
+                            After you have completed the Final Exam and passed your lesson plan assignment, the course will be complete.
+                        </Paragraph>
+                        <Paragraph>
+                            You will receive a digital copy of your TEFL certificate.
+                        </Paragraph>
+                        <Paragraph>
+                            Your certificate code will always be available online via the
+                            <Hyperlink x:Name="TEFLVerifyLink" RequestNavigate="Hyperlink_RequestNavigate">
+                                eChinaCareers TEFL Verify
+                            </Hyperlink>
+                            page
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

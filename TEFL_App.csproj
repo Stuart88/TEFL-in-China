@@ -121,8 +121,20 @@
     <Compile Include="Views\Course\CourseHome.xaml.cs">
       <DependentUpon>CourseHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Course\FinalExam.xaml.cs">
+      <DependentUpon>FinalExam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Course\LessonPlanPage.xaml.cs">
       <DependentUpon>LessonPlanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Course\Modules\Mod4Part2.xaml.cs">
+      <DependentUpon>Mod4Part2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Course\Modules\Mod4Part1.xaml.cs">
+      <DependentUpon>Mod4Part1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Course\Modules\Mod3Part4.xaml.cs">
+      <DependentUpon>Mod3Part4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Course\Modules\Mod3Part3.xaml.cs">
       <DependentUpon>Mod3Part3.xaml</DependentUpon>
@@ -207,9 +219,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Course\FinalExam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Course\LessonPlanPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Course\Modules\Mod4Part2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Course\Modules\Mod4Part1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Course\Modules\Mod3Part4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Course\Modules\Mod3Part3.xaml">
       <Generator>MSBuild:Compile</Generator>

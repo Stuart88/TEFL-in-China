@@ -1,0 +1,347 @@
+﻿<Page x:Class="TEFL_App.Views.Course.Modules.Mod4Part1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course.Modules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Module 1 - Part 1">
+
+    <Grid  x:Name="Mod4Chapter1Grid" Style="{StaticResource TEFLChapterGrid}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" ScrollViewer.CanContentScroll="True"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Module 4, Part 1: Introduction to Classroom Management" Style="{StaticResource TEFLChapterTitle}"/>
+                
+        <ScrollViewer x:Name="ScrollArea" Grid.Row="1" Grid.Column="0" >
+            <StackPanel Style="{StaticResource TEFLChapterPageArea}">
+
+
+
+                <RichTextBox x:Name="mod4part1sect1" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+                    <FlowDocument>
+                        <Paragraph   Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.1 What is Classroom Management?
+                        </Paragraph>
+                        <Paragraph>
+                            Although classroom management seems to have become synonymous with “dealing” with discipline issues, as you can see from the quote above, there is far more involved in being an effective manager of your classroom. First and foremost, it has to do with what you, as the teacher, do in your classroom to ensure that your students feel that their classroom is a safe, welcoming and organized environment in which they can learn.
+                        </Paragraph>
+                        <Paragraph>
+                            Exploiting and managing efficiently whatever resources you have available is part of effective classroom management. Classroom resources refer to the tools available which can facilitate teaching and learning in your class. Depending on where you are working, these resources may vary greatly. Some language institutes and schools are very well set up and provide their teachers with whiteboards and board markers (or even interactive whiteboards), audio equipment, video equipment, photocopying, stationery, libraries, computer labs and internet etc. Others may have some of the above, but not all, or you may find yourself working with very limited resources indeed. In general, you should be able to count on at the very least a classroom with sufficient seating for all your students, a board (chalkboard or whiteboard) and a desk for the teacher.
+                        </Paragraph>
+                        <Paragraph>
+                            You will need to adapt some of your management techniques and strategies depending on whether you are teaching young learners or adults but there are some standards that should be adhered to, no matter what age group you are teaching or what environment you are working in. In the sections below, you will gain an understanding of what is involved in effective classroom management.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod4part1sect2" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.2 Routine Schedules and Punctuality
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Model Punctuality
+                        </Paragraph>
+                        <Paragraph>
+                            Teachers should try to model the behavior they expect from their students. You should aim to be in the classroom 2-3 minutes before the class is due to start, and be at the door to welcome your students with a smile as they come into class.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Beginning Class
+                        </Paragraph>
+                        <Paragraph>
+                            Proactive classroom control begins with setting the tenor in your room in the first few minutes …. If you miss the opportunity for a smooth, controlled start, you will spend more of your time trying to calm things down and regain control.
+                        </Paragraph>
+                        <Paragraph>
+                            It is a good idea to set up a routine with your students (adults or young learners) whereby they have a daily start-up activity which can be done individually or in pairs. This should be an activity which provides practice in skills the students already know and requires no instruction and very little explanation. It could be something as simple as comparing their homework, reviewing the previous class individually and in silence or preparing for a 2-minute spelling test. As the rest of your students arrive over the course of several minutes, they see that their classmates are already working and, because this routine is well-established, they will do the same. Thus, when you are ready to start class, you are not having to bring the class “to order” and battling to get the attention of students who are chatting and “waiting” for the class to begin.
+                        </Paragraph>
+                        <Paragraph>
+                            Your classes should always start on time, even if only one or two students have shown up punctually. This indicates to the latecomers that their tardiness is unacceptable and that they will miss out if they don’t come to class on time. Do not interrupt what you are saying/doing for latecomers but do acknowledge them with a nod or a smile. With younger learners in schools, there may be official policies on coming late to class, which you will be expected to enforce.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            Ending Class
+                        </Paragraph>
+                        <Paragraph>
+                            Similarly, you should always end your class on time out of respect for your students and any teacher or class that may be following you. Make sure to stop any activity, even if students haven’t finished, so that you allow time to “end” the class – to reflect on what has been learnt, to assign homework, and to answer any questions or doubts your students may have. A well-prepared teacher will even allow a few minutes at the end of each period, enlisting the help of your students where necessary, to get things ready for the next class. For example, make sure that any chairs/desks that have been moved are put back in place, your whiteboard has been cleaned and you have your materials for the next class ready to hand.
+                        </Paragraph>
+                        <Paragraph>
+                            As your students leave, you should again be standing at the door to wish them a warm farewell and remind them of any work that is due.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod4part1sect3" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.3 Preparation
+                        </Paragraph>
+                        <Paragraph>
+                            From the minute your class begins to the minute it ends, there should be no reason for you to leave the classroom. This means you must be prepared – there should be no dashing off to the photocopier because you don’t have enough copies, or your board markers have run out of ink.
+                        </Paragraph>
+                        <Paragraph>
+                            If something unexpected crops up (eg, the plug on your CD recorder explodes, or the lights in the classroom stop working), see if you can ask one of your students to leave the room for you to take the message to Admin or Maintenance, rather than going yourself. If you absolutely have to leave the classroom for any reason, make sure your students are working on a task before you do so.
+                        </Paragraph>
+                        <Paragraph>
+                            The more prepared you are with your planning, the more smoothly the class will run. As a new teacher, you should “over-plan”. Try to anticipate possible problems with your lesson, and have solutions ready in place.
+                        </Paragraph>
+                        <Paragraph>
+                            You should check beforehand that all electrical equipment you will need for your class is working, and ALWAYS have a backup plan. For example, if you plan to watch a video with your class, or use the internet – what will you do if there is a power failure, or the internet crashes? Another example of things going wrong could be that a few students finish an activity in half the time you have allowed for it. You should have an extra activity up your sleeve that you can give your “fast” students to work on, while the others are finishing.
+                        </Paragraph>
+                        <Paragraph>
+                            Try to keep all your students engaged at all times: allowing some students to sit and chat while the rest of the class is working is distracting, and could lead to problem behavior such as wandering around the class, talking on mobile phones etc.
+                        </Paragraph>
+                        <Paragraph>
+                            The advantage of being prepared is that it allows you time to think during the class, and to assess the “mood” of the whole class and/or individual students, so that you can head off potential problems before they become problems. If you are too busy improvising or thinking on your feet, your class will have a hectic feel to it which will communicate itself to your students. The more organized you are, the more your students will be able to relax, knowing that they are in capable hands. Strive always to be calm and in control.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                
+
+                <RichTextBox x:Name="mod4part1sect4" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.4 Organizing the Classroom Layout and Expectations
+                        </Paragraph>
+                        <Paragraph>
+                            As far as possible, you should try to ensure that your classroom is a pleasant place to be in, where students feel safe and comfortable. Even on a very limited budget, you can decorate your classroom to make it a more “friendly” place to be in – put up brightly colored language-related posters (or make them yourself), pin up students’ work (this is highly motivating for students, both adult and children), and try to get a couple of plants from somewhere.
+                        </Paragraph>
+                        <Paragraph>
+                            Report maintenance problems immediately (eg lights, broken desks/chairs, peeling paint etc.) and follow up on this if you don’t get results quickly.
+                        </Paragraph>
+                        <Paragraph>
+                            You should also organize your classroom with designated spaces. Below are some essential areas to set up:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Have a bulletin board where you can paste homework assignments and other news or information you want your students to have. Make sure you keep it up to date!</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Set up a "lost &amp; found" corner – this could be as simple as a basket or box on the floor</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Paste up a poster-sized two-month calendar, large enough to be able to write on specific dates. This is extremely useful for keeping in mind assignment deadlines, bank holidays etc</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Use trays on your desk (or even just a designated space on your desk) to collect student homework and assign a student to check that all work is handed in on time</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Have another tray where you keep photocopies or handouts for students. This is useful for students who may have missed a class. Going and getting the work they may have missed should become routine, and you will avoid the student interrupting the current class, saying “Teacher, I didn’t come last class. What did I miss?”</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Set up folders (preferably in a lockable filing cabinet) to keep track of individual student progress, where you can keep assignments, records of grades, infractions and consequences etc</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Keep a box or drawer with useful stationery your students can use and return: stapler, scissors, hole-punch, glue, card, paper, spare pens/pencils and erasers. Bear in mind that in some environments you may have to pay for this and other stationery yourself</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod4part1sect5" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.5 Establishing Expectations
+                        </Paragraph>
+                        <Paragraph>
+                            With any new class (adults or children), it is always worth taking the time to communicate your expectations to your students, and to engage in dialogue as to what is and what isn’t “acceptable” classroom behavior.
+                        </Paragraph>
+                        <Paragraph>
+                            Negotiate the classroom norms with your students at the beginning of the term/course and pin up a short list of rules (maximum 5) somewhere in the class. Refer to the list either verbally or with a gesture when students are in danger of breaking the rules.
+                        </Paragraph>
+                        <Paragraph>
+                            In order to emphasize your expectations of appropriate behavior the rules should be stated in a positive way, rather than negative. For example, “Remember to switch off your mobile phones” rather than “No mobile phones allowed”. A catch-all rule such as “Follow directions the first time they are given” will help to cover problems that are not addressed specifically.
+                        </Paragraph>
+                        <Paragraph>
+                            With adults, frequently a simple reminder will suffice, and with younger learners your school will already have in place a system of consequences for infraction of rules. Make sure your students know what the consequences* are for each infraction (*please note we do not talk “punishment”!).
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox x:Name="mod4part1sect6" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.6 Discipline Issues
+                        </Paragraph>
+                        <Paragraph>
+                            Whether you teach 5-year olds or 40-year olds, at some point, you will find yourself having to “deal” with inappropriate behavior in your classroom. Make no mistake – as the teacher, it is your job to ensure the class runs smoothly and individuals are not permitted to disrupt learning for others. In the following sections, you will gain an understanding of some of the reasons for student behavior or “misbehavior” and some practical ideas for how to cope.
+                        </Paragraph>
+
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod4part1sect7" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.6a Discipline Issues with Young Learners
+                        </Paragraph>
+                        <Paragraph>
+                            It is important to remember that children are still learning to self-regulate their behavior and whatever subject you may be teaching, your job as a teacher includes helping students through this process.
+                        </Paragraph>
+                        <Paragraph>
+                            Lawrence Kohlberg’s Stages of Moral Development postulates that all youngsters go through four stages of moral and ethical reasoning, and that the speed of progress depends entirely on the individual. This explains why although all your students may be the same age, some students haven’t yet learnt to self-regulate, and also why heavy-handed discipline techniques may work well for some students, but not others. The four stages recognized by Kohlberg are:
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            <Bold>Stage 1:</Bold> Recalcitrant behavior - the ‘power’ stage
+                        </Paragraph>
+                        <Paragraph>
+                            This is the lowest stage and is characterized by recalcitrance. Students are defiant, and require a lot of attention from the teacher. They often refuse to do as they are asked and if they want something, they usually just take it. They show very little concern for the feelings of others. They seek out extensions of power - pencils, scissors, and rulers become weapons in their hands. They have not as yet developed an inner sense of morality, but will follow orders because of a fear of reprisal. They generally only respond to assertive discipline – the imbalance between the adult’s power and the student’s power is what makes these students behave. Fortunately, in any one class only a very small percentage will be at this stage of development – by the age of five, most children have grown out of this stage.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            <Bold>Stage 2:</Bold> Self-serving behavior - the ‘reward-punishment’ stage
+                        </Paragraph>
+                        <Paragraph>
+                            These youngsters have an individualistic morality and tend to be egotistical. They will behave in class either because they want a reward (sweets, free time etc.) or because they don’t like the consequences when they don’t behave. They have little sense of self-discipline and rely on the teacher to provide supervision. Most children move beyond this stage by the age of eight or nine. Older students who are still functioning at this level respond well to assertive discipline.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            <Bold>Stage 3:</Bold> Interpersonal discipline - the ‘how can I please you?’ stage
+                        </Paragraph>
+                        <Paragraph>
+                            At this stage, children have started to develop a sense of discipline. They behave because you ask them to – they care about what others think of them and they want you to like them. A softer approach works with these students – assertive discipline is generally unnecessary. These children are just beginning to trust others and build interpersonal relationships – they may be fine with a particular teacher, but misbehave in other classes, depending on the relationship with the teacher. In middle school, the majority of children will be at this stage of development.
+                        </Paragraph>
+                        <Paragraph Style="{StaticResource TEFLParagraphTitle}">
+                            <Bold>Stage 4:</Bold> Self-discipline - the ‘social order’ stage
+                        </Paragraph>
+                        <Paragraph>
+                            Students functioning at this level rarely ever get into trouble. They have a strongly developed sense of right and wrong. They behave well because in their minds it is the right thing to do. They enjoy cooperative learning – you can leave them to get on with a project with little supervision. Students at this level do not respond well to assertive discipline.
+                        </Paragraph>
+                        <Paragraph BorderBrush="{StaticResource Grey}" BorderThickness="0,1,0,0" Padding="0,20,0,0">
+                            According to the Honor Level System, understanding these stages can help us to know how to deal with problem behavior. It is unrealistic to expect a Stage 2 student to suddenly jump to becoming a Stage 4 student. Teachers need to accompany and coax students to the next level of behavior. It is also important to remember that children can always regress to a lower stage at any time. If your student consistently performs at a higher stage and suddenly regresses, you should look for a reason for the shift in behavior: problems with family, friends, alcohol, drugs, tiredness, illness etc.
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod4part1sect8" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.6b Discipline Issues with Young Adults / Teenagers
+                        </Paragraph>
+                        <Paragraph>
+                            Below are some of the situations that you may find in a high school context:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>The haters – students that hate everyone in the class. They tend to be loners</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Sub-groups – small groups within the class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Class clown (male or female) – students that love to joke around and be the center of attention</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students that refuse to complete any homework activities</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Disorganized students – students that are messy and refuse to organize their school supplies</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Walkers – students that love to walk around the class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Talkers – students that love to talk with classmates during the class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Mixed ability classes – students that have a higher level or lower level in the same class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Beauty queens – female students who think they should be in a beauty queen contest and are the prettiest in the class. They can be unkind to other students, particularly other girls, and often distracted in class</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students who don’t pay attention</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Students who don’t participate at all</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+                <RichTextBox x:Name="mod4part1sect9" Style="{StaticResource TEFLChapterSectionText}">
+                    <RichTextBox.Effect>
+                        <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                    </RichTextBox.Effect>
+
+                    <FlowDocument>
+                        <Paragraph  Style="{StaticResource TEFLChapterSectionTitle}">
+                            4.1.6c Discipline Issues with Adults
+                        </Paragraph>
+                        <Paragraph>
+                            The following are examples of adult student behavior that have the potential to disrupt the class or successful learning. Note that many teenagers also exhibit some or all these behaviors:
+                        </Paragraph>
+                        <List>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Rambling — wandering around and off the subject. Using far-fetched examples or analogies</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Shyness or silence — lack of participation</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Talkativeness — knowing everything, manipulation, chronic whining</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Sharp-shooting — trying to shoot you down or trip you up</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Heckling/arguing — disagreeing with everything you say; making personal attacks</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Overt hostility/resistance — angry, belligerent, combative behavior</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Griping — may be legitimate complaining</Paragraph>
+                            </ListItem>
+                            <ListItem Style="{StaticResource SpacedListItem}">
+                                <Paragraph>Side conversations — may be related to subject or personal. Distracts classmates and you</Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </RichTextBox>
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

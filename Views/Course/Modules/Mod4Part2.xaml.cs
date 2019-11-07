@@ -4,14 +4,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using TEFL_App.Helpers;
-using static TEFL_App.Views.Course.Modules.Mod1Part1PageTextClass;
+using static TEFL_App.Views.Course.Modules.Mod4Part2PageTextClass;
 
 namespace TEFL_App.Views.Course.Modules
 {
     /// <summary>
-    /// Interaction logic for Mod1Part1.xaml
+    /// Interaction logic for Mod4Part2.xaml
     /// </summary>
-    public partial class Mod1Part1 : Page
+    public partial class Mod4Part2 : Page
     {
         #region Private Fields
 
@@ -21,7 +21,7 @@ namespace TEFL_App.Views.Course.Modules
 
         #region Public Constructors
 
-        public Mod1Part1(string focusElementID, Action<Page> navigateTo)
+        public Mod4Part2(string focusElementID, Action<Page> navigateTo)
         {
             NavigateTo = navigateTo;
 
@@ -36,9 +36,9 @@ namespace TEFL_App.Views.Course.Modules
 
         #region Public Properties
 
-        public Mod1Part1PageText PageText { get; set; } = App.Settings.CultureInfo == Enums.Language.English
-                    ? Mod1Part1PageTextEN
-                    : Mod1Part1PageTextZH;
+        public Mod4Part2PageText PageText { get; set; } = App.Settings.CultureInfo == Enums.Language.English
+                    ? Mod4Part2PageTextEN
+                    : Mod4Part2PageTextZH;
 
         #endregion Public Properties
 
@@ -62,11 +62,11 @@ namespace TEFL_App.Views.Course.Modules
             }
         }
 
-        private void ProfilePageLink_Click(object sender, RoutedEventArgs e)
+        private void FinalExamPage_Click(object sender, RoutedEventArgs e)
         {
             if (App.StudentProfile.ID > 0)
             {
-                Functions.ShowStudentProfile(App.StudentProfile);
+                NavigateTo(new FinalExam());
             }
             else
             {
@@ -77,7 +77,7 @@ namespace TEFL_App.Views.Course.Modules
         #endregion Private Methods
     }
 
-    public sealed partial class Mod1Part1PageText
+    public sealed partial class Mod4Part2PageText
     {
         #region Public Properties
 
@@ -86,16 +86,16 @@ namespace TEFL_App.Views.Course.Modules
         #endregion Public Properties
     }
 
-    public sealed class Mod1Part1PageTextClass
+    public sealed class Mod4Part2PageTextClass
     {
         #region Internal Fields
 
-        internal static Mod1Part1PageText Mod1Part1PageTextEN = new Mod1Part1PageText
+        internal static Mod4Part2PageText Mod4Part2PageTextEN = new Mod4Part2PageText
         {
             NoProfileError = "Pease log in using a student profile"
         };
 
-        internal static Mod1Part1PageText Mod1Part1PageTextZH = new Mod1Part1PageText
+        internal static Mod4Part2PageText Mod4Part2PageTextZH = new Mod4Part2PageText
         {
             NoProfileError = "请 log in using student profile"
         };

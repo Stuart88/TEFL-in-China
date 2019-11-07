@@ -312,11 +312,10 @@
                             1.1.11 How to receive the certificate
                         </Paragraph>
                         <Paragraph>
-                            You will recieve a digital certificate to your email inbox upon completion of the course. You will also be assigned a TEFL certificate code which can be accessed and verified via
-                            <Hyperlink NavigateUri="https://www.echinacareers.com/" RequestNavigate="Hyperlink_RequestNavigate">eChinaCareers TEFL Verify</Hyperlink>. Potential employers can also use this page to verify the validity of your qualification.
-                        </Paragraph>
-                        <Paragraph>
-                            If you are based in the United States or Canada you will also automatically receive a physical certification shipped to the address in your Teacher Bay profile. If you would like us to post to a different address, please contact us prior to your conclusion of the course.
+                            You will recieve a digital certificate upon completion of the course. You will also be assigned a TEFL certificate code which can be accessed and verified via
+                            <Hyperlink x:Name="TEFLVerifyLink" RequestNavigate="Hyperlink_RequestNavigate">
+                                eChinaCareers TEFL Verify
+                            </Hyperlink> . Potential employers can also use this page to verify the validity of your qualification.
                         </Paragraph>
                         <Paragraph>
                             If you live outside of the United States or Canada and require a physical copy, we are willing to ship internationally at an additional expense. Please inquire further.
