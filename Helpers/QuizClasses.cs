@@ -49,11 +49,11 @@ namespace TEFL_App.Helpers
 
         public TeflTest(int teflID, List<TestQuestion> questions, double score, string candName)
         {
-            TEFLprofileID = teflID;
-            Questions = questions;
-            ModuleNumber = questions[0].Module;
-            Score = score;
-            CandidateName = candName;
+            this.TEFLprofileID = teflID;
+            this.Questions = questions;
+            this.ModuleNumber = questions[0].Module;
+            this.Score = score;
+            this.CandidateName = candName;
         }
 
         #endregion Public Constructors
@@ -75,17 +75,17 @@ namespace TEFL_App.Helpers
 
         public TestQuestion(ModuleNumber module, QuestionType type, string question, List<string> answers, List<int> correctAnsIndex)
         {
-            Type = type;
-            Module = module;
-            Question = question;
+            this.Type = type;
+            this.Module = module;
+            this.Question = question;
 
             for (int i = 0; i < answers.Count; i++)
             {
-                Answers.Add(new MultipleChoiceOption(answers[i]));
+                this.Answers.Add(new MultipleChoiceOption(answers[i]));
             }
             for (int i = 0; i < correctAnsIndex.Count; i++)
             {
-                CorrectAnswers.Add(this.Answers[correctAnsIndex[i]].Text);
+                this.CorrectAnswers.Add(this.Answers[correctAnsIndex[i]].Text);
             }
         }
 
@@ -95,6 +95,7 @@ namespace TEFL_App.Helpers
 
         public List<MultipleChoiceOption> Answers { get; set; } = new List<MultipleChoiceOption>();
         public List<string> CorrectAnswers { get; set; } = new List<string>();
+        public List<string> SelectedAnswers { get; set; } = new List<string>();
         public QuestionResult FinalResult { get; set; }
         public ModuleNumber Module { get; set; }
         public string Question { get; set; }

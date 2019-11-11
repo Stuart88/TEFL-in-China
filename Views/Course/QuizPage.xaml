@@ -115,6 +115,8 @@
             </Grid>
 
             <Button Grid.Row="3" 
+                    x:Name="QuizSubmitBtn"
+                    Click="QuizSubmitBtn_Click"
                     Style="{StaticResource MainButtonStyle}"
                     Margin="0,40,0,40"
                     Height="50"

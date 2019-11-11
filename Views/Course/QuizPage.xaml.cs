@@ -19,6 +19,7 @@ namespace TEFL_App.Views.Course
         public bool isModuleQuiz;
         private static Random rnd = new Random();
         private List<TestQuestion> Questions;
+        public double Score = 0d;
 
         #endregion Private Fields
 
@@ -74,19 +75,31 @@ namespace TEFL_App.Views.Course
         /// <summary>
         /// Appends a new grid of checkbox options to the referenced grid
         /// </summary>
-        private void CreateCheckBoxOptions(List<MultipleChoiceOption> answers, ref Grid parent, int questionNum)
+        private void CreateCheckBoxOptions(TestQuestion question, ref Grid parent, int questionNum)
         {
             Grid grid = new Grid();
+
+            List<MultipleChoiceOption> answers = question.Answers;
 
             for (int j = 0; j < answers.Count; j++)
             {
                 grid.RowDefinitions.Add(new RowDefinition { });
+                string questionText = answers[j].Text;
 
                 CheckBox checkBox = new CheckBox
                 {
                     Name = string.Format("Q{0}Opt{1}", questionNum, j),
-                    Content = new TextBlock { Text = answers[j].Text, Style = FindResource("AnswerOptionTextStyle") as Style },
-                    Style = FindResource("CheckboxOptionStyle") as Style
+                    Content = new TextBlock { Text = questionText, Style = FindResource("AnswerOptionTextStyle") as Style },
+                    Style = FindResource("CheckboxOptionStyle") as Style,
+                    Tag = question.CorrectAnswers.Any(x => x == questionText)        //Tag = true if this option is a correct answer
+                };
+                checkBox.Checked += (s, e) =>
+                {
+                    Questions[questionNum].SelectedAnswers.Add(questionText);
+                };
+                checkBox.Unchecked += (s, e) =>
+                {
+                    Questions[questionNum].SelectedAnswers.Remove(questionText);
                 };
 
                 grid.Children.Add(checkBox);
@@ -107,12 +120,16 @@ namespace TEFL_App.Views.Course
                 //Single question grid. Holds question wording and answer options
                 Grid qGrid = new Grid()
                 {
+                    Name = string.Format("Question{0}", i),
+                    Tag = questions[i],
                     Style = FindResource("QuizQuestionAreaStyle") as Style,
                 };
+                RegisterName(string.Format("Question{0}", i), qGrid);
+
                 TextBlock qText = new TextBlock
                 {
                     Text = string.Format("{0}. {1}", i + 1, questions[i].Question),
-                    Style = FindResource("QuizQuestionWordingStyle") as Style
+                    Style = FindResource("QuizQuestionWordingStyle") as Style,
                 };
 
                 qGrid.RowDefinitions.Add(new RowDefinition { Style = FindResource("QuizRowAreaStyle") as Style });
@@ -121,11 +138,11 @@ namespace TEFL_App.Views.Course
 
                 if (questions[i].Type == QuestionType.SingleChoice)
                 {
-                    CreateRadioOptions(questions[i].Answers, ref qGrid, i);
+                    CreateRadioOptions(questions[i], ref qGrid, i);
                 }
                 else
                 {
-                    CreateCheckBoxOptions(questions[i].Answers, ref qGrid, i);
+                    CreateCheckBoxOptions(questions[i], ref qGrid, i);
                 }
 
                 qGrid.RowDefinitions.Add(new RowDefinition { Style = FindResource("QuizRowAreaStyle") as Style });
@@ -137,19 +154,31 @@ namespace TEFL_App.Views.Course
         /// <summary>
         /// Appends a new grid of radio button options to the referenced grid
         /// </summary>
-        private void CreateRadioOptions(List<MultipleChoiceOption> answers, ref Grid parent, int questionNum)
+        private void CreateRadioOptions(TestQuestion question, ref Grid parent, int questionNum)
         {
             Grid grid = new Grid();
+
+            List<MultipleChoiceOption> answers = question.Answers;
 
             for (int j = 0; j < answers.Count; j++)
             {
                 grid.RowDefinitions.Add(new RowDefinition { });
+                string questionText = answers[j].Text;
 
                 RadioButton radioButton = new RadioButton
                 {
                     GroupName = string.Format("Question{0}", questionNum),
-                    Content = new TextBlock { Text = answers[j].Text, Style = FindResource("AnswerOptionTextStyle") as Style },
-                    Style = FindResource("RadioOptionStyle") as Style
+                    Content = new TextBlock { Text = questionText, Style = FindResource("AnswerOptionTextStyle") as Style },
+                    Style = FindResource("RadioOptionStyle") as Style,
+                    Tag = question.CorrectAnswers.Any(x => x == questionText)        //Tag = true if this option is a correct answer
+                };
+                radioButton.Checked += (s, e) =>
+                {         
+                    Questions[questionNum].SelectedAnswers.Add(questionText);
+                };
+                radioButton.Unchecked += (s, e) =>
+                {
+                    Questions[questionNum].SelectedAnswers.Remove(questionText);
                 };
 
                 grid.Children.Add(radioButton);
@@ -171,5 +200,26 @@ namespace TEFL_App.Views.Course
         }
 
         #endregion Public Methods
+
+        private void QuizSubmitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            double correct = 0;
+            for(int i =  0; i < Questions.Count; i++)
+            {
+                Grid qGrid = (Grid)FindName(string.Format("Question{0}", i));
+                qGrid.IsEnabled = false;
+                
+                if (Questions[i].SelectedAnswers.All(x => Questions[i].CorrectAnswers.Contains(x))
+                    && Questions[i].CorrectAnswers.Count == Questions[i].SelectedAnswers.Count)    // compare with .Count to make sure multiple choice answers only pass when ALL choices are correct
+                {
+                    correct++;
+                }
+
+            }
+
+            Score = Math.Round(100 * correct / Questions.Count, 0);
+
+            Functions.ShowMessageDialog("Your score", string.Format("{0}%", Score));
+        }
     }
 }
