@@ -24,7 +24,7 @@ namespace TEFL_App.Views.Course
         {
             InitializeComponent();
 
-            welcomeText.Text = string.Format("{0}, 你好！", App.StudentProfile.Name);
+            ContentFrame.Content = new Student.StudentProfile(App.StudentProfile);
         }
     }
 }

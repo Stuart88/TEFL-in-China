@@ -6,6 +6,7 @@ using TEFL_App.Views.Course;
 using TEFL_App.Views.Management;
 using System.Linq;
 using static TEFL_App.Views.General.LayoutPageTextClass;
+using static TEFL_App.Helpers.QuizQuestions;
 using System.Windows.Media.Animation;
 using TEFL_App.Helpers;
 
@@ -140,7 +141,7 @@ namespace TEFL_App.Views.General
                     "3.1" => new Course.Modules.Mod3Part1(data.SectionID, NavigateTo),
                     "3.2" => new Course.Modules.Mod3Part2(data.SectionID, NavigateTo),
                     "3.3" => new Course.Modules.Mod3Part3(data.SectionID, NavigateTo),
-                    "3.4" => new Course.Modules.Mod3Part4(data.SectionID, NavigateTo),
+                    "3.5" => new Course.Modules.Mod3Part4(data.SectionID, NavigateTo),
                     "4.1" => new Course.Modules.Mod4Part1(data.SectionID, NavigateTo),
                     "4.2" => new Course.Modules.Mod4Part2(data.SectionID, NavigateTo),
                     _ => new ManagerHome()
@@ -153,6 +154,8 @@ namespace TEFL_App.Views.General
                 ViewingPage.ScrollIntoViewByName(data.SectionID, "ScrollArea");
             }
         }
+
+
 
         private Button ChapterTitleBtn(CourseData.ChapterTitleData data)
         {
@@ -182,13 +185,38 @@ namespace TEFL_App.Views.General
         {
             string panelName = (string)((Button)sender).Tag;
 
-            StackPanel animatingPanel = (StackPanel)FindName(panelName);
-
-            if(animatingPanel != null)
+            if (panelName.Contains("Quiz"))
             {
-                CreateMenuAnimation(animatingPanel);
+                string quizIdentifier = string.Join(".", panelName.Split('_').Skip(1).Take(2).ToArray());           //panelName takes the form Quiz_1_4_0 (i.e. ChapterTitleData with Number = "1.4.0" )
 
+               ViewingPage.Content = quizIdentifier switch
+               {
+                   "1.4" => new QuizPage(GetQuestions(ModuleNumber.Mod1), ModuleNumber.Mod1),
+                   "2.3" => new QuizPage(GetQuestions(ModuleNumber.Mod2), ModuleNumber.Mod2),
+                   "3.5" => new QuizPage(GetQuestions(ModuleNumber.Mod3), ModuleNumber.Mod3),
+                   "4.3" => new QuizPage(GetQuestions(ModuleNumber.Mod4), ModuleNumber.Mod4),
+                   _ => throw new Exception("Nothing found!")
+               };
+                try
+                {
+                    ContentArea.Content = ViewingPage.Content;
+                }
+                catch (Exception ex)
+                {
+                    Functions.ShowErrorMessageDialog(ex);
+                }
             }
+            else
+            {
+                StackPanel animatingPanel = (StackPanel)FindName(panelName);
+
+                if (animatingPanel != null)
+                {
+                    CreateMenuAnimation(animatingPanel);
+
+                }
+            }
+            
 
         }
 
@@ -283,7 +311,14 @@ namespace TEFL_App.Views.General
 
         private string ChapterStackName(CourseData.ChapterTitleData data)
         {
-            return string.Format("ChapterStack{0}", ChapterNameString(data));
+            if (data.Title.Contains("Quiz"))
+            {
+                return string.Format("Quiz_{0}", ChapterNameString(data));
+            }
+            else
+            {
+                return string.Format("ChapterStack{0}", ChapterNameString(data));
+            }
         }
 
         /// <summary>
@@ -314,6 +349,7 @@ namespace TEFL_App.Views.General
             {
                 "ManagerHome" => new ManagerHome(),
                 "CourseHome" => new CourseHome(),
+                "Final Exam" => new QuizPage(GetQuestions(ModuleNumber.FinalExam), ModuleNumber.FinalExam),
                 "Staff" => new Staff(),
                 "Course" => new TEFLCourse(),
                 "Assignment" => new LessonPlanPage(),
@@ -349,6 +385,7 @@ namespace TEFL_App.Views.General
         {
             managerHomeBtn.Content = PageText.Home;
             courseHomeBtn.Content = PageText.Home;
+            finalExamBtn.Content = PageText.FinalExam;
             courseBtn.Content = PageText.Course;
             staffBtn.Content = PageText.Staff;
             settingsBtn.Content = PageText.Settings;
@@ -375,6 +412,7 @@ namespace TEFL_App.Views.General
 
         public string Course { get; set; }
         public string LessonPlan { get; set; }
+        public string FinalExam { get; set; }
         public string Help { get; set; }
         public string Home { get; set; }
         public string Logout { get; set; }
@@ -391,6 +429,7 @@ namespace TEFL_App.Views.General
         internal static LayoutPageText LayoutPageTextEn = new LayoutPageText
         {
             Home = "Home",
+            FinalExam = "Final Exam",
             Staff = "Staff",
             Course = "TEFL Course",
             LessonPlan = "Lesson Plan",
@@ -403,6 +442,7 @@ namespace TEFL_App.Views.General
         {
             Home = "主页",
             Staff = "人工",
+            FinalExam = "考试",
             Course = "TEFL 教程",
             LessonPlan = "Lesson Plan",
             Settings = "设备",

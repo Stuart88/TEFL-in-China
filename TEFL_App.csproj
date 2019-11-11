@@ -118,6 +118,8 @@
     <Compile Include="DataLayer\Enums.cs" />
     <Compile Include="Helpers\Converters.cs" />
     <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Helpers\QuizClasses.cs" />
+    <Compile Include="Helpers\QuizQuestions.cs" />
     <Compile Include="Views\Course\CourseHome.xaml.cs">
       <DependentUpon>CourseHome.xaml</DependentUpon>
     </Compile>
@@ -159,6 +161,9 @@
     </Compile>
     <Compile Include="Views\Course\Modules\Mod1Part2.xaml.cs">
       <DependentUpon>Mod1Part2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Course\QuizPage.xaml.cs">
+      <DependentUpon>QuizPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Course\TEFLCourse.xaml.cs">
       <DependentUpon>TEFLCourse.xaml</DependentUpon>
@@ -268,6 +273,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Course\Modules\Mod1Part2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Course\QuizPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

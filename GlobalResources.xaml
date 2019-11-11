@@ -13,6 +13,7 @@
     <converters:DatetoStringConverter  x:Key="DatetoStringConverter" />
     <converters:ToCheckmarkConverter  x:Key="ToCheckmarkConverter" />
     <converters:ExamAttemptsConverter  x:Key="ExamAttemptsConverter" />
+    <converters:VisibilityConverter  x:Key="VisibilityConverter" />
     <converters:HighestValueFromStringListConverter  x:Key="HighestValueFromStringListConverter" />
 
     <!--<Image x:Key="LogoImage" MaxWidth="150" MaxHeight="150" Source="Assets\Images\eCcLogo.png"/>-->

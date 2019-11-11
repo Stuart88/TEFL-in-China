@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using TEFL_App.Helpers;
 
@@ -23,6 +24,24 @@ namespace TEFL_App.Converters
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return DateTime.Parse(value as string);
+        }
+    }
+
+    public class VisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value switch
+            {
+                null => Visibility.Visible,
+                bool b => b ? Visibility.Visible : Visibility.Collapsed, 
+                _ => Visibility.Visible
+            };
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
         }
     }
 

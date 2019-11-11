@@ -95,6 +95,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Frame Grid.Row="0" Padding="30" Background="White" BorderBrush="{StaticResource Orange}" BorderThickness="4"
@@ -114,6 +115,10 @@
 
             <Button Grid.Row="4" x:Name="courseBtn" Click="MenuBtnClick" Tag="Course"
                     Content="{Binding Path=PageText.Course, ElementName=layoutWindow}"
+                    Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
+
+            <Button Grid.Row="4" x:Name="finalExamBtn" Click="MenuBtnClick" Tag="Final Exam"
+                    Content="{Binding Path=PageText.FinalExam, ElementName=layoutWindow}"
                     Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
 
             <Button Grid.Row="5" x:Name="assignmentBtn" Click="MenuBtnClick" Tag="Assignment"
@@ -137,7 +142,7 @@
             
         </Grid>
 
-        <Frame x:Name="ContentArea" NavigationUIVisibility="Visible"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Frame x:Name="ContentArea" NavigationUIVisibility="Hidden"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
     </Grid>
 </Page>

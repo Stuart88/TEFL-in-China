@@ -17,6 +17,7 @@ namespace TEFL_App.Helpers
     public static class Functions
     {
         #region Public Methods
+       
 
         public static string Base64Encode(string plainText)
         {

@@ -1,0 +1,127 @@
+﻿<Page x:Class="TEFL_App.Views.Course.QuizPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.Course"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Quiz Page"
+      Background="{StaticResource LightGrey}"
+      x:Name="QuizPage_">
+
+    <Page.Resources>
+        <Style TargetType="RowDefinition" x:Key="QuizRowAreaStyle">
+        </Style>
+        <Style TargetType="Grid" x:Key="QuizQuestionAreaStyle">
+            <Setter Property="Margin" Value="0,10,0,10"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="QuizQuestionWordingStyle">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="{StaticResource LightGrey}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+        </Style>
+        <Style TargetType="RadioButton" x:Key="RadioOptionStyle">
+            <Setter Property="Margin" Value="20,10,0,10"/>
+        </Style>
+        <Style TargetType="CheckBox" x:Key="CheckboxOptionStyle">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="20,10,0,10"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="AnswerOptionTextStyle">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid x:Name="mainPage" 
+              HorizontalAlignment="Center" 
+              MaxWidth="900" 
+              Background="White" 
+              UseLayoutRounding="True"
+              Margin="0,30,0,400">
+            
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+            </Grid.Effect>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="QuizTitle"
+                       Margin="0,20,0,0"
+                       Foreground="White"
+                       FontSize="40"
+                       Background="{StaticResource Orange}"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"/>
+
+            <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
+                         Visibility="{Binding Path=isModuleQuiz, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}">
+                <FlowDocument>
+                    <Paragraph>
+                        The following is a self-assessment, not a graded exam. Use this time not only to simply answer the questions to the best of your ability, but also to look back at your notes, the module texts, and all links provided to enhance your memory and comprehension.
+                    </Paragraph>
+                    <Paragraph>
+                        Please pass this quiz with a score of
+                        <Span x:Name="PassMarkSpan"></Span> % 
+                    to move on to the next module.
+                    </Paragraph>
+                    <Paragraph>
+                        Best attemp:
+                        <Span x:Name="BestAttemptSpan" FontWeight="Bold"></Span>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+            <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
+                         Visibility="{Binding Path=isFinalExam, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}"
+                         Background="#e1e2ff">
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center" FontSize="25" FontWeight="Bold">
+                        Info
+                    </Paragraph>
+                    <List>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>The final exam consists of 40 multiple choice questions.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>Some questions are single choice; others require multiple options to be picked. Single choice questions will only allow you to choose one answer, whereas multiple choices will have checkboxes, for which you can choose to check as many boxes as you think are correct.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>Your score will be provided automatically upon completion of the test, and a copy of your results will be saved in the Exam Results page.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>After completing the final exam, you will be able to move on to the final stage, the Lesson Plan Assignment.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>
+                                <Bold>You must achieve a score of at least 70% to pass the final exam.</Bold>
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </RichTextBox>
+
+            <Grid Grid.Row="2"  x:Name="QuestionsGrid" ScrollViewer.CanContentScroll="True" MaxWidth="600">
+
+            </Grid>
+
+            <Button Grid.Row="3" 
+                    Style="{StaticResource MainButtonStyle}"
+                    Margin="0,40,0,40"
+                    Height="50"
+                    FontSize="18">
+                Submit
+            </Button>
+
+        </Grid>
+    </ScrollViewer>
+</Page>

@@ -80,8 +80,8 @@
         </Style>
     </Page.Resources>
 
-    <ScrollViewer>
-        <Grid  VerticalAlignment="Center">
+    <ScrollViewer Background="{StaticResource LightGrey}">
+        <Grid  VerticalAlignment="Center" MaxWidth="900" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
