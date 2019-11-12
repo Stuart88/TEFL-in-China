@@ -860,7 +860,21 @@ namespace TEFL_App.Helpers
 
         public static List<TestQuestion> GetQuestions(ModuleNumber module)
         {
+            Questions.ResetQuestions();
+
             return Questions.Where(x => x.Module == module).ToList();
+        }
+
+        /// <summary>
+        /// Rests the state of all questions.
+        /// </summary>
+        /// <param name="Qs"></param>
+        public static void ResetQuestions(this List<TestQuestion> Qs)
+        {
+            foreach(var q in Qs)
+            {
+                q.SelectedAnswers.Clear();
+            }
         }
 
         /******************/

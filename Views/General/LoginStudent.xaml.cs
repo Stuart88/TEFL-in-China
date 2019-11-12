@@ -115,6 +115,7 @@ namespace TEFL_App.Views.General
 
                         App.UserType = Helpers.Enums.UserType.Candidate;
                         App.StudentProfile = json.data;
+                        App.StudentProfile.ProcessData();
                         SetMainWindowContent(new Layout(Logout));
                     }
                     else

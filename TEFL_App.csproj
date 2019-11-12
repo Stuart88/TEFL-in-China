@@ -120,6 +120,7 @@
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Helpers\QuizClasses.cs" />
     <Compile Include="Helpers\QuizQuestions.cs" />
+    <Compile Include="Models\HttpPostable.cs" />
     <Compile Include="Views\Course\CourseHome.xaml.cs">
       <DependentUpon>CourseHome.xaml</DependentUpon>
     </Compile>

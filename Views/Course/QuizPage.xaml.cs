@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -15,21 +16,44 @@ namespace TEFL_App.Views.Course
     {
         #region Private Fields
 
-        public bool isFinalExam;
-        public bool isModuleQuiz;
-        private static Random rnd = new Random();
-        private List<TestQuestion> Questions;
         public double Score = 0d;
+        private static Random rnd = new Random();
+        private ModuleNumber ModuleNumber;
+        private List<TestQuestion> Questions;
+        public bool CanDoQuiz { get; set; }
+        public bool CannotDoQuiz { get; set; }
+        public bool IsFinalExam { get; set; }
+        public bool IsModuleQuiz { get; set; }
 
         #endregion Private Fields
+
+        #region Private Methods
+
+        private bool CheckCanDoQuiz(Models.TEFLProfile profile, ModuleNumber module)
+        {
+            return module switch
+            {
+                ModuleNumber.Mod1 => true,
+                ModuleNumber.Mod2 => Functions.HighestExamScore(profile.Mod1QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.Mod3 => Functions.HighestExamScore(profile.Mod2QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.Mod4 => Functions.HighestExamScore(profile.Mod3QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.FinalExam => Functions.HighestExamScore(profile.Mod4QuizScores) >= Globals.QuizScorePassMark,
+                _ => false
+            };
+        }
+
+        #endregion Private Methods
 
         #region Public Constructors
 
         public QuizPage(List<TestQuestion> questions, ModuleNumber module)
         {
             Questions = Shuffle(questions);
-            isModuleQuiz = module != ModuleNumber.FinalExam;
-            isFinalExam = module == ModuleNumber.FinalExam;
+            IsModuleQuiz = module != ModuleNumber.FinalExam;
+            IsFinalExam = module == ModuleNumber.FinalExam;
+            ModuleNumber = module;
+            CanDoQuiz = CheckCanDoQuiz(App.StudentProfile, module);
+            CannotDoQuiz = !CanDoQuiz;
 
             InitializeComponent();
 
@@ -65,12 +89,40 @@ namespace TEFL_App.Views.Course
                 BestAttemptSpan.Inlines.Add(string.Format("{0}%", bestAttempt));
             }
 
-            CreateQuestions(Questions);
+            if (CanDoQuiz)
+            {
+                CreateQuestions(Questions);
+            }
+            else
+            {
+                CannotDoQuizText.Inlines.Add(string.Format("Please first complete Module {0}.", (int)module));
+            }
         }
 
         #endregion Public Constructors
 
+
+
         #region Private Methods
+
+        /// <summary>
+        /// Adds final row to the given question grid, which will hold text showing "Correct"/"Incorrect" after quiz is comlete
+        /// </summary>
+        /// <param name="questionNum"></param>
+        /// <param name="grid"></param>
+        /// <param name="rowTag">Tag is used later for appending result text, i.e. Grid.SetRow(resultText, tag) , in QuizSubmitBtn_Click()</param>
+        private void AppendResultRow(int questionNum, ref Grid grid, int rowTag)
+        {
+            //Add final empty row for showing question result after completion
+            string rowName = string.Format("Question{0}ResultRow", questionNum);
+            RowDefinition newRow = new RowDefinition
+            {
+                Name = rowName,
+                Tag = rowTag
+            };
+            grid.RowDefinitions.Add(newRow);
+            RegisterName(rowName, newRow);
+        }
 
         /// <summary>
         /// Appends a new grid of checkbox options to the referenced grid
@@ -104,6 +156,11 @@ namespace TEFL_App.Views.Course
 
                 grid.Children.Add(checkBox);
                 Grid.SetRow(checkBox, j);
+
+                if (j == answers.Count - 1)
+                {
+                    AppendResultRow(questionNum, ref grid, j + 1);
+                }
             }
 
             parent.Children.Add(grid);
@@ -112,19 +169,22 @@ namespace TEFL_App.Views.Course
 
         private void CreateQuestions(List<TestQuestion> questions)
         {
+            QuestionsGrid.Children.Clear();
+
             for (int i = 0; i < questions.Count; i++)
             {
                 //Main quiz area, holds all questions.
                 QuestionsGrid.RowDefinitions.Add(new RowDefinition { Style = FindResource("QuizRowAreaStyle") as Style });
 
                 //Single question grid. Holds question wording and answer options
+                string gridName = string.Format("Question{0}Grid", i);
                 Grid qGrid = new Grid()
                 {
-                    Name = string.Format("Question{0}", i),
+                    Name = gridName,
                     Tag = questions[i],
                     Style = FindResource("QuizQuestionAreaStyle") as Style,
                 };
-                RegisterName(string.Format("Question{0}", i), qGrid);
+                RegisterName(gridName, qGrid);
 
                 TextBlock qText = new TextBlock
                 {
@@ -173,7 +233,7 @@ namespace TEFL_App.Views.Course
                     Tag = question.CorrectAnswers.Any(x => x == questionText)        //Tag = true if this option is a correct answer
                 };
                 radioButton.Checked += (s, e) =>
-                {         
+                {
                     Questions[questionNum].SelectedAnswers.Add(questionText);
                 };
                 radioButton.Unchecked += (s, e) =>
@@ -183,6 +243,11 @@ namespace TEFL_App.Views.Course
 
                 grid.Children.Add(radioButton);
                 Grid.SetRow(radioButton, j);
+
+                if (j == answers.Count - 1)
+                {
+                    AppendResultRow(questionNum, ref grid, j + 1);
+                }
             }
 
             parent.Children.Add(grid);
@@ -201,25 +266,97 @@ namespace TEFL_App.Views.Course
 
         #endregion Public Methods
 
-        private void QuizSubmitBtn_Click(object sender, RoutedEventArgs e)
+        private async System.Threading.Tasks.Task PostQuizResultAsync(string scoreString)
+        {
+            switch (ModuleNumber)
+            {
+                case ModuleNumber.Mod1:
+                    App.StudentProfile.Mod1QuizScores += scoreString;
+                    break;
+
+                case ModuleNumber.Mod2:
+                    App.StudentProfile.Mod2QuizScores += scoreString;
+                    break;
+
+                case ModuleNumber.Mod3:
+                    App.StudentProfile.Mod3QuizScores += scoreString;
+                    break;
+
+                case ModuleNumber.Mod4:
+                    App.StudentProfile.Mod4QuizScores += scoreString;
+                    break;
+
+                case ModuleNumber.FinalExam:
+                    App.StudentProfile.ExamScores += scoreString;
+                    App.StudentProfile.ExamAttempts += 1;
+                    break;
+            }
+
+            var dictionary = App.StudentProfile.ConvertToDict();
+            dictionary.Add("userType", "TEFLStudent");
+
+            string userData = Functions.Base64Encode(string.Format("{0};{1}:{2}", App.ManagerProfile.ID, App.UserLogin, App.UserPassword));
+            App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
+
+            var postResult = await Functions.PostItem<Models.TEFLProfile>("EditUpdateTEFLProfile", dictionary);
+
+            if (postResult.ok)
+            {
+                App.StudentProfile = postResult.data;
+
+                Functions.ShowMessageDialog("Your score", string.Format("You scored {0}%", Score));
+            }
+            else
+            {
+                //error message shows in PostItem<>()
+               // Functions.ShowErrorMessageDialog(new Exception(postResult.message));
+            }
+        }
+
+        private async void QuizSubmitBtn_ClickAsync(object sender, RoutedEventArgs e)
         {
             double correct = 0;
-            for(int i =  0; i < Questions.Count; i++)
+
+            for (int i = 0; i < Questions.Count; i++)
             {
-                Grid qGrid = (Grid)FindName(string.Format("Question{0}", i));
+                //Get question grid
+                Grid qGrid = (Grid)FindName(string.Format("Question{0}Grid", i));
+
+                //Disable questions and quiz button.
                 qGrid.IsEnabled = false;
-                
+                qGrid.Opacity = 0.5;
+                qGrid.Background = FindResource("LightGrey") as SolidColorBrush;
+                QuizSubmitBtn.IsEnabled = false;
+                QuizSubmitBtn.Opacity = 0.5;
+
+                //Add new row for showing result.
+                qGrid.RowDefinitions.Add(new RowDefinition { });
+                int resultRowIndex = (int)(FindName(string.Format("Question{0}ResultRow", i)) as RowDefinition).Tag;
+                TextBlock resultText = new TextBlock
+                {
+                    Style = FindResource("ResultTextStyle") as Style
+                };
+                qGrid.Children.Add(resultText);
+                Grid.SetRow(resultText, resultRowIndex);
+
+                //Check answer
                 if (Questions[i].SelectedAnswers.All(x => Questions[i].CorrectAnswers.Contains(x))
-                    && Questions[i].CorrectAnswers.Count == Questions[i].SelectedAnswers.Count)    // compare with .Count to make sure multiple choice answers only pass when ALL choices are correct
+                    && Questions[i].CorrectAnswers.Count == Questions[i].SelectedAnswers.Count)    // compare with .Count() to make sure multiple choice answers only pass when ALL choices are correct
                 {
                     correct++;
+                    resultText.Text = "✔ - Correct";
+                    resultText.Foreground = new SolidColorBrush(Colors.Green);
                 }
-
+                else
+                {
+                    resultText.Text = "❌ - Incorrect";
+                    resultText.Foreground = new SolidColorBrush(Colors.Red);
+                }
             }
 
             Score = Math.Round(100 * correct / Questions.Count, 0);
 
-            Functions.ShowMessageDialog("Your score", string.Format("{0}%", Score));
+            await PostQuizResultAsync(Score.ToString() + ",");
         }
     }
 }

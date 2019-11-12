@@ -189,17 +189,17 @@ namespace TEFL_App.Views.General
             {
                 string quizIdentifier = string.Join(".", panelName.Split('_').Skip(1).Take(2).ToArray());           //panelName takes the form Quiz_1_4_0 (i.e. ChapterTitleData with Number = "1.4.0" )
 
-               ViewingPage.Content = quizIdentifier switch
-               {
-                   "1.4" => new QuizPage(GetQuestions(ModuleNumber.Mod1), ModuleNumber.Mod1),
-                   "2.3" => new QuizPage(GetQuestions(ModuleNumber.Mod2), ModuleNumber.Mod2),
-                   "3.5" => new QuizPage(GetQuestions(ModuleNumber.Mod3), ModuleNumber.Mod3),
-                   "4.3" => new QuizPage(GetQuestions(ModuleNumber.Mod4), ModuleNumber.Mod4),
-                   _ => throw new Exception("Nothing found!")
-               };
                 try
                 {
-                    ContentArea.Content = ViewingPage.Content;
+                    ViewingPage = quizIdentifier switch
+                    {
+                        "1.4" => new QuizPage(GetQuestions(ModuleNumber.Mod1), ModuleNumber.Mod1),
+                        "2.3" => new QuizPage(GetQuestions(ModuleNumber.Mod2), ModuleNumber.Mod2),
+                        "3.5" => new QuizPage(GetQuestions(ModuleNumber.Mod3), ModuleNumber.Mod3),
+                        "4.3" => new QuizPage(GetQuestions(ModuleNumber.Mod4), ModuleNumber.Mod4),
+                        _ => throw new Exception("Nothing found!")
+                    };
+                    ContentArea.Content = ViewingPage;
                 }
                 catch (Exception ex)
                 {
@@ -213,7 +213,6 @@ namespace TEFL_App.Views.General
                 if (animatingPanel != null)
                 {
                     CreateMenuAnimation(animatingPanel);
-
                 }
             }
             

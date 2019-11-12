@@ -34,6 +34,10 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="ResultTextStyle">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
     </Page.Resources>
 
     <ScrollViewer>
@@ -42,7 +46,7 @@
               MaxWidth="900" 
               Background="White" 
               UseLayoutRounding="True"
-              Margin="0,30,0,400">
+              Margin="10,30,10,400">
             
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
@@ -64,7 +68,7 @@
                        TextAlignment="Center"/>
 
             <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
-                         Visibility="{Binding Path=isModuleQuiz, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}">
+                         Visibility="{Binding Path=IsModuleQuiz, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}">
                 <FlowDocument>
                     <Paragraph>
                         The following is a self-assessment, not a graded exam. Use this time not only to simply answer the questions to the best of your ability, but also to look back at your notes, the module texts, and all links provided to enhance your memory and comprehension.
@@ -75,14 +79,14 @@
                     to move on to the next module.
                     </Paragraph>
                     <Paragraph>
-                        Best attemp:
+                        Best attempt:
                         <Span x:Name="BestAttemptSpan" FontWeight="Bold"></Span>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
 
             <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
-                         Visibility="{Binding Path=isFinalExam, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}"
+                         Visibility="{Binding Path=IsFinalExam, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}"
                          Background="#e1e2ff">
                 <FlowDocument>
                     <Paragraph TextAlignment="Center" FontSize="25" FontWeight="Bold">
@@ -107,16 +111,29 @@
                             </Paragraph>
                         </ListItem>
                     </List>
+                   
                 </FlowDocument>
             </RichTextBox>
 
-            <Grid Grid.Row="2"  x:Name="QuestionsGrid" ScrollViewer.CanContentScroll="True" MaxWidth="600">
+            <RichTextBox  Grid.Row="2" Style="{StaticResource TEFLChapterSectionText}"
+                         Visibility="{Binding Path=CannotDoQuiz, ElementName=QuizPage_, Converter={StaticResource VisibilityConverter}}"
+                         Background="#e1e2ff">
+                <FlowDocument>
+                    <Paragraph x:Name="CannotDoQuizText" TextAlignment="Center" >
+                      
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
 
-            </Grid>
+            <Grid Grid.Row="2"  x:Name="QuestionsGrid" ScrollViewer.CanContentScroll="True" MaxWidth="600"
+                  Visibility="{Binding ElementName=QuizPage_, Path=CanDoQuiz, Converter={StaticResource VisibilityConverter}}" />
+
+
 
             <Button Grid.Row="3" 
+                    Visibility="{Binding ElementName=QuizPage_, Path=CanDoQuiz, Converter={StaticResource VisibilityConverter}}"
                     x:Name="QuizSubmitBtn"
-                    Click="QuizSubmitBtn_Click"
+                    Click="QuizSubmitBtn_ClickAsync"
                     Style="{StaticResource MainButtonStyle}"
                     Margin="0,40,0,40"
                     Height="50"

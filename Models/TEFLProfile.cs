@@ -2,7 +2,7 @@
 
 namespace TEFL_App.Models
 {
-    public class TEFLProfile
+    public class TEFLProfile : HttpPostable
     {
 
         #region Public Properties
@@ -30,20 +30,28 @@ namespace TEFL_App.Models
 
         #endregion Public Properties
 
+        /// <summary>
+        /// Ensures properties will work in software, i.e. sets null strings to string.empty
+        /// </summary>
+        public void ProcessData()
+        {
+            LessonPlanPath ??= "";
+            Name ??= "";
+            Mod1QuizScores ??= "";
+            Mod2QuizScores ??= "";
+            Mod3QuizScores ??= "";
+            Mod4QuizScores ??= "";
+            ModulesComplete ??= "";
+            ExamScores ??= "";
+
+            LessonPlanSubmitted = !string.IsNullOrEmpty(LessonPlanPath);
+        }
+
         #region Local Data
 
         public bool LessonPlanSubmitted { get; set; } = false;
 
         #endregion Local Data
 
-        public void ProcessFromServer()
-        {
-            LessonPlanSubmitted = !string.IsNullOrEmpty(LessonPlanPath);
-
-            Mod1QuizScores = Mod1QuizScores ?? "";
-            Mod2QuizScores = Mod2QuizScores ?? "";
-            Mod3QuizScores = Mod3QuizScores ?? "";
-            Mod4QuizScores = Mod4QuizScores ?? "";
-        }
     }
 }

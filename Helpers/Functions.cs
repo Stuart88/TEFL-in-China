@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -205,6 +210,56 @@ namespace TEFL_App.Helpers
 
         }
 
+        public static async Task<(bool ok, T data, string message)> PostItem<T>(string uri, Dictionary<string, string> dict) where T : new()
+        {
+            try
+            {
+                
+                var stringPayload = JsonConvert.SerializeObject(dict);
+
+                var content = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+                App.client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                string json_data = await App.client.PostAsync(Globals.baseURL + uri, content).Result.Content.ReadAsStringAsync();
+
+                App.client.DefaultRequestHeaders.Accept.Clear();
+
+                if (!string.IsNullOrEmpty(json_data))
+                {
+                    JsonBasicResult<T> json = JsonConvert.DeserializeObject<JsonBasicResult<T>>(json_data);
+
+                    if (json.ok)
+                    {
+                        if (json.data != null)
+                        {
+                            //T updated = json.data;
+                            return (true, json.data, "");
+                        }
+                        else
+                        {
+                            return (true, new T(), "");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception(json.message);
+                    }
+                }
+                else
+                {
+                    throw new Exception("No result data!");
+                }
+            }
+            catch (Exception e)
+            {
+                ShowErrorMessageDialog(e);
+
+                return (false, new T(), ErrorMessage(e));
+            }
+        }
+
+
 
         public static void SynchroniseAppData(ManagerLoginResult data)
         {
@@ -214,7 +269,7 @@ namespace TEFL_App.Helpers
 
             foreach (var p in App.TEFLProfiles)
             {
-                p.ProcessFromServer();
+                p.ProcessData();
             }
         }
 

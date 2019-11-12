@@ -79,6 +79,7 @@
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Background" Value="{StaticResource LightGrey}"/>
     </Style>
     <Style TargetType="StackPanel" x:Key="TEFLChapterPageArea">
         <Setter Property="MaxWidth" Value="800"/>
