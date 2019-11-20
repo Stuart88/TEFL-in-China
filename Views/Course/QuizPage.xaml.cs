@@ -14,35 +14,19 @@ namespace TEFL_App.Views.Course
     /// </summary>
     public partial class QuizPage : Page
     {
-        #region Private Fields
+        #region Public Fields
 
         public double Score = 0d;
+
+        #endregion Public Fields
+
+        #region Private Fields
+
         private static Random rnd = new Random();
         private ModuleNumber ModuleNumber;
         private List<TestQuestion> Questions;
-        public bool CanDoQuiz { get; set; }
-        public bool CannotDoQuiz { get; set; }
-        public bool IsFinalExam { get; set; }
-        public bool IsModuleQuiz { get; set; }
 
         #endregion Private Fields
-
-        #region Private Methods
-
-        private bool CheckCanDoQuiz(Models.TEFLProfile profile, ModuleNumber module)
-        {
-            return module switch
-            {
-                ModuleNumber.Mod1 => true,
-                ModuleNumber.Mod2 => Functions.HighestExamScore(profile.Mod1QuizScores) >= Globals.QuizScorePassMark,
-                ModuleNumber.Mod3 => Functions.HighestExamScore(profile.Mod2QuizScores) >= Globals.QuizScorePassMark,
-                ModuleNumber.Mod4 => Functions.HighestExamScore(profile.Mod3QuizScores) >= Globals.QuizScorePassMark,
-                ModuleNumber.FinalExam => Functions.HighestExamScore(profile.Mod4QuizScores) >= Globals.QuizScorePassMark,
-                _ => false
-            };
-        }
-
-        #endregion Private Methods
 
         #region Public Constructors
 
@@ -54,10 +38,11 @@ namespace TEFL_App.Views.Course
             ModuleNumber = module;
             CanDoQuiz = CheckCanDoQuiz(App.StudentProfile, module);
             CannotDoQuiz = !CanDoQuiz;
+            IsManager = App.UserType == Enums.UserType.Manager;
 
             InitializeComponent();
 
-            QuizTitle.Text = module switch
+            string quizTitle = module switch
             {
                 ModuleNumber.Mod1 => "Module 1 Quiz",
                 ModuleNumber.Mod2 => "Module 2 Quiz",
@@ -66,12 +51,14 @@ namespace TEFL_App.Views.Course
                 ModuleNumber.FinalExam => "Final Exam",
                 _ => ""
             };
+            this.Title = quizTitle;
+            QuizTitle.Text = quizTitle;
 
             PassMarkSpan.Inlines.Add(Globals.QuizScorePassMark.ToString());
 
             int bestAttempt = module switch
             {
-                ModuleNumber.Mod1 => Functions.HighestExamScore(App.StudentProfile?.Mod2QuizScores ?? ""),
+                ModuleNumber.Mod1 => Functions.HighestExamScore(App.StudentProfile?.Mod1QuizScores ?? ""),
                 ModuleNumber.Mod2 => Functions.HighestExamScore(App.StudentProfile?.Mod2QuizScores ?? ""),
                 ModuleNumber.Mod3 => Functions.HighestExamScore(App.StudentProfile?.Mod3QuizScores ?? ""),
                 ModuleNumber.Mod4 => Functions.HighestExamScore(App.StudentProfile?.Mod4QuizScores ?? ""),
@@ -101,7 +88,25 @@ namespace TEFL_App.Views.Course
 
         #endregion Public Constructors
 
+        #region Public Properties
 
+        public bool CanDoQuiz { get; set; }
+        public bool CannotDoQuiz { get; set; }
+        public bool IsFinalExam { get; set; }
+        public bool IsModuleQuiz { get; set; }
+        public bool IsManager { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Methods
+
+        public static List<TestQuestion> Shuffle(List<TestQuestion> items)
+        {
+            return items.Select(x => new { value = x, order = rnd.Next() })
+            .OrderBy(x => x.order).Select(x => x.value).ToList();
+        }
+
+        #endregion Public Methods
 
         #region Private Methods
 
@@ -122,6 +127,19 @@ namespace TEFL_App.Views.Course
             };
             grid.RowDefinitions.Add(newRow);
             RegisterName(rowName, newRow);
+        }
+
+        private bool CheckCanDoQuiz(Models.TEFLProfile profile, ModuleNumber module)
+        {
+            return module switch
+            {
+                ModuleNumber.Mod1 => true,
+                ModuleNumber.Mod2 => Functions.HighestExamScore(profile.Mod1QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.Mod3 => Functions.HighestExamScore(profile.Mod2QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.Mod4 => Functions.HighestExamScore(profile.Mod3QuizScores) >= Globals.QuizScorePassMark,
+                ModuleNumber.FinalExam => Functions.HighestExamScore(profile.Mod4QuizScores) >= Globals.QuizScorePassMark,
+                _ => false
+            };
         }
 
         /// <summary>
@@ -254,18 +272,6 @@ namespace TEFL_App.Views.Course
             Grid.SetRow(grid, 1);
         }
 
-        #endregion Private Methods
-
-        #region Public Methods
-
-        public static List<TestQuestion> Shuffle(List<TestQuestion> items)
-        {
-            return items.Select(x => new { value = x, order = rnd.Next() })
-            .OrderBy(x => x.order).Select(x => x.value).ToList();
-        }
-
-        #endregion Public Methods
-
         private async System.Threading.Tasks.Task PostQuizResultAsync(string scoreString)
         {
             switch (ModuleNumber)
@@ -309,7 +315,7 @@ namespace TEFL_App.Views.Course
             else
             {
                 //error message shows in PostItem<>()
-               // Functions.ShowErrorMessageDialog(new Exception(postResult.message));
+                // Functions.ShowErrorMessageDialog(new Exception(postResult.message));
             }
         }
 
@@ -356,7 +362,16 @@ namespace TEFL_App.Views.Course
 
             Score = Math.Round(100 * correct / Questions.Count, 0);
 
-            await PostQuizResultAsync(Score.ToString() + ",");
+            if(App.UserType == Enums.UserType.Candidate)
+            {
+                await PostQuizResultAsync(Score.ToString() + ",");
+            }
+            else
+            {
+                Functions.ShowMessageDialog("Your score", string.Format("You scored {0}%", Score));
+            }
         }
+
+        #endregion Private Methods
     }
 }

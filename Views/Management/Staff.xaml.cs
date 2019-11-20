@@ -51,7 +51,7 @@ namespace TEFL_App.Views.Management
                 };
                 TextBlock lastLoginText = new TextBlock
                 {
-                    Text = p.LastLogin.HasValue ? p.LastLogin.Value.ToString(App.CultureInfo) : "",
+                    Text = p.LastLogin.HasValue ? p.LastLogin.Value.ToString("dd MMM yyyy", App.CultureInfo) : "",
                     Style = Application.Current.FindResource("TableRowStylePlain") as Style,
                 };
                 TextBlock mod1Text = new TextBlock

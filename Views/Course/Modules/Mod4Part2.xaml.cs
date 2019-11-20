@@ -66,7 +66,7 @@ namespace TEFL_App.Views.Course.Modules
         {
             if (App.StudentProfile.ID > 0)
             {
-                NavigateTo(new FinalExam());
+                NavigateTo(new QuizPage(QuizQuestions.GetQuestions(ModuleNumber.FinalExam), ModuleNumber.FinalExam));
             }
             else
             {

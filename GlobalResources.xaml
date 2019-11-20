@@ -28,6 +28,8 @@
         <Setter Property="Background" Value="{StaticResource Orange}" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderBrush" Value="Orange"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontSize" Value="15"/>
     </Style>
     
     <Style TargetType="Frame" x:Key="LineDivider">
@@ -50,7 +52,7 @@
         <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="TableRowStylePlain">
         <Setter Property="Foreground" Value="{StaticResource Black}"/>

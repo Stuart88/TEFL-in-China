@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TEFL_App.Views.Course
+namespace TEFL_App.Views.General
 {
     /// <summary>
-    /// Interaction logic for FinalExam.xaml
+    /// Interaction logic for PleaseUpdate.xaml
     /// </summary>
-    public partial class FinalExam : Page
+    public partial class PleaseUpdate : Page
     {
-        public FinalExam()
+        public PleaseUpdate()
         {
             InitializeComponent();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

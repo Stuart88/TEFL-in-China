@@ -6,9 +6,130 @@
       xmlns:local="clr-namespace:TEFL_App.Views.Course"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LessonPlanPage">
+      Title="Lesson Plan Page"
+      x:Name="LessonPlanPage_"
+      UseLayoutRounding="True">
 
-    <Grid>
-        <Label>Lesson plan stuff!</Label>
-    </Grid>
+
+    <ScrollViewer>
+        <Grid HorizontalAlignment="Center" Margin="10,50,10,10" MaxWidth="900" ScrollViewer.CanContentScroll="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <RichTextBox Grid.Row="0" Style="{StaticResource TEFLChapterSectionText}">
+                <RichTextBox.Effect>
+                    <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                </RichTextBox.Effect>
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center" FontWeight="Bold" FontSize="20" Background="{StaticResource Orange}"
+                               Foreground="White" Padding="10">
+                        Lesson Plan Assignment
+                    </Paragraph>
+                    <Paragraph>
+                        After completing the Final Exam, you can start to work on the Lesson Plan Assignment.
+                    </Paragraph>
+                    <Paragraph>
+                        The following template may be used for guidance:
+                        <Hyperlink NavigateUri="https://echinacareers.com/Downloads/Planning%20a%20Lesson%20-%20Template.docx"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                            Planning a Lesson - Template.docx
+                        </Hyperlink>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+            <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
+                         Visibility="{Binding Path=CannotUploadLessonPlan, ElementName=LessonPlanPage_, Converter={StaticResource VisibilityConverter}}"
+                         Background="#e1e2ff">
+                <RichTextBox.Effect>
+                    <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                </RichTextBox.Effect>
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center" FontSize="25" FontWeight="Bold">
+                        Info
+                    </Paragraph>
+                    <Paragraph>
+                        Please first pass all module tests and the final exam
+                    </Paragraph>
+
+                </FlowDocument>
+            </RichTextBox>
+
+
+            <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
+                         Visibility="{Binding Path=CanUploadLessonPlan, ElementName=LessonPlanPage, Converter={StaticResource VisibilityConverter}}"
+                         Background="#e1e2ff">
+                <RichTextBox.Effect>
+                    <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                </RichTextBox.Effect>
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center" FontSize="25" FontWeight="Bold">
+                        Info
+                    </Paragraph>
+                    <List>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>To pass the lesson plan assigment, you need to demonstrate your ability to plan a real ESL lesson. The best thing to do here is to plan as if you really are going to give the lesson you are creating.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>When your are ready, upload your lesson plan via the 'Select File' button below.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>If there are any issues with your lesson plan, a tutor from North American TEFL will contact you via email to discuss things further.</Paragraph>
+                        </ListItem>
+                        <ListItem Style="{StaticResource SpacedListItem}">
+                            <Paragraph>Upon satisfactory completion of this assigment, you will have completed the course and will be granted your TEFL certificate.</Paragraph>
+                        </ListItem>
+                    </List>
+
+                </FlowDocument>
+            </RichTextBox>
+
+            <RichTextBox Grid.Row="2"  Style="{StaticResource TEFLChapterSectionText}" 
+                         Visibility="{Binding Path=CanUploadLessonPlan, ElementName=LessonPlanPage_, Converter={StaticResource VisibilityConverter}}">
+
+                <RichTextBox.Effect>
+                    <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                </RichTextBox.Effect>
+                <FlowDocument>
+                    <BlockUIContainer>
+                        <StackPanel x:Name="LessonPlanUploadStackpanel"  Orientation="Vertical"
+                    
+                    HorizontalAlignment="Center">
+
+
+                            <Button Style="{StaticResource MainButtonStyle}" Padding="10" FontSize="20" Click="FileSelectBtn_Click">Select File</Button>
+
+                            <TextBlock Margin="0,10,0,20" HorizontalAlignment="Center" x:Name="SelectedFileData" Foreground="{StaticResource Black}" FontSize="20"/>
+
+                            <Button x:Name="UploadBtn" Style="{StaticResource MainButtonStyle}" Padding="10" FontSize="20" Click="UploadBtn_Click"
+                    Visibility="Collapsed">Upload</Button>
+
+                            <TextBlock Margin="0,20,0,20" HorizontalAlignment="Center" x:Name="SuccessMessage" Foreground="Blue"/>
+
+                            <StackPanel x:Name="DownloadButtonStackPanel">
+                                <Border Height="2" BorderThickness="2" BorderBrush="{StaticResource LightGrey}" Margin="00"/>
+
+                                <TextBlock  Margin="0,20,0,10" HorizontalAlignment="Center" Text="You have uploaded a lesson plan"/>
+
+                                <Button x:Name="DownloadBtn" 
+                            Style="{StaticResource MainButtonStyle}" 
+                                        Background="CornflowerBlue"
+                                        BorderThickness="0"
+                            Padding="10" FontSize="20" 
+                            Click="DownloadBtn_Click">
+                                    Download
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </BlockUIContainer>
+                </FlowDocument>
+            </RichTextBox>
+        </Grid>
+    </ScrollViewer>
+
+   
 </Page>

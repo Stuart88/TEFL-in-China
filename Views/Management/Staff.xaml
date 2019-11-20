@@ -8,57 +8,67 @@
       d:DesignHeight="450" d:DesignWidth="600"
       Background="white"
       Title="Staff"
+      UseLayoutRounding="True"
       x:Name="staffPageWindow">
 
-    <Grid x:Name="staffGrid">
+    
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <ScrollViewer VerticalAlignment="Stretch">
+        <Border MaxWidth="1000" Margin="10,150,10,100">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+            </Border.Effect>
+            <Grid x:Name="staffGrid">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition MaxWidth="80" />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <Border Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="NameHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Name, ElementName=staffPageWindow}" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="NameHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Name, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="2" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="LastLoginHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.LastLogin, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="3" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="Mod1Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module1, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="4" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="Mod2Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module2, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="5" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="Mod3Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module3, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="6" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="Mod4Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module4, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="7" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="FinalExamHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.FinalExam, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="8" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="AssignmentHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Assignment, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="9" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="PasssedHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Passed, ElementName=staffPageWindow}" />
+                </Border>
+                <Border Grid.Column="10" Style="{StaticResource TableHeaderBorderStyle}">
+                    <TextBlock x:Name="PassDateHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.PassDate, ElementName=staffPageWindow}" />
+                </Border>
+            </Grid>
         </Border>
-        <Border Grid.Column="2" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="LastLoginHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.LastLogin, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="3" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="Mod1Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module1, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="4" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="Mod2Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module2, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="5" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="Mod3Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module3, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="6" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="Mod4Header" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Module4, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="7" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="FinalExamHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.FinalExam, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="8" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="AssignmentHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Assignment, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="9" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="PasssedHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.Passed, ElementName=staffPageWindow}" />
-        </Border>
-        <Border Grid.Column="10" Style="{StaticResource TableHeaderBorderStyle}">
-            <TextBlock x:Name="PassDateHeader" Style="{StaticResource TableHeaderStyle}"  Text="{Binding Path=PageText.PassDate, ElementName=staffPageWindow}" />
-        </Border>
-    </Grid>
+    </ScrollViewer>
 </Page>

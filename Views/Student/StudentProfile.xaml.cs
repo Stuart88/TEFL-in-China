@@ -9,6 +9,7 @@ using System.IO;
 using TEFL_App.Models;
 using static TEFL_App.Helpers.Enums;
 using static TEFL_App.Views.Student.StudentProfilePageTextClass;
+using System.Diagnostics;
 
 namespace TEFL_App.Views.Student
 {
@@ -79,26 +80,11 @@ namespace TEFL_App.Views.Student
             }
         }
 
-        private async void DownloadAssignment(object sender, EventArgs args)
+        private void DownloadAssignment(object sender, EventArgs args)
         {
             try
             {
-                var response = await App.client.GetAsync(Profile.LessonPlanPath);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    Stream contentStream = await response.Content.ReadAsStreamAsync();
-
-                    SaveFileDialog saveDialog = new SaveFileDialog();
-                    if (saveDialog.ShowDialog() == true)
-                    {
-                        using (var file = File.Create(saveDialog.FileName))
-                        { // create a new file to write to
-                            await contentStream.CopyToAsync(file);
-                        }
-
-                    }
-                }
+                Process.Start(new ProcessStartInfo(Profile.LessonPlanPath));
             }
             catch (Exception ex)
             {

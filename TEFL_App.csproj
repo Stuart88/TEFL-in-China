@@ -121,11 +121,9 @@
     <Compile Include="Helpers\QuizClasses.cs" />
     <Compile Include="Helpers\QuizQuestions.cs" />
     <Compile Include="Models\HttpPostable.cs" />
+    <Compile Include="Models\TEFLLessonPlanAttachment.cs" />
     <Compile Include="Views\Course\CourseHome.xaml.cs">
       <DependentUpon>CourseHome.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Course\FinalExam.xaml.cs">
-      <DependentUpon>FinalExam.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Course\LessonPlanPage.xaml.cs">
       <DependentUpon>LessonPlanPage.xaml</DependentUpon>
@@ -178,6 +176,9 @@
     <Compile Include="Views\General\LoginManager.xaml.cs">
       <DependentUpon>LoginManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\General\PleaseUpdate.xaml.cs">
+      <DependentUpon>PleaseUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\General\PopupWindow.xaml.cs">
       <DependentUpon>PopupWindow.xaml</DependentUpon>
     </Compile>
@@ -222,10 +223,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Course\CourseHome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Course\FinalExam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,6 +291,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\General\LoginManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\General\PleaseUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
