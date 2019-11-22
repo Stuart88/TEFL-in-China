@@ -24,7 +24,7 @@ namespace TEFL_App.Views.Course
         {
             InitializeComponent();
 
-            ContentFrame.Content = new Student.StudentProfile(App.StudentProfile);
+            ContentFrame.Content = new TEFL_App.Views.General.WelcomePage();
         }
     }
 }

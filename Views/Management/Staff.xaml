@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TEFL_App.Views.Management"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="600"
-      Background="white"
+     
       Title="Staff"
       UseLayoutRounding="True"
       x:Name="staffPageWindow">

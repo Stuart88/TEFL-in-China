@@ -24,8 +24,8 @@
         </Style>
         <Style TargetType="Button" x:Key="MainMenuBtnStyle">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="0,5,0,5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10,5,0,5"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="{StaticResource Grey}"/>
@@ -43,7 +43,8 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style TargetType="Frame" x:Key="MenuSectionStyle">
-            
+        
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style TargetType="Label" x:Key="MenuHeaderStyleText">
             <Setter Property="Background" Value="{StaticResource DarkBlue}"/>
@@ -55,10 +56,13 @@
         </Style>
         <Style TargetType="Label" x:Key="MenuTitleStyleText">
             <Setter Property="Foreground" Value="White"/>
-
         </Style>
-        <Style TargetType="Label" x:Key="MenuSectionStyleText">
+        <Style TargetType="TextBlock" x:Key="MenuSectionStyleText">
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="10, 5, 0, 5"/>
         </Style>
         <Style TargetType="Grid" x:Key="ChapterSectionGrid">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -67,7 +71,7 @@
             
         </Style>
         <Style TargetType="TextBlock" x:Key="ChapterSectionNumber">
-            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Width" Value="Auto"/>
@@ -86,7 +90,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" >
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource LightGrey}" >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" MinWidth="280" />
@@ -107,10 +111,12 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+                    
                     <Frame Grid.Row="0" Padding="30" Background="White" BorderBrush="{StaticResource LightGrey}" BorderThickness="4"
-                   Content="{StaticResource LogoImage}" />
+                   Content="{StaticResource LogoImage2}"  NavigationUIVisibility="Hidden"/>
 
                     <Button Grid.Row="1" x:Name="managerHomeBtn" Click="MenuBtnClick" Tag="ManagerHome" Style="{StaticResource MainMenuBtnStyle}"
                     Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
@@ -120,32 +126,36 @@
                     Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
                      Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}"/>
 
-                    <Button Grid.Row="3" x:Name="staffBtn" Click="MenuBtnClick" Tag="Staff" Style="{StaticResource MainMenuBtnStyle}"
-                    Content="{Binding Path=PageText.Staff, ElementName=layoutWindow}"
-                    Visibility="{Binding UserIsManager, ElementName=layoutWindow}" />
-
-                    <Button Grid.Row="4" x:Name="courseBtn" Click="MenuBtnClick" Tag="Course" Style="{StaticResource MainMenuBtnStyle}"
-                    Content="{Binding Path=PageText.Course, ElementName=layoutWindow}"
-                    Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
-
-                    <Button Grid.Row="4" x:Name="finalExamBtn" Click="MenuBtnClick" Tag="Final Exam" Style="{StaticResource MainMenuBtnStyle}"
-                    Content="{Binding Path=PageText.FinalExam, ElementName=layoutWindow}"
-                    Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
-
-                    <Button Grid.Row="5" x:Name="assignmentBtn" Click="MenuBtnClick" Tag="Assignment" Style="{StaticResource MainMenuBtnStyle}"
+                    <Button Grid.Row="3" x:Name="studentProfileBtn" Click="MenuBtnClick" Tag="StudentProfile" Style="{StaticResource MainMenuBtnStyle}"
                     Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
                      Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}"/>
 
-                    <Button Grid.Row="6" x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings" Style="{StaticResource MainMenuBtnStyle}"
+                    <Button Grid.Row="4" x:Name="staffBtn" Click="MenuBtnClick" Tag="Staff" Style="{StaticResource MainMenuBtnStyle}"
+                    Content="{Binding Path=PageText.Staff, ElementName=layoutWindow}"
+                    Visibility="{Binding UserIsManager, ElementName=layoutWindow}" />
+
+                    <Button Grid.Row="5" x:Name="courseBtn" Click="MenuBtnClick" Tag="Course" Style="{StaticResource MainMenuBtnStyle}"
+                    Content="{Binding Path=PageText.Course, ElementName=layoutWindow}"
+                    Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
+
+                    <Button Grid.Row="5" x:Name="finalExamBtn" Click="MenuBtnClick" Tag="Final Exam" Style="{StaticResource MainMenuBtnStyle}"
+                    Content="{Binding Path=PageText.FinalExam, ElementName=layoutWindow}"
+                    Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}" />
+
+                    <Button Grid.Row="6" x:Name="assignmentBtn" Click="MenuBtnClick" Tag="Assignment" Style="{StaticResource MainMenuBtnStyle}"
+                    Content="{Binding Path=PageText.Home, ElementName=layoutWindow}"
+                     Visibility="{Binding UserIsCandidate, ElementName=layoutWindow}"/>
+
+                    <Button Grid.Row="7" x:Name="settingsBtn" Click="MenuBtnClick" Tag="Settings" Style="{StaticResource MainMenuBtnStyle}"
                     Content="{Binding Path=PageText.Settings, ElementName=layoutWindow}" />
 
-                    <Button Grid.Row="7" x:Name="helpBtn" Click="MenuBtnClick" Tag="Help" Style="{StaticResource MainMenuBtnStyle}"
+                    <Button Grid.Row="8" x:Name="helpBtn" Click="MenuBtnClick" Tag="Help" Style="{StaticResource MainMenuBtnStyle}"
                     Content="{Binding Path=PageText.Help, ElementName=layoutWindow}" />
 
-                    <Button Grid.Row="8" x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout" Style="{StaticResource MainMenuBtnStyle}"
+                    <Button Grid.Row="9" x:Name="logoutBtn" Click="LogoutBtn_Click" Tag="Logout" Style="{StaticResource MainMenuBtnStyle}"
                     Content="{Binding Path=PageText.Logout, ElementName=layoutWindow}" />
 
-                    <StackPanel  Grid.Row="9" VerticalAlignment="Stretch" x:Name="ModuleChaptersStackPanel" Orientation="Vertical" >
+                    <StackPanel  Grid.Row="10" VerticalAlignment="Stretch" x:Name="ModuleChaptersStackPanel" Orientation="Vertical" >
 
                     </StackPanel>
 

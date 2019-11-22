@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static TEFL_App.Views.Management.WelcomePageTextClass;
+using static TEFL_App.Views.General.WelcomePageTextClass;
 
-namespace TEFL_App.Views.Management
+namespace TEFL_App.Views.General
 {
     /// <summary>
     /// Interaction logic for WelcomePage.xaml
@@ -40,7 +40,7 @@ namespace TEFL_App.Views.Management
         public string WelcomeText { get; set; }
         public string PleaseSetPassword { get; set; }
         public string PleaseSetPassword_Explanation { get; set; }
-        
+
 
         #endregion Public Properties
     }
@@ -55,7 +55,7 @@ namespace TEFL_App.Views.Management
             WelcomeText = "Stuff stuff stuff introductor text lalala",
             PleaseSetPassword = "Please set a login password for your staff",
             PleaseSetPassword_Explanation = "Your staff will use this password to login to the software and access the course.",
-           
+
         };
 
         internal static WelcomePageText WelcomePageTextZH = new WelcomePageText
@@ -64,7 +64,7 @@ namespace TEFL_App.Views.Management
             WelcomeText = "Stuff stuff stuff introductor text lalala",
             PleaseSetPassword = "请选择你的员工的登录密码",
             PleaseSetPassword_Explanation = "跟这个密码您公司的员工可以登录",
-           
+
         };
 
         #endregion Internal Fields

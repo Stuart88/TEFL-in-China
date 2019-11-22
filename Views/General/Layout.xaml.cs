@@ -34,16 +34,7 @@ namespace TEFL_App.Views.General
             SetLanguage();
             CreateChapterMenuButtons();
 
-            //Loaded += MinimiseMenu;
-
-            if (App.UserType == Helpers.Enums.UserType.Manager)
-            {
-                ContentArea.Content = new ManagerHome();
-            }
-            else
-            {
-                ContentArea.Content = new CourseHome();
-            }
+            ContentArea.Content = new WelcomePage();
 
             OnLogout = onLogout;
         }
@@ -167,9 +158,9 @@ namespace TEFL_App.Views.General
                 Content = new Frame
                 {
                     Style = TryFindResource("MenuSectionStyle") as Style,
-                    Content = new Label
+                    Content = new TextBlock
                     {
-                        Content = string.Format("{0}", data.Title),
+                        Text = string.Format("{0}", data.Title),
                         Style = TryFindResource("MenuSectionStyleText") as Style,
                     }
                 },
@@ -347,8 +338,9 @@ namespace TEFL_App.Views.General
         {
             Page selectedPage = ((Button)sender).Tag switch
             {
-                "ManagerHome" => new ManagerHome(),
-                "CourseHome" => new CourseHome(),
+                "ManagerHome" => new WelcomePage(),
+                "CourseHome" => new WelcomePage(),
+                "StudentProfile" => new Student.StudentProfile(App.StudentProfile),
                 "Final Exam" => new QuizPage(GetQuestions(ModuleNumber.FinalExam), ModuleNumber.FinalExam),
                 "Staff" => new Staff(),
                 "Course" => new TEFLCourse(),
@@ -392,6 +384,7 @@ namespace TEFL_App.Views.General
             assignmentBtn.Content = PageText.LessonPlan;
             helpBtn.Content = PageText.Help;
             logoutBtn.Content = PageText.Logout;
+            studentProfileBtn.Content = PageText.StudentProfile;
         }
 
         private void SetLanguage()
@@ -411,6 +404,7 @@ namespace TEFL_App.Views.General
         #region Public Properties
 
         public string Course { get; set; }
+        public string StudentProfile { get; set; }
         public string LessonPlan { get; set; }
         public string FinalExam { get; set; }
         public string Help { get; set; }
@@ -431,6 +425,7 @@ namespace TEFL_App.Views.General
             Home = "Home",
             FinalExam = "Final Exam",
             Staff = "Staff",
+            StudentProfile = "Student Profile",
             Course = "TEFL Course",
             LessonPlan = "Lesson Plan",
             Settings = "Settings",
@@ -442,6 +437,7 @@ namespace TEFL_App.Views.General
         {
             Home = "主页",
             Staff = "人工",
+            StudentProfile = "学生资料",
             FinalExam = "考试",
             Course = "TEFL 教程",
             LessonPlan = "Lesson Plan",

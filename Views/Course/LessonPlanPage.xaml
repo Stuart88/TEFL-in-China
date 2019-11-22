@@ -11,7 +11,7 @@
       UseLayoutRounding="True">
 
 
-    <ScrollViewer>
+    <ScrollViewer Background="{StaticResource LightGrey}">
         <Grid HorizontalAlignment="Center" Margin="10,50,10,10" MaxWidth="900" ScrollViewer.CanContentScroll="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -44,7 +44,7 @@
 
             <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
                          Visibility="{Binding Path=CannotUploadLessonPlan, ElementName=LessonPlanPage_, Converter={StaticResource VisibilityConverter}}"
-                         Background="#e1e2ff">
+                           Background="{StaticResource LightBlue}">
                 <RichTextBox.Effect>
                     <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
                 </RichTextBox.Effect>
@@ -62,7 +62,7 @@
 
             <RichTextBox Grid.Row="1" Style="{StaticResource TEFLChapterSectionText}"
                          Visibility="{Binding Path=CanUploadLessonPlan, ElementName=LessonPlanPage, Converter={StaticResource VisibilityConverter}}"
-                         Background="#e1e2ff">
+                         Background="{StaticResource LightBlue}">
                 <RichTextBox.Effect>
                     <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
                 </RichTextBox.Effect>

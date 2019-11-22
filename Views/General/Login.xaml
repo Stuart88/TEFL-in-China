@@ -7,18 +7,61 @@
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="LoginButtonStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Width" Value="180" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="Image" x:Key="LoginIcon">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+        </Style>
+    </Page.Resources>
 
     <Grid VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager" Content="管理登录" />
-            <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student"  Content="学生登录" />
+        <Frame  Grid.Row="0" Content="{StaticResource LogoImage}" />
+        <TextBlock Grid.Row="1" FontSize="26" Text="Welcome to TEFL in China" Foreground="{StaticResource Orange}"  HorizontalAlignment="Center" MaxWidth="300" Margin="0, 0 , 0, 40"></TextBlock>
+        
+
+        <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="400"
+                    Margin="0,0,0,20"
+                    Background="{StaticResource LightGrey}">
+
+            <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager"  Style="{StaticResource LoginButtonStyle}"
+                    Background="#3e7ded">
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource LoginIcon}" Source="pack://application:,,,/TEFL_App;component/Assets/Images/man-with-tie.png"/>
+
+                    <TextBlock Text="管理登录"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student" Style="{StaticResource LoginButtonStyle}" 
+                  
+                    Background="#ff7500">
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource LoginIcon}" Source="pack://application:,,,/TEFL_App;component/Assets/Images/team.png"/>
+
+                    <TextBlock Text="学生登录"/>
+                </StackPanel>
+            </Button>
+            
         </StackPanel>
 
-        <Frame NavigationUIVisibility="Hidden" VerticalAlignment="Center" Grid.Row="1" x:Name="loginFrame" />
+        <Frame NavigationUIVisibility="Hidden" VerticalAlignment="Center" Grid.Row="3" x:Name="loginFrame" />
     </Grid>
 </Page>

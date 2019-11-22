@@ -13,7 +13,7 @@ namespace TEFL_App.Views.Management
         {
             InitializeComponent();
 
-            welcomeText.Text = string.Format("{0}, 你好！", App.ManagerProfile.DisplayNameEn);
+            Content = new TEFL_App.Views.General.WelcomePage();
         }
 
         #endregion Public Constructors

@@ -7,9 +7,11 @@
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       x:Name="settingsWindow"
-      Title="Settings">
+      Title="Settings"
+      Background="{StaticResource LightGrey}">
 
     <StackPanel MaxWidth="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+        
         <Label x:Name="languageLabel" Content="{Binding Path=PageText.Language, ElementName=settingsWindow}" />
         <ComboBox x:Name="languageComboBox" SelectionChanged="ComboBox_Selected" HorizontalAlignment="Left" Width="200">
             <ComboBoxItem x:Name="langItemEn" Content="English" Tag="English" />

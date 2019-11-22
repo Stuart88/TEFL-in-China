@@ -1,0 +1,62 @@
+﻿<Page x:Class="TEFL_App.Views.General.WelcomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TEFL_App.Views.General"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="WelcomePage"
+      UseLayoutRounding="True"
+      Background="{StaticResource LightGrey}">
+
+    <Page.Resources>
+        <Style TargetType="Frame" x:Key="ImageFrame">
+            <Setter Property="Margin" Value="30,45,30,0"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid  HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="1200">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <RichTextBox Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                     Margin="20" IsReadOnly="True"
+                     Padding="10"
+                     MaxWidth="500">
+            <RichTextBox.Effect>
+                <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+            </RichTextBox.Effect>
+
+            <FlowDocument>
+                <Paragraph>
+                    Welcome to the eChinaCareers TEFL certification course, provided by North American TEFL Academy
+                </Paragraph>
+                <Paragraph>
+                    blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                </Paragraph>
+            </FlowDocument>
+
+        </RichTextBox>
+
+        <Frame Grid.Row="1" Grid.Column="0" Content="{StaticResource LogoImage}" Style="{StaticResource ImageFrame}" />
+
+        <Frame Grid.Row="1" Grid.Column="1" Content="{StaticResource NorthAmericanTEFLImage}" Style="{StaticResource ImageFrame}"/>
+
+    </Grid>
+  
+</Page>
