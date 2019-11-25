@@ -42,6 +42,30 @@
         <Setter Property="Margin" Value="20"/>
     </Style>
 
+    <Style TargetType="ComboBox" x:Key="GeneralComboboxStyle">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <Style TargetType="Button" x:Key="SettingsBtnStyle">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Margin" Value="0,15,0,0"/>
+    </Style>
+    <Style TargetType="Label" x:Key="MenuLabelStyle">
+        <Setter Property="Foreground" Value="{StaticResource Grey}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
+    <Style TargetType="TextBox" x:Key="InputStyle">
+        <Setter Property="Foreground" Value="{StaticResource Black}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
+    <Style TargetType="PasswordBox" x:Key="PasswordInputStyle">
+        <Setter Property="Foreground" Value="{StaticResource Black}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
     <Style TargetType="Border" x:Key="TableHeaderBorderStyle">
         <Setter Property="Background" Value="{StaticResource Grey}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>

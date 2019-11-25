@@ -29,25 +29,23 @@
         
         <RichTextBox Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                      Margin="20" IsReadOnly="True"
-                     Padding="10"
+                     Padding="30"
                      MaxWidth="500">
             <RichTextBox.Effect>
                 <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
             </RichTextBox.Effect>
 
             <FlowDocument>
-                <Paragraph>
-                    Welcome to the eChinaCareers TEFL certification course, provided by North American TEFL Academy
+                <Paragraph FontSize="16" Foreground="{StaticResource Black}" FontWeight="Bold">
+                    Welcome to the eChinaCareers TEFL certification course
+                    <LineBreak/>
+                    <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">with North American TEFL Academy</Span>
                 </Paragraph>
+                <BlockUIContainer>
+                    <Frame Style="{StaticResource LineDivider}"/>
+                </BlockUIContainer>
                 <Paragraph>
-                    blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
-                blar balb alb dsgf fmgfdmgdf mgfmd gfdm gm fd
+                    This software acts as a contained course on Teaching English as a Foreign Language. Content 
                 </Paragraph>
             </FlowDocument>
 

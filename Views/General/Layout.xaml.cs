@@ -442,7 +442,7 @@ namespace TEFL_App.Views.General
             Course = "TEFL 教程",
             LessonPlan = "Lesson Plan",
             Settings = "设备",
-            Help = "Help",
+            Help = "服务",
             Logout = "退出"
         };
 

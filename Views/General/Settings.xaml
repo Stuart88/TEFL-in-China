@@ -8,37 +8,61 @@
       d:DesignHeight="450" d:DesignWidth="800"
       x:Name="settingsWindow"
       Title="Settings"
+      UseLayoutRounding="True"
       Background="{StaticResource LightGrey}">
 
-    <StackPanel MaxWidth="400" HorizontalAlignment="Center" VerticalAlignment="Center">
-        
-        <Label x:Name="languageLabel" Content="{Binding Path=PageText.Language, ElementName=settingsWindow}" />
-        <ComboBox x:Name="languageComboBox" SelectionChanged="ComboBox_Selected" HorizontalAlignment="Left" Width="200">
-            <ComboBoxItem x:Name="langItemEn" Content="English" Tag="English" />
-            <ComboBoxItem x:Name="langItemZh" Content="中文" Tag="Chinese" />
-        </ComboBox>
+    <ScrollViewer>
+        <Grid Background="White" Margin="0,30,0,30" MaxWidth="400" Height="Auto" VerticalAlignment="Center" >
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+            </Grid.Effect>
 
-        <Button x:Name="saveBtn" Click="SaveButton_Click"
-                HorizontalAlignment="Left"
-                Width="200"
+            <Border Padding="0,50,0,50">
+                <StackPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <TextBlock x:Name="SettingsTitle" TextAlignment="Center" Margin="0,0,0,0" FontSize="20" FontWeight="Bold" Foreground="{StaticResource Black}" />
+
+                    <Frame Style="{StaticResource LineDivider}"/>
+
+                    <Label x:Name="languageLabel" Style="{StaticResource MenuLabelStyle}" Content="{Binding Path=PageText.Language, ElementName=settingsWindow}" />
+
+                    <ComboBox x:Name="languageComboBox" Style="{StaticResource GeneralComboboxStyle}" SelectionChanged="ComboBox_Selected" HorizontalAlignment="Center" Width="200">
+                        <ComboBoxItem x:Name="langItemEn" Content="English" Tag="English" />
+                        <ComboBoxItem x:Name="langItemZh" Content="中文" Tag="Chinese" />
+                    </ComboBox>
+
+                    <Button x:Name="saveBtn" Click="SaveButton_Click"
+                HorizontalAlignment="Center"
+                        Style="{StaticResource SettingsBtnStyle}"
                 Content="{Binding Path=PageText.Save, ElementName=settingsWindow}" />
 
+                    <Frame Style="{StaticResource LineDivider}"/>
 
 
-        <StackPanel x:Name="PasswordChangeArea">
-            <Label x:Name="PasswordInputLabel" Content="{Binding Path=PageText.Password, ElementName=welcomePane}"/>
-            <TextBox x:Name="PasswordInput"/>
+                    <StackPanel x:Name="PasswordChangeArea">
 
-            <Label x:Name="PasswordInputLabel2" Content="{Binding Path=PageText.RetypePassword, ElementName=welcomePane}"/>
-            <TextBox x:Name="PasswordInput2"/>
+                        <Label x:Name="PasswordInputLabel"  Style="{StaticResource MenuLabelStyle}" Content="{Binding Path=PageText.Password, ElementName=welcomePane}"/>
+                        <TextBlock x:Name="PasswordInfoText" Text="{Binding Path=PageText.PasswordInfo, ElementName=welcomePane }" 
+                               TextWrapping="Wrap" Margin="0,-5,0,15"/>
 
-            <Label x:Name="ManagerPasswordLabel" Content="{Binding Path=PageText.ManagerPassword, ElementName=welcomePane}"/>
-            <PasswordBox x:Name="ManagerPassword"/>
+                        <Label x:Name="PasswordInputLabel1"  Content="{Binding Path=PageText.Password, ElementName=welcomePane}"/>
+                        <TextBox x:Name="PasswordInput" Style="{StaticResource InputStyle}"/>
 
-            <Button x:Name="ChangePasswordBtn"  Click="ChangePasswordBtn_Click"
-                    Style="{StaticResource MainButtonStyle}" Content="{Binding Path=PageText.Submit, ElementName=settingsWindow}"/>
-            
-        </StackPanel>
-        
-    </StackPanel>
+                        <Label x:Name="PasswordInputLabel2" Content="{Binding Path=PageText.RetypePassword, ElementName=welcomePane}"/>
+                        <TextBox x:Name="PasswordInput2" Style="{StaticResource InputStyle}"/>
+
+                        <Label x:Name="ManagerPasswordLabel" Content="{Binding Path=PageText.ManagerPassword, ElementName=welcomePane}"
+                           Margin="0,15,0,0"/>
+                        <PasswordBox x:Name="ManagerPassword" Style="{StaticResource PasswordInputStyle}"/>
+
+                        <Button x:Name="ChangePasswordBtn"  Click="ChangePasswordBtn_Click"
+                    Style="{StaticResource SettingsBtnStyle}" Content="{Binding Path=PageText.Submit, ElementName=settingsWindow}"
+                            Margin="0,15,0,0"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
 </Page>

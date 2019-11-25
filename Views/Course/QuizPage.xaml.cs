@@ -82,7 +82,7 @@ namespace TEFL_App.Views.Course
             }
             else
             {
-                CannotDoQuizText.Inlines.Add(string.Format("Please first complete Module {0}.", (int)module));
+                CannotDoQuizText.Inlines.Add(string.Format("Please first complete Module {0}", (int)module));
             }
         }
 

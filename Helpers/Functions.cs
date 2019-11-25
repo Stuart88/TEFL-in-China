@@ -210,6 +210,12 @@ namespace TEFL_App.Helpers
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uri">URI end path (echinacareers.com/controller/ base URL is added inside method. Do not include here)</param>
+        /// <param name="dict">query parameters</param>
+        /// <returns></returns>
         public static async Task<(bool ok, T data, string message)> PostItem<T>(string uri, Dictionary<string, string> dict) where T : new()
         {
             try

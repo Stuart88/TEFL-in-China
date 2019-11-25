@@ -74,9 +74,12 @@ namespace TEFL_App.Views.General
             saveBtn.Content = PageText.Save;
             languageLabel.Content = PageText.Language;
             PasswordInputLabel.Content = PageText.Password;
+            PasswordInputLabel1.Content = PageText.Password;
             PasswordInputLabel2.Content = PageText.RetypePassword;
             ManagerPasswordLabel.Content = PageText.ManagerPassword;
             ChangePasswordBtn.Content = PageText.Submit;
+            PasswordInfoText.Text = PageText.PasswordInfo;
+            SettingsTitle.Text = PageText.Settings;
         }
 
         private void SetLanguage()
@@ -155,8 +158,10 @@ namespace TEFL_App.Views.General
         public string PasswordsDoNotMatch { get; set; }
         public string RetypePassword { get; set; }
         public string Save { get; set; }
+        public string PasswordInfo { get; set; }
         public string SavedSuccess { get; set; }
         public string Submit { get; set; }
+        public string Settings { get; set; }
 
         #endregion Public Properties
     }
@@ -167,28 +172,32 @@ namespace TEFL_App.Views.General
 
         internal static SettingsPageText SettingsPageTextEn = new SettingsPageText
         {
-            Save = "Save",
-            Submit = "Submit",
+            Save = "Save Language",
+            PasswordInfo = "Here you can set the password your staff use to login to this software",
+            Submit = "Change Password",
             Confirmation = "Are you sure?",
             PasswordsDoNotMatch = "Passwords do not match!",
             SavedSuccess = "Settings saved!",
             Language = "Language",
-            Password = "Password",
+            Password = "New Staff Password",
             RetypePassword = "Retype password",
-            ManagerPassword = "Please enter your main login password to continue",
+            ManagerPassword = "Please provide your eChinaCareers login password",
+            Settings = "Settings"
         };
 
         internal static SettingsPageText SettingsPageTextZH = new SettingsPageText
         {
-            Save = "保存",
+            Save = "保存语言",
             Submit = "提交新密码",
+            PasswordInfo = "这里修改你 staff 的登录密码",
             PasswordsDoNotMatch = "密码不 the same!",
             Confirmation = "确定？",
             SavedSuccess = "成功！",
             Language = "语言",
-            Password = "密码",
+            Password = "修改 Staff 密码",
             RetypePassword = "请再次输入密码",
-            ManagerPassword = "请输入你的 main 密码",
+            ManagerPassword = "请输入你的 eChinaCareers 密码",
+            Settings = "设备"
         };
 
         #endregion Internal Fields

@@ -26,23 +26,31 @@ namespace TEFL_App.Views.Course
     public partial class LessonPlanPage : Page
     {
         private Models.TEFLLessonPlanAttachment AttachmentToUpload;
-        public bool CanUploadLessonPlan { get; set; }
-        public bool CannotUploadLessonPlan { get; set; }
+        public bool CanUploadLessonPlan { get; set; } = Functions.HighestExamScore(App.StudentProfile.ExamScores) >= Globals.QuizScorePassMark;
         public LessonPlanPage()
         {
-            CanUploadLessonPlan = Functions.HighestExamScore(App.StudentProfile.ExamScores) >= Globals.QuizScorePassMark;
-            CannotUploadLessonPlan = !CanUploadLessonPlan;
-            AttachmentToUpload = new Models.TEFLLessonPlanAttachment
-            {
-                TEFLProfileID = App.StudentProfile.ID,
-            };
-
-
             InitializeComponent();
+
+            LessonPlanInfoCanUpload.Visibility = CanUploadLessonPlan
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+
+            LessonPlanUploadArea.Visibility = CanUploadLessonPlan
+               ? Visibility.Visible
+               : Visibility.Collapsed;
+
+            CannotUploadInfoText.Visibility = CanUploadLessonPlan
+                ? Visibility.Collapsed
+                : Visibility.Visible;
 
             DownloadButtonStackPanel.Visibility = App.StudentProfile.LessonPlanSubmitted
                ? Visibility.Visible
                : Visibility.Collapsed;
+
+            AttachmentToUpload = new Models.TEFLLessonPlanAttachment
+            {
+                TEFLProfileID = App.StudentProfile.ID,
+            };
         }
 
 
