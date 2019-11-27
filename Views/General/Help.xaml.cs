@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using TEFL_App.DataLayer;
@@ -40,9 +41,11 @@ namespace TEFL_App.Views.General
         {
             if(ContactFormBox.Text.Length > 0)
             {
-                ContactFormResult.Text = "";
-                ContactFormBox.IsEnabled = false;
-                SubmitBtn.IsEnabled = false;
+                Application.Current.Dispatcher.Invoke(() => {
+                    ContactFormResult.Text = "";
+                    ContactFormBox.IsEnabled = false;
+                    SubmitBtn.IsEnabled = false;
+                });
 
                 string email = DbContext.GetDbVerifieds().FirstOrDefault().Email;
 

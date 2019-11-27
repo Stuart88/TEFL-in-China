@@ -39,6 +39,7 @@
         <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width="400"
                     Margin="0,0,0,20"
+                    Visibility="Collapsed"
                     Background="{StaticResource LightGrey}">
 
             <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager"  Style="{StaticResource LoginButtonStyle}"

@@ -30,11 +30,10 @@ namespace TEFL_App.Views.General
 
             SetMainWindowContent = setMainWindowContent;
 
-            
-            _ = Task.Run(async () => 
-            { 
-                await AutoFetchData(); 
-            });
+            Loaded += async (s, e) =>
+            {
+                await AutoFetchData();
+            };
 
             loginFrame.Content = new LoginManager(SetMainWindowContent);
         }
@@ -45,37 +44,48 @@ namespace TEFL_App.Views.General
 
         private async Task AutoFetchData()
         {
-            
-
-            if(Functions.AppVerified(out string email))
+            try
             {
-                string userData = Functions.Base64Encode(string.Format("{0}:{1}", email, ""));
 
-                App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
-
-                string json_data = await App.client.GetStringAsync(Globals.baseURL + "GetAppData");   
-
-                if (!string.IsNullOrEmpty(json_data))
+                if (Functions.AppVerified(out string email))
                 {
-                    JsonBasicResult<ManagerLoginResult> json = JsonConvert.DeserializeObject<JsonBasicResult<ManagerLoginResult>>(json_data);
-                    if (json.ok)
+                    string userData = Functions.Base64Encode(string.Format("{0}:{1}", email, ""));
+
+                    App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
+
+                    string json_data = await App.client.GetStringAsync(Globals.baseURL + "GetAppData");
+
+                    if (!string.IsNullOrEmpty(json_data))
                     {
-                        Functions.SynchroniseAppData(json.data);
+                        JsonBasicResult<ManagerLoginResult> json = JsonConvert.DeserializeObject<JsonBasicResult<ManagerLoginResult>>(json_data);
+                        if (json.ok)
+                        {
+
+                            Application.Current.Dispatcher.Invoke(() => {
+                                Functions.SynchroniseAppData(json.data);
+                                LoginOptionBtnsStackPanel.Visibility = Visibility.Visible; 
+                            });
+                            
+                        }
+                        else
+                        {
+                            throw new Exception(json.message);
+                        }
                     }
                     else
                     {
-                        throw new Exception(json.message);
+                        throw new Exception("No result data!");
                     }
                 }
                 else
                 {
-                    throw new Exception("No result data!");
+                    //app not been used yet, so only allow manager login
+                    LoginOptionBtnsStackPanel.Visibility = Visibility.Hidden;
                 }
             }
-            else
+            catch(Exception e)
             {
-                //app not been used yet, so only allow manager login
-                LoginOptionBtnsStackPanel.Visibility = Visibility.Hidden;   
+                Functions.ShowErrorMessageDialog(e);
             }
 
         }
