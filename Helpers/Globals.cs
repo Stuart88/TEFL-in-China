@@ -7,6 +7,7 @@
         public const string baseURL = "https://echinacareers.com/TEFLApp/";
 
         public const int QuizScorePassMark = 70;
+        public const int CourseExpiryTime = 6; //months
 
         #endregion Public Fields
 

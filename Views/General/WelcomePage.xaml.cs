@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TEFL_App.Helpers;
 using static TEFL_App.Views.General.WelcomePageTextClass;
 
 namespace TEFL_App.Views.General
@@ -28,6 +29,22 @@ namespace TEFL_App.Views.General
         public WelcomePage()
         {
             InitializeComponent();
+
+            if(App.UserType == Helpers.Enums.UserType.Manager)
+            {
+                StudentGuideArea.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ManagerGuideArea.Visibility = Visibility.Collapsed;
+                if (App.StudentProfile.RegistrationDate < DateTime.Now.AddMonths(-Globals.CourseExpiryTime))
+                {
+                    CourseExpiredText.Visibility = Visibility.Visible;
+                    MainWelcomeGrid.IsEnabled = false;
+                }
+            }
+
+            
         }
     }
 

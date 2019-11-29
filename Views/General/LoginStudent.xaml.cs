@@ -85,15 +85,18 @@ namespace TEFL_App.Views.General
         {
             try
             {
-                UsernameInput.IsEnabled = false;
-                PasswordInput.IsEnabled = false;
-                LoginBtn.IsEnabled = false;
-                RememberMeCheckbox.IsEnabled = false;
+                Dispatcher.Invoke(() => {
+
+                    UsernameInput.IsEnabled = false;
+                    PasswordInput.IsEnabled = false;
+                    LoginBtn.IsEnabled = false;
+                    RememberMeCheckbox.IsEnabled = false;
+                });
 
                 App.UserLogin = UsernameInput.Text;
                 App.UserPassword = PasswordInput.Password;
 
-                string userData = Functions.Base64Encode(string.Format("{0};{1}:{2}", App.ManagerProfile.ID, App.UserLogin, App.UserPassword));
+                string userData = Functions.Base64Encode(string.Format("{0}:{1}", App.UserLogin, App.UserPassword));
 
                 App.client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", userData);
 
@@ -101,9 +104,15 @@ namespace TEFL_App.Views.General
 
                 if (!string.IsNullOrEmpty(json_data))
                 {
-                    JsonBasicResult<TEFLProfile> json = JsonConvert.DeserializeObject<JsonBasicResult<TEFLProfile>>(json_data);
+                    JsonBasicResult<StudentLoginResult> json = JsonConvert.DeserializeObject<JsonBasicResult<StudentLoginResult>>(json_data);
                     if (json.ok)
                     {
+                        
+                        App.UserType = Helpers.Enums.UserType.Candidate;
+                        App.ManagerProfile = json.data.Manager;
+                        App.StudentProfile = json.data.Student;
+                        App.StudentProfile.ProcessData();
+
                         if (RememberMe)
                         {
                             DbContext.AddRememberMe(new DbRememberMe { Email = UsernameInput.Text, Type = (int)DataLayer.Enums.RememberMeType.Candidate });
@@ -113,9 +122,12 @@ namespace TEFL_App.Views.General
                             DbContext.DeleteRememberMe(DbRememberMe);
                         }
 
-                        App.UserType = Helpers.Enums.UserType.Candidate;
-                        App.StudentProfile = json.data;
-                        App.StudentProfile.ProcessData();
+                        if (!Functions.AppVerified(out _))
+                        {
+                            DbContext.AddVerified(new DbVerified { Email = App.ManagerProfile.Email });
+                        }
+
+
                         SetMainWindowContent(new Layout(Logout));
                     }
                     else
@@ -128,10 +140,14 @@ namespace TEFL_App.Views.General
             catch (Exception ex)
             {
                 Functions.ShowErrorMessageDialog(ex);
-                UsernameInput.IsEnabled = true;
-                PasswordInput.IsEnabled = true;
-                LoginBtn.IsEnabled = true;
-                RememberMeCheckbox.IsEnabled = true;
+                Dispatcher.Invoke(() => {
+
+                    UsernameInput.IsEnabled = true;
+                    PasswordInput.IsEnabled = true;
+                    LoginBtn.IsEnabled = true;
+                    RememberMeCheckbox.IsEnabled = true;
+                });
+             
             }
         }
 

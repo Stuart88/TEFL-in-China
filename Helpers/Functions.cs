@@ -125,10 +125,22 @@ namespace TEFL_App.Helpers
             else
             {
                 byte[] passwordHash = GeneratePasswordHash(givenPassword);
-                return passwordHash.SequenceEqual(profile.AppPassword);
+                return ByteArraysEqual(passwordHash, profile.AppPassword);
             }
 
            
+        }
+
+        public static bool ByteArraysEqual(byte[] b1, byte[] b2)
+        {
+            if (b1 == b2) return true;
+            if (b1 == null || b2 == null) return false;
+            if (b1.Length != b2.Length) return false;
+            for (int i = 0; i < b1.Length; i++)
+            {
+                if (b1[i] != b2[i]) return false;
+            }
+            return true;
         }
 
         public static BitmapImage LoadImage(byte[] imageData)
@@ -216,7 +228,7 @@ namespace TEFL_App.Helpers
         /// <param name="uri">URI end path (echinacareers.com/controller/ base URL is added inside method. Do not include here)</param>
         /// <param name="dict">query parameters</param>
         /// <returns></returns>
-        public static async Task<(bool ok, T data, string message)> PostItem<T>(string uri, Dictionary<string, string> dict) where T : new()
+        public static async Task<JsonBasicResult<T>> PostItem<T>(string uri, Dictionary<string, string> dict) where T : new()
         {
             try
             {
@@ -240,11 +252,11 @@ namespace TEFL_App.Helpers
                         if (json.data != null)
                         {
                             //T updated = json.data;
-                            return (true, json.data, "");
+                            return new JsonBasicResult<T>(true, json.data, "");
                         }
                         else
                         {
-                            return (true, new T(), "");
+                            return new JsonBasicResult<T>(true, new T(), "");
                         }
                     }
                     else
@@ -261,11 +273,11 @@ namespace TEFL_App.Helpers
             {
                 ShowErrorMessageDialog(e);
 
-                return (false, new T(), ErrorMessage(e));
+                return new JsonBasicResult<T>(false, new T(), ErrorMessage(e));
             }
         }
 
-        public static async Task<(bool ok, T data, string message)> MultipartUpload<T>(string uri, Dictionary<string, string> dict) where T : new()
+        public static async Task<JsonBasicResult<T>> MultipartUpload<T>(string uri, Dictionary<string, string> dict) where T : new()
         {
             try
             {
@@ -294,11 +306,11 @@ namespace TEFL_App.Helpers
                             if (json.data != null)
                             {
                                 //T updated = json.data;
-                                return (true, json.data, "");
+                                return new JsonBasicResult<T>(true, json.data, "");
                             }
                             else
                             {
-                                return (true, new T(), "");
+                                return new JsonBasicResult<T>(true, new T(), "");
                             }
                         }
                         else
@@ -316,7 +328,7 @@ namespace TEFL_App.Helpers
             {
                 ShowErrorMessageDialog(e);
 
-                return (false, new T(), ErrorMessage(e));
+                return new JsonBasicResult<T>(false, new T(), ErrorMessage(e));
             }
         }
 

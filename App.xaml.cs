@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http;
+using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 using TEFL_App.DataLayer;
 using TEFL_App.Models;
@@ -37,6 +40,45 @@ namespace TEFL_App
 
             InitializeComponent();
         }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            SetupExceptionHandling();
+        }
+
+        private void SetupExceptionHandling()
+        {
+            AppDomain.CurrentDomain.UnhandledException += (s, e) => LogUnhandledException((Exception)e.ExceptionObject, "AppDomain.CurrentDomain.UnhandledException");
+
+            DispatcherUnhandledException += (s, e) => LogUnhandledException(e.Exception, "Application.Current.DispatcherUnhandledException");
+
+            TaskScheduler.UnobservedTaskException += (s, e) => LogUnhandledException(e.Exception, "TaskScheduler.UnobservedTaskException");
+        }
+
+        private void LogUnhandledException(Exception exception, string source)
+        {
+            string message = $"Unhandled exception ({source})";
+            //var file = System.IO.File.CreateText("newFile.txt");
+
+            try
+            {
+                AssemblyName assemblyName = Assembly.GetExecutingAssembly().GetName();
+                message = $"Unhandled exception in {assemblyName.Name} v{assemblyName.Version} ({source})";
+            }
+            catch (Exception ex)
+            {
+               // file.WriteLine(ex.Message);
+                //_Logger.Fatal(ex, "Exception in LogUnhandledException");
+            }
+            finally
+            {
+               // file.WriteLine(exception.Message + "\n" + message);
+                //_Logger.Fatal(exception, message);
+                MessageBox.Show($"An unexpected error occurred. Please contact Support if the error persists. \n\n {exception.Message} \n\n {exception.StackTrace}", "Fatal Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
 
         #endregion Public Constructors
 

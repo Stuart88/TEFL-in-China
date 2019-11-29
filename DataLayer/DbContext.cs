@@ -6,7 +6,6 @@ namespace TEFL_App.DataLayer
     public static class DbContext
     {
         #region Private Fields
-
         private static SQLiteConnection db = new SQLiteConnection("TeflApp.db");
 
         #endregion Private Fields
@@ -93,7 +92,17 @@ namespace TEFL_App.DataLayer
 
         public static List<DbRememberMe> GetAllRememberMeData()
         {
-            return db.Table<DbRememberMe>().ToList();
+
+            List<DbRememberMe> res = new List<DbRememberMe>();
+
+            var data = db.Table<DbRememberMe>();
+
+            foreach (var item in data)
+            {
+                res.Add(item);
+            }
+
+            return res;
         }
 
         public static DbAppSettings GetAppSettings()
@@ -108,10 +117,19 @@ namespace TEFL_App.DataLayer
 
             return settings;
         }
-
+        
         public static List<DbVerified> GetDbVerifieds()
         {
-            return db.Table<DbVerified>().ToList();
+            List<DbVerified> res = new List<DbVerified>();
+
+            var data = db.Table<DbVerified>();
+
+            foreach(var item in data)
+            {
+                res.Add(item);
+            }
+
+            return res;
         }
 
         public static bool GetProfilePic(int candID, out DbProfilePic pic)

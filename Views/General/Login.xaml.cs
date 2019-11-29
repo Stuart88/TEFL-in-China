@@ -80,7 +80,8 @@ namespace TEFL_App.Views.General
                 else
                 {
                     //app not been used yet, so only allow manager login
-                    LoginOptionBtnsStackPanel.Visibility = Visibility.Hidden;
+                    LoginOptionBtnsStackPanel.Visibility = Visibility.Visible;
+                    //LoginOptionBtnsStackPanel.Visibility = Visibility.Hidden;
                 }
             }
             catch(Exception e)

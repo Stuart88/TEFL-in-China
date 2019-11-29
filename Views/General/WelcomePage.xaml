@@ -16,45 +16,311 @@
         </Style>
     </Page.Resources>
 
-    <Grid  HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="1200">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid x:Name="MainWelcomeGrid" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0" >
 
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        
-        <RichTextBox Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                     Margin="20" IsReadOnly="True"
-                     Padding="30"
-                     MaxWidth="500">
-            <RichTextBox.Effect>
-                <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
-            </RichTextBox.Effect>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <FlowDocument>
-                <Paragraph FontSize="16" Foreground="{StaticResource Black}" FontWeight="Bold">
-                    Welcome to the eChinaCareers TEFL certification course
-                    <LineBreak/>
-                    <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">with North American TEFL Academy</Span>
-                </Paragraph>
-                <BlockUIContainer>
-                    <Frame Style="{StaticResource LineDivider}"/>
-                </BlockUIContainer>
-                <Paragraph>
-                    This software acts as a contained course on Teaching English as a Foreign Language. Content 
-                </Paragraph>
-            </FlowDocument>
+            <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
+               Background="White" MaxWidth="1200" MinWidth="400">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
+                </Grid.Effect>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-        </RichTextBox>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="CourseExpiredText"
+                       Visibility="Collapsed"
+                       Text="COURSE EXPIRED! Please purchase a new course" 
+                       Background="Red"
+                        Foreground="White"
+                       Padding="10"
+                       FontWeight="DemiBold"
+                       FontSize="15"
+                       TextAlignment="Center"/>
 
-        <Frame Grid.Row="1" Grid.Column="0" Content="{StaticResource LogoImage}" Style="{StaticResource ImageFrame}" />
+                <RichTextBox 
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
 
-        <Frame Grid.Row="1" Grid.Column="1" Content="{StaticResource NorthAmericanTEFLImage}" Style="{StaticResource ImageFrame}"/>
 
-    </Grid>
+                    <FlowDocument>
+                        <Paragraph FontSize="20" Foreground="{StaticResource Black}" FontWeight="Bold">
+                            Welcome to your eChinaCareers TEFL certification course
+                            <LineBreak/>
+                            <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">produced by North American TEFL Academy</Span>
+                        </Paragraph>
+                        <BlockUIContainer>
+                            <Frame Style="{StaticResource LineDivider}"/>
+                        </BlockUIContainer>
+                        <Paragraph>
+                            You can start the course immediately via the menu options on the left
+                        </Paragraph>
+                        <Paragraph>
+                            It is advisable to contact North American TEFL to tell them you have started the course. In your email, be sure
+                        to tell them the school you are based at.
+                        </Paragraph>
+                        <Paragraph>
+                            Contact:
+                            <Span Foreground="{StaticResource DarkBlue}">contact@northamericantefl.com</Span>
+                        </Paragraph>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox 
+                x:Name="StudentGuideArea"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="16" Foreground="{StaticResource DarkBlue}" FontWeight="Bold">
+                            Quick Start Guide
+
+                        </Paragraph>
+                        <Table>
+                            <Table.Resources>
+                                <Style TargetType="Paragraph" x:Key="TableLabel">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                                <Style TargetType="Paragraph" x:Key="TableText">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                            </Table.Resources>
+                            <Table.Columns>
+                                <TableColumn Width="100"/>
+                                <TableColumn/>
+                            </Table.Columns>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Home
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            View the Welcome Page (this page)
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Student Profile
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            Go here to for a summary of how you are progressing with the course
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Final Exam
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            The final exam. Please first complete the quizes at the end of modules 1, 2, 3 and 4
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Lesson Plan
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            This is where you can access and upload your lesson planning assignment. Please first complete the final exam.
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Settings
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            Change the software interface language
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Help
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            For accessing contact details and requesting further assistance
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Log Out
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            Exit the course and return to the login area
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox 
+                 x:Name="ManagerGuideArea"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="16" Foreground="{StaticResource DarkBlue}" FontWeight="Bold">
+                            Quick Start Guide
+
+                        </Paragraph>
+                        <Table>
+                            <Table.Resources>
+                                <Style TargetType="Paragraph" x:Key="TableLabel">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                                <Style TargetType="Paragraph" x:Key="TableText">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                            </Table.Resources>
+                            <Table.Columns>
+                                <TableColumn Width="100"/>
+                                <TableColumn/>
+                            </Table.Columns>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Home
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            View the Welcome Page (this page)
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Staff
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            View a list of your staff who have taken the course
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Settings
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            Change the software interface language
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Help
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            For accessing contact details and requesting further assistance
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            Log Out
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            Exit the course and return to the login area
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+            </Grid>
+
+
+
+            <Frame Grid.Row="1" Grid.Column="0" Content="{StaticResource LogoImage}" HorizontalAlignment="Center" Style="{StaticResource ImageFrame}" />
+
+            <Frame Grid.Row="1" Grid.Column="1" Content="{StaticResource NorthAmericanTEFLImage}" HorizontalAlignment="Center"  Style="{StaticResource ImageFrame}"/>
+
+        </Grid>
+    </ScrollViewer>
   
 </Page>

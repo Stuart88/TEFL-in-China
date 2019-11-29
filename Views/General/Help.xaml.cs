@@ -57,9 +57,11 @@ namespace TEFL_App.Views.General
                     ? string.Format("TEFL Account, Manager: {0}", App.ManagerProfile.DisplayNameEn)
                     : string.Format("TEFL Account, Student: {0} at {1}", App.StudentProfile.Name, App.ManagerProfile.DisplayNameEn);
 
+                string emailBody = string.Format("<b>TEFL Software Support Request</b><br/><br/>{0}<br/><br/>{1}", senderName, ContactFormBox.Text);
+
                 Dictionary<string, string> values = new Dictionary<string, string>()
             {
-                { "emailBody", ContactFormBox.Text },
+                { "emailBody", emailBody },
                 { "senderName", senderName }
             };
 

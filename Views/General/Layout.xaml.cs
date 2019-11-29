@@ -32,11 +32,27 @@ namespace TEFL_App.Views.General
         {
             InitializeComponent();
             SetLanguage();
-            CreateChapterMenuButtons();
 
             ContentArea.Content = new WelcomePage();
 
             OnLogout = onLogout;
+
+            if(App.UserType == Enums.UserType.Candidate && App.StudentProfile.RegistrationDate < DateTime.Now.AddMonths(-Globals.CourseExpiryTime))
+            {
+                //LeftMenuArea.IsEnabled = false;
+                //managerHomeBtn.IsEnabled = false;
+                //courseHomeBtn.IsEnabled = false;
+                //studentProfileBtn.IsEnabled = false;
+                //staffBtn.IsEnabled = false;
+                //courseBtn.IsEnabled = false;
+                finalExamBtn.IsEnabled = false;
+                assignmentBtn.IsEnabled = false;
+                CourseExpiredText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                CreateChapterMenuButtons();
+            }
         }
 
         private void MinimiseMenu(object sender, RoutedEventArgs e)
@@ -375,16 +391,16 @@ namespace TEFL_App.Views.General
 
         private void SetButtonsText()
         {
-            managerHomeBtn.Content = PageText.Home;
-            courseHomeBtn.Content = PageText.Home;
-            finalExamBtn.Content = PageText.FinalExam;
-            courseBtn.Content = PageText.Course;
-            staffBtn.Content = PageText.Staff;
-            settingsBtn.Content = PageText.Settings;
-            assignmentBtn.Content = PageText.LessonPlan;
-            helpBtn.Content = PageText.Help;
-            logoutBtn.Content = PageText.Logout;
-            studentProfileBtn.Content = PageText.StudentProfile;
+            managerHomeBtnText.Text = PageText.Home;
+            courseHomeBtnText.Text = PageText.Home;
+            finalExamBtnText.Text = PageText.FinalExam;
+            courseBtnText.Text = PageText.Course;
+            staffBtnText.Text = PageText.Staff;
+            settingsBtnText.Text = PageText.Settings;
+            assignmentBtnText.Text = PageText.LessonPlan;
+            helpBtnText.Text = PageText.Help;
+            logoutBtnText.Text = PageText.Logout;
+            studentProfileBtnText.Text = PageText.StudentProfile;
         }
 
         private void SetLanguage()

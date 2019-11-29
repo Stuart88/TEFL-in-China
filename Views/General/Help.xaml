@@ -90,13 +90,13 @@
                     <TextBox x:Name="ContactFormBox" AcceptsReturn="True" Height="200" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap">
                         
                     </TextBox>
-                    <TextBlock x:Name="ContactFormResult" Foreground="Blue" FontSize="14" />
 
                     <Button x:Name="SubmitBtn" Click="SubmitBtn_Click"
                 HorizontalAlignment="Center"
                         Style="{StaticResource SettingsBtnStyle}"
                 Content="{Binding Path=PageText.Submit, ElementName=helpWindow}" />
 
+                    <TextBlock x:Name="ContactFormResult" TextAlignment="Center" FontWeight="Bold" Foreground="Blue" FontSize="14" Margin="0,5,0,0" />
 
 
                 </StackPanel>
