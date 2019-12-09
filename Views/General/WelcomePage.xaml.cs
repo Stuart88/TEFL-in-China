@@ -33,10 +33,13 @@ namespace TEFL_App.Views.General
             if(App.UserType == Helpers.Enums.UserType.Manager)
             {
                 StudentGuideArea.Visibility = Visibility.Collapsed;
+                StudentIntroText.Visibility = Visibility.Collapsed;
             }
             else
             {
                 ManagerGuideArea.Visibility = Visibility.Collapsed;
+                ManagerIntroText.Visibility = Visibility.Collapsed;
+
                 if (App.StudentProfile.RegistrationDate < DateTime.Now.AddMonths(-Globals.CourseExpiryTime))
                 {
                     CourseExpiredText.Visibility = Visibility.Visible;

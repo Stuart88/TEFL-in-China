@@ -35,13 +35,13 @@ namespace TEFL_App.Views.Management
         {
             int rowIndex = 1;
 
-            foreach (var p in App.TEFLProfiles)
+            foreach (Models.TEFLProfile p in App.TEFLProfiles)
             {
                 staffGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
                 TextBlock nameText = new TextBlock
                 {
-                    Text = p.Name,
+                    Text = string.Format("{0} ({1})", p.Name, p.AppUsername),
                     Style = Application.Current.FindResource("TableRowStylePlain") as Style,
                 };
                 Button actionBtn = new Button { Content = "Data" };
@@ -171,7 +171,7 @@ namespace TEFL_App.Views.Management
 
         internal static StaffPageText StaffPageTextEN = new StaffPageText
         {
-            Name = "Name",
+            Name = "Name (Username)",
             LastLogin = "Last Login",
             Module1 = "Mod 1",
             Module2 = "Mod 2",
@@ -185,7 +185,7 @@ namespace TEFL_App.Views.Management
 
         internal static StaffPageText StaffPageTextZH = new StaffPageText
         {
-            Name = "名字",
+            Name = "名字 (用户名)",
             LastLogin = "最近登录",
             Module1 = "Mod 1",
             Module2 = "Mod 2",

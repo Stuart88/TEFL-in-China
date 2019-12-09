@@ -451,6 +451,9 @@
     <Folder Include="Assets\Files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\eCcLogoText.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Images\NorthAmericanTEFLAcademyLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

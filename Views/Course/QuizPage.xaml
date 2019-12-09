@@ -83,9 +83,9 @@
                         <Span x:Name="BestAttemptSpan" FontWeight="Bold"></Span>
                     </Paragraph>
                     <BlockUIContainer>
-                        <TextBlock Visibility="{Binding ElementName=QuizPage_, Path=IsManager}" 
+                        <TextBlock Visibility="{Binding ElementName=QuizPage_, Path=IsManager, Converter={StaticResource VisibilityConverter}}"
                                    FontWeight="Bold"
-                                   Text="You are logged into a Manager account. Quiz score results will be saved."/>
+                                   Text="You are logged into a Manager account. Quiz score results will not be saved."/>
                     </BlockUIContainer>
                 </FlowDocument>
             </RichTextBox>

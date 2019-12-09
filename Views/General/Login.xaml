@@ -13,7 +13,8 @@
             <Setter Property="Width" Value="180" />
             <Setter Property="Height" Value="40" />
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightGrey}"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="TextBlock.FontWeight" Value="Normal"/>
             <Setter Property="TextBlock.FontSize" Value="18"/>
@@ -37,11 +38,10 @@
         <TextBlock Grid.Row="1" FontSize="26" Text="Welcome to TEFL in China" Foreground="{StaticResource Orange}"  HorizontalAlignment="Center" MaxWidth="300" Margin="0, 0 , 0, 40"></TextBlock>
         
 
-        <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <StackPanel x:Name="LoginOptionBtnsStackPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" 
                     Width="400"
                     Margin="0,0,0,20"
-                    Visibility="Collapsed"
-                    Background="{StaticResource LightGrey}">
+                    Visibility="Collapsed">
 
             <Button x:Name="managerLoginBtn" Click="LoginBtn_Click" Tag="Manager"  Style="{StaticResource LoginButtonStyle}"
                     Background="#3e7ded">
@@ -51,7 +51,7 @@
                 </StackPanel>
             </Button>
 
-            <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student" Style="{StaticResource LoginButtonStyle}" 
+            <Button x:Name="studentLoginBtn" Click="LoginBtn_Click" Tag="Student" Style="{StaticResource LoginButtonStyle}"
                     Background="#ff7500">
                 <StackPanel Orientation="Horizontal">
                     <Image Style="{StaticResource LoginIcon}" Source="pack://application:,,,/TEFL_App;component/Assets/Images/005-black-male-user-symbol.png"/>

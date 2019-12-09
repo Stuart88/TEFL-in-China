@@ -81,9 +81,9 @@
         </Style>
     </Page.Resources>
 
-    <ScrollViewer Background="{StaticResource LightGrey}">
-       
-        <Grid  VerticalAlignment="Center" MaxWidth="900" Background="White">
+    <ScrollViewer Background="{StaticResource LightGrey}" >
+
+        <Grid  VerticalAlignment="Center" MaxWidth="900" Background="White" Margin="0,10,0,10">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20"  Color="Gray" Direction="315"/>
             </Grid.Effect>

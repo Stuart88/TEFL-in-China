@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using TEFL_App.DataLayer;
 using TEFL_App.Helpers;
 using TEFL_App.Models;
@@ -19,7 +20,8 @@ namespace TEFL_App.Views.General
         #region Private Fields
 
         private Action<Page> SetMainWindowContent;
-
+        private readonly SolidColorBrush ManagerBtnBorderColour = new SolidColorBrush(Colors.Blue);
+        private readonly SolidColorBrush StudentBtnBorderColour = new SolidColorBrush(Colors.OrangeRed);
         #endregion Private Fields
 
         #region Public Constructors
@@ -36,6 +38,8 @@ namespace TEFL_App.Views.General
             };
 
             loginFrame.Content = new LoginManager(SetMainWindowContent);
+
+            managerLoginBtn.BorderBrush = ManagerBtnBorderColour;
         }
 
         #endregion Public Constructors
@@ -95,6 +99,19 @@ namespace TEFL_App.Views.General
         {
             string tag = (string)((Button)sender).Tag;
 
+            //reset border colours
+            managerLoginBtn.BorderBrush = FindResource("LightGrey") as SolidColorBrush;
+            studentLoginBtn.BorderBrush = FindResource("LightGrey") as SolidColorBrush;
+
+            //set bolder border colour for chosen button
+            ((Button)sender).BorderBrush = tag switch
+            {
+                "Manager" => ManagerBtnBorderColour,
+                "Student" => StudentBtnBorderColour,
+                _ => throw new Exception("How did we get here!")
+            };
+
+            //choose correct login input section
             loginFrame.Content = tag switch
             {
                 "Manager" => new LoginManager(SetMainWindowContent),

@@ -52,7 +52,7 @@
                        FontSize="15"
                        TextAlignment="Center"/>
 
-                <RichTextBox 
+                <RichTextBox x:Name="StudentIntroText"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="20" IsReadOnly="True"
@@ -83,6 +83,43 @@
                             <Span Foreground="{StaticResource DarkBlue}">contact@northamericantefl.com</Span>
                         </Paragraph>
 
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox x:Name="ManagerIntroText"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="20" Foreground="{StaticResource Black}" FontWeight="Bold">
+                            Welcome to the eChinaCareers TEFL certification course
+                            <LineBreak/>
+                            <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">produced by North American TEFL Academy</Span>
+                        </Paragraph>
+                        <BlockUIContainer>
+                            <Frame Style="{StaticResource LineDivider}"/>
+                        </BlockUIContainer>
+                        <Paragraph>
+                            Here you can view and manage the TEFL courses that you have purchased for your staff.
+                        </Paragraph>
+                        <Paragraph>
+                            It is advisable to first set your staff login password via the
+                            <Bold>Settings</Bold>
+                            option in the left hand menu. This is the password that staff will use to login to the software.
+                        </Paragraph>
+                        <Paragraph>
+                            You can view the progress of your staff by the viewing the 
+                            <Bold>Staff</Bold>
+                            section from the left hand menu.
+                        </Paragraph>
+                       
                     </FlowDocument>
 
                 </RichTextBox>
@@ -316,7 +353,7 @@
 
 
 
-            <Frame Grid.Row="1" Grid.Column="0" Content="{StaticResource LogoImage}" HorizontalAlignment="Center" Style="{StaticResource ImageFrame}" />
+            <Frame Grid.Row="1" Grid.Column="0" Content="{StaticResource LogoImageWithText}" HorizontalAlignment="Center" Style="{StaticResource ImageFrame}"  />
 
             <Frame Grid.Row="1" Grid.Column="1" Content="{StaticResource NorthAmericanTEFLImage}" HorizontalAlignment="Center"  Style="{StaticResource ImageFrame}"/>
 

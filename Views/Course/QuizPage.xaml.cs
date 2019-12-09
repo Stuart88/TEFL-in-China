@@ -36,9 +36,9 @@ namespace TEFL_App.Views.Course
             IsModuleQuiz = module != ModuleNumber.FinalExam;
             IsFinalExam = module == ModuleNumber.FinalExam;
             ModuleNumber = module;
-            CanDoQuiz = CheckCanDoQuiz(App.StudentProfile, module);
-            CannotDoQuiz = !CanDoQuiz;
             IsManager = App.UserType == Enums.UserType.Manager;
+            CanDoQuiz = CheckCanDoQuiz(App.StudentProfile, module) || IsManager;
+            CannotDoQuiz = !CanDoQuiz;
 
             InitializeComponent();
 

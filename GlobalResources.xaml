@@ -20,6 +20,7 @@
     <!--<Image x:Key="LogoImage" MaxWidth="150" MaxHeight="150" Source="Assets\Images\eCcLogo.png"/>-->
     <Image  x:Key="LogoImage2" Width="150" Height="150" Source="pack://application:,,,/TEFL_App;component/Assets/Images/eCcLogo.png"/>
     <Image  x:Key="LogoImage" Width="150" Height="150" Source="pack://application:,,,/TEFL_App;component/Assets/Images/eCcLogo.png"/>
+    <Image  x:Key="LogoImageWithText" Width="450" Height="150" Source="pack://application:,,,/TEFL_App;component/Assets/Images/eCcLogoText.png"/>
     <Image  x:Key="NorthAmericanTEFLImage" Width="450" Height="150" Source="pack://application:,,,/TEFL_App;component/Assets/Images/NorthAmericanTEFLAcademyLogo.png"/>
 
     <!-- #region General Resources-->

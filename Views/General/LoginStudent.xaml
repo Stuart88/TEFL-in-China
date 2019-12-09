@@ -6,19 +6,19 @@
              xmlns:local="clr-namespace:TEFL_App.Views.General"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Background="{StaticResource LightGrey}">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" >
         
 
-        <TextBlock Text="Username" Foreground="{StaticResource Grey}" ></TextBlock>
+        <TextBlock Text="用户名" Foreground="{StaticResource Grey}" ></TextBlock>
         <TextBox x:Name="UsernameInput" Foreground="{StaticResource Black}" FontSize="24" HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10"
                  Text="" />
 
-        <TextBlock Text="Password" Foreground="{StaticResource Grey}" ></TextBlock>
+        <TextBlock Text="密码" Foreground="{StaticResource Grey}" ></TextBlock>
         <PasswordBox x:Name="PasswordInput" Foreground="{StaticResource Black}" FontSize="24"  HorizontalAlignment="Stretch"  Margin="0, 0, 0, 10" KeyUp="PasswordInput_KeyUp" />
         
         <Button x:Name="LoginBtn" Style="{StaticResource MainButtonStyle}" Background="ForestGreen" HorizontalAlignment="Stretch"
-                BorderBrush="Green" FontSize="24" Click="LoginBtn_Click">Login</Button>
+                BorderBrush="Green" FontSize="24" Click="LoginBtn_Click">学生登录</Button>
 
-        <CheckBox x:Name="RememberMeCheckbox" IsChecked="False" Checked="RememberMeCheckbox_Checked" Unchecked="RememberMeCheckbox_Checked" Content="Remember Me" HorizontalAlignment="Center" Margin="10"></CheckBox>
+        <CheckBox x:Name="RememberMeCheckbox" IsChecked="False" Checked="RememberMeCheckbox_Checked" Unchecked="RememberMeCheckbox_Checked" Content="记住登录资料" HorizontalAlignment="Center" Margin="10"></CheckBox>
     </StackPanel>
 </UserControl>
