@@ -442,7 +442,7 @@ namespace TEFL_App.Views.General
             FinalExam = "Final Exam",
             Staff = "Staff",
             StudentProfile = "Student Profile",
-            Course = "TEFL Course",
+            //Course = "TEFL Course",
             LessonPlan = "Lesson Plan",
             Settings = "Settings",
             Help = "Help",
@@ -451,15 +451,15 @@ namespace TEFL_App.Views.General
 
         internal static LayoutPageText LayoutPageTextZH = new LayoutPageText
         {
-            Home = "主页",
-            Staff = "人工",
-            StudentProfile = "学生资料",
-            FinalExam = "考试",
-            Course = "TEFL 教程",
-            LessonPlan = "Lesson Plan",
-            Settings = "设备",
-            Help = "服务",
-            Logout = "退出"
+            Home = "课程主页",
+            Staff = "人员管理",
+            StudentProfile = "学生档案",
+            FinalExam = "结课考试",
+            //Course = "TEFL 教程",
+            LessonPlan = "课程计划",
+            Settings = "设置",
+            Help = "帮助",
+            Logout = "退出登录"
         };
 
         #endregion Internal Fields

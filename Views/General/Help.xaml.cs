@@ -122,13 +122,13 @@ namespace TEFL_App.Views.General
 
         internal static HelpPageText HelpPageTextZH = new HelpPageText
         {
-            Help = "服务",
-            ContactMethods = "联系方法",
-            Email = "邮箱: ",
+            Help = "帮助",
+            ContactMethods = "联系客服",
+            Email = "e-mail: ",
             Phone = "电话: ",
             Wechat = "微信号: ",
-            WechatQR = "微信扫码: ",
-            ContactUs = "联系我们",
+            WechatQR = "微信二维码: ",
+            ContactUs = "备注",
             Submit = "提交",
             SuccessfullySent = "发送成功!",
             Failed = "失败!"

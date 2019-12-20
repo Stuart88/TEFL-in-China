@@ -187,17 +187,17 @@ namespace TEFL_App.Views.General
 
         internal static SettingsPageText SettingsPageTextZH = new SettingsPageText
         {
-            Save = "保存语言",
+            Save = "保存设置",
             Submit = "提交新密码",
-            PasswordInfo = "这里修改你 staff 的登录密码",
+            PasswordInfo = "在此重置您的登陆密码",
             PasswordsDoNotMatch = "密码不 the same!",
             Confirmation = "确定？",
             SavedSuccess = "成功！",
             Language = "语言",
-            Password = "修改 Staff 密码",
-            RetypePassword = "请再次输入密码",
-            ManagerPassword = "请输入你的 eChinaCareers 密码",
-            Settings = "设备"
+            Password = "请输入新密码",
+            RetypePassword = "请再次输入",
+            ManagerPassword = "请输入您的eChinaCareers用户登陆密码",
+            Settings = "设置"
         };
 
         #endregion Internal Fields

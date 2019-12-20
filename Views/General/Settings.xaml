@@ -27,8 +27,8 @@
                     <Label x:Name="languageLabel" Style="{StaticResource MenuLabelStyle}" Content="{Binding Path=PageText.Language, ElementName=settingsWindow}" />
 
                     <ComboBox x:Name="languageComboBox" Style="{StaticResource GeneralComboboxStyle}" SelectionChanged="ComboBox_Selected" HorizontalAlignment="Center" Width="200">
-                        <ComboBoxItem x:Name="langItemEn" Content="English" Tag="English" />
-                        <ComboBoxItem x:Name="langItemZh" Content="中文" Tag="Chinese" />
+                        <ComboBoxItem x:Name="langItemEn" Content="English / 英语" Tag="English" />
+                        <ComboBoxItem x:Name="langItemZh" Content="中文 / Chinese" Tag="Chinese" />
                     </ComboBox>
 
                     <Button x:Name="saveBtn" Click="SaveButton_Click"

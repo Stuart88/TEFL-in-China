@@ -52,12 +52,14 @@
                        FontSize="15"
                        TextAlignment="Center"/>
 
-                <RichTextBox x:Name="StudentIntroText"
+                <!-- ENGLISH -->
+                <RichTextBox x:Name="StudentIntroText_EN"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="20" IsReadOnly="True"
                 Padding="30"
                 BorderThickness="0"
+                Visibility="Collapsed"
                 Foreground="{StaticResource Black}"
                 MaxWidth="500">
 
@@ -87,14 +89,15 @@
 
                 </RichTextBox>
 
-                <RichTextBox x:Name="ManagerIntroText"
+                <RichTextBox x:Name="ManagerIntroText_EN"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="20" IsReadOnly="True"
                 Padding="30"
                 BorderThickness="0"
                 Foreground="{StaticResource Black}"
-                MaxWidth="500">
+                MaxWidth="500"
+                Visibility="Collapsed">
 
 
                     <FlowDocument>
@@ -124,9 +127,9 @@
 
                 </RichTextBox>
 
-                <RichTextBox 
-                x:Name="StudentGuideArea"
+                <RichTextBox  x:Name="StudentGuideArea_EN"
                 Grid.Row="1"
+                Visibility="Collapsed"
                 Grid.Column="1"
                 Margin="20" IsReadOnly="True"
                 Padding="30"
@@ -249,9 +252,9 @@
 
                 </RichTextBox>
 
-                <RichTextBox 
-                 x:Name="ManagerGuideArea"
+                <RichTextBox  x:Name="ManagerGuideArea_EN"
                 Grid.Row="1"
+                Visibility="Collapsed"
                 Grid.Column="1"
                 Margin="20" IsReadOnly="True"
                 Padding="30"
@@ -340,6 +343,305 @@
                                     <TableCell>
                                         <Paragraph Style="{StaticResource TableText}">
                                             Exit the course and return to the login area
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <!-- CHINESE -->
+                
+                <RichTextBox x:Name="StudentIntroText_ZH"
+                Grid.Row="1"
+                Grid.Column="0"
+                Visibility="Collapsed"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="20" Foreground="{StaticResource Black}" FontWeight="Bold">
+                            欢迎来到eChinaCareers TEFL认证课程
+                            <LineBreak/>
+                            <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">北美TEFL学院</Span>
+                        </Paragraph>
+                        <BlockUIContainer>
+                            <Frame Style="{StaticResource LineDivider}"/>
+                        </BlockUIContainer>
+                        <Paragraph>
+                            您可以通过左侧的操作面板直接开始课程的学习。
+                        </Paragraph>
+                        <Paragraph>
+                            报名成功后，请直接通过以下e-mail地址联系北美TEFL学院，告知学院已报名成功并附上您目前所在的学校名字。
+                        </Paragraph>
+                        <Paragraph>
+                            请发送至:
+                            <Span Foreground="{StaticResource DarkBlue}">contact@northamericantefl.com</Span>
+                        </Paragraph>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox x:Name="ManagerIntroText_ZH"
+                Grid.Row="1"
+                Grid.Column="0"
+                Visibility="Collapsed"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="20" Foreground="{StaticResource Black}" FontWeight="Bold">
+                            欢迎来到eChinaCareers TEFL认证课程
+                            <LineBreak/>
+                            <Span FontSize="13" Foreground="{StaticResource Grey}" FontWeight="Normal">北美TEFL学院</Span>
+                        </Paragraph>
+                        <BlockUIContainer>
+                            <Frame Style="{StaticResource LineDivider}"/>
+                        </BlockUIContainer>
+                        <Paragraph>
+                            在这里您可以查看、管理已报名TEFL课程的学员。
+                        </Paragraph>
+                        <Paragraph>
+                            首次登录的管理人员，我们建议在左侧的操作面板里，找到 
+                            <Bold>"设置"</Bold>  
+                            选项，修改您的登陆密码，之后用新密码进行登录。
+                        </Paragraph>
+                        <Paragraph>
+                            您可以在左侧的操作面板中找到“管理界面
+                            <Bold>"人员管理"</Bold>
+                            选项，查看学员的课程进度。
+                        </Paragraph>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox  x:Name="StudentGuideArea_ZH"
+                Grid.Row="1"
+                Grid.Column="1"
+                Visibility="Collapsed"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="16" Foreground="{StaticResource DarkBlue}" FontWeight="Bold">
+                            快捷指南
+                        </Paragraph>
+                        <Table>
+                            <Table.Resources>
+                                <Style TargetType="Paragraph" x:Key="TableLabel">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                                <Style TargetType="Paragraph" x:Key="TableText">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                            </Table.Resources>
+                            <Table.Columns>
+                                <TableColumn Width="100"/>
+                                <TableColumn/>
+                            </Table.Columns>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            课程首页
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            访问课程欢迎页（当前页）
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            学生档案
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            查看课程进度与课程详情
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            结课考试
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            完成一到四课程阶段后，即可参加课程的结课考试
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            课程计划
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            通过结课考试之后，请于计划中获取您的课程任务，完成之后在此单元上传
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            设置
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            更改您的界面语言
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            帮助
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            更改您的界面语言
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            退出登录
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            退出现有账号，返回初始登录界面
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+
+                    </FlowDocument>
+
+                </RichTextBox>
+
+                <RichTextBox  x:Name="ManagerGuideArea_ZH"
+                Grid.Row="1"
+                Grid.Column="1"
+                Visibility="Collapsed"
+                Margin="20" IsReadOnly="True"
+                Padding="30"
+                BorderThickness="0"
+                Foreground="{StaticResource Black}"
+                MaxWidth="500">
+
+
+                    <FlowDocument>
+                        <Paragraph FontSize="16" Foreground="{StaticResource DarkBlue}" FontWeight="Bold">
+                            快捷指南
+                        </Paragraph>
+                        <Table>
+                            <Table.Resources>
+                                <Style TargetType="Paragraph" x:Key="TableLabel">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                                <Style TargetType="Paragraph" x:Key="TableText">
+                                    <Setter Property="Foreground" Value="{StaticResource DarkBlue}"/>
+                                    <Setter Property="FontWeight" Value="Normal"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                            </Table.Resources>
+                            <Table.Columns>
+                                <TableColumn Width="100"/>
+                                <TableColumn/>
+                            </Table.Columns>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            课程首页
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            访问课程欢迎页（当前页）
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            人员管理
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            查看学员名单与课程详情
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            设置
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            更改您的界面语言
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            帮助
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            如需更多帮助，请联系客服
+                                        </Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableLabel}">
+                                            退出登录
+                                        </Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph Style="{StaticResource TableText}">
+                                            退出现有账号，返回初始登录界面
                                         </Paragraph>
                                     </TableCell>
                                 </TableRow>

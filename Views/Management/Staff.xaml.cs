@@ -44,7 +44,7 @@ namespace TEFL_App.Views.Management
                     Text = string.Format("{0} ({1})", p.Name, p.AppUsername),
                     Style = Application.Current.FindResource("TableRowStylePlain") as Style,
                 };
-                Button actionBtn = new Button { Content = "Data" };
+                Button actionBtn = new Button { Content = PageText.Data };
                 actionBtn.Click += (s, e) =>  
                 {
                     Helpers.Functions.ShowStudentProfile(p);
@@ -161,6 +161,7 @@ namespace TEFL_App.Views.Management
         public string Name { get; set; }
         public string PassDate { get; set; }
         public string Passed { get; set; }
+        public string Data { get; set; }
 
         #endregion Public Properties
     }
@@ -181,20 +182,22 @@ namespace TEFL_App.Views.Management
             Assignment = "Assignment",
             Passed = "Passed",
             PassDate = "Pass Date",
+            Data = "Data"
         };
 
         internal static StaffPageText StaffPageTextZH = new StaffPageText
         {
             Name = "名字 (用户名)",
-            LastLogin = "最近登录",
-            Module1 = "Mod 1",
-            Module2 = "Mod 2",
-            Module3 = "Mod 3",
-            Module4 = "Mod 4",
-            FinalExam = "考试",
-            Assignment = "功课",
-            Passed = "已通过",
-            PassDate = "通过日期",
+            LastLogin = "最后一次登录",
+            Module1 = "阶段一",
+            Module2 = "阶段二",
+            Module3 = "阶段三",
+            Module4 = "阶段四",
+            FinalExam = "期末考试",
+            Assignment = "课程任务",
+            Passed = "结课状态",
+            PassDate = "结课时间",
+            Data = "详情"
         };
 
         #endregion Internal Fields

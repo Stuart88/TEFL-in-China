@@ -119,7 +119,7 @@ namespace TEFL_App.Views.Student
 
             string highestScore = scores.Length > 0
                 ? string.Format("{0}: {1}%", PageText.HighestScore, Helpers.Functions.HighestExamScore(scores))
-                : "No Data";
+                : PageText.NoData;
 
             SolidColorBrush grey = new SolidColorBrush(Colors.DarkGray);
             ///Asign list header
@@ -256,6 +256,7 @@ namespace TEFL_App.Views.Student
         public string LessonPlanNotSubmitted { get; set; }
         public string LessonPlanSubmitted { get; set; }
         public string Download { get; set; }
+        public string NoData { get; set; }
 
         #endregion Public Properties
     }
@@ -288,6 +289,7 @@ namespace TEFL_App.Views.Student
             TEFLCertificate = "TEFL Certificate",
             HighestScore = "Highest Score",
             Passed = "- Passed ✔",
+            NoData = "No Data"
         };
 
         internal static StudentProfilePageText StudentProfilePageTextZH = new StudentProfilePageText
@@ -295,25 +297,26 @@ namespace TEFL_App.Views.Student
             SelectImage = "选择头像",
             RemoveImage = "删掉",
             AreYouSure = "确定？",
-            ExamAttempts = "考试次数",
-            ExamScores = "考试结果",
-            FinishDate = "毕业日期",
-            LessonPlanAssignment = "Assignment",
+            ExamAttempts = "成绩详情",
+            ExamScores = "结课成绩",
+            FinishDate = "结课日期",
+            LessonPlanAssignment = "已提交",
             LessonPlanNotSubmitted = "没提交",
             LessonPlanSubmitted = "已提交",
             Download = "下载",
-            ModulesCompleted = "Modules Completed",
-            StartDate = "开始日期",
-            StudentProfile = "学生资料",
-            FinalExam = "Final Exam",
-            Module1 = "Module 1",
-            Module2 = "Module 2",
-            Module3 = "Module 3",
-            Module4 = "Module 4",
-            ModuleTestScores = "Module Test Scores",
-            TEFLCertificate = "TEFL Certificate",
-            HighestScore = "Highest Score",
+            ModulesCompleted = "完成阶段",
+            StartDate = "课程开始日期",
+            StudentProfile = "学生档案",
+            FinalExam = "最终成绩",
+            Module1 = "阶段一",
+            Module2 = "阶段二",
+            Module3 = "阶段三",
+            Module4 = "阶段四",
+            ModuleTestScores = "课程阶段测试成绩",
+            TEFLCertificate = "TEFL认证课程",
+            HighestScore = "最高分",
             Passed = "- 已通过 ✔",
+            NoData = "暂无数据"
         };
 
         #endregion Internal Fields

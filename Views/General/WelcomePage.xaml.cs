@@ -32,14 +32,30 @@ namespace TEFL_App.Views.General
 
             if(App.UserType == Helpers.Enums.UserType.Manager)
             {
-                StudentGuideArea.Visibility = Visibility.Collapsed;
-                StudentIntroText.Visibility = Visibility.Collapsed;
+                if(App.Settings.CultureInfo == Enums.Language.English)
+                {
+                    ManagerGuideArea_EN.Visibility = Visibility.Visible;
+                    ManagerIntroText_EN.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    ManagerGuideArea_ZH.Visibility = Visibility.Visible;
+                    ManagerIntroText_ZH.Visibility = Visibility.Visible;
+                }
             }
             else
             {
-                ManagerGuideArea.Visibility = Visibility.Collapsed;
-                ManagerIntroText.Visibility = Visibility.Collapsed;
-
+                if (App.Settings.CultureInfo == Enums.Language.English)
+                {
+                    StudentGuideArea_EN.Visibility = Visibility.Visible;
+                    StudentIntroText_EN.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    StudentGuideArea_ZH.Visibility = Visibility.Visible;
+                    StudentIntroText_ZH.Visibility = Visibility.Visible;
+                }
+                
                 if (App.StudentProfile.RegistrationDate < DateTime.Now.AddMonths(-Globals.CourseExpiryTime))
                 {
                     CourseExpiredText.Visibility = Visibility.Visible;
